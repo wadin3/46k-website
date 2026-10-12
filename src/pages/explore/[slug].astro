@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+export async function getStaticPaths(){
+  const articles=await getCollection('articles',({data})=>!data.draft);
+  return articles.map(article=>({params:{slug:article.id},props:{article}}));
+}
+const {article}=Astro.props;
+const {Content}=await render(article);
+const all=await getCollection('articles',({data})=>!data.draft);
+const related=all.filter(a=>a.id!==article.id&&(a.data.category===article.data.category||a.data.type===article.data.type)).slice(0,2);
+const d=article.data;
+---
+<EditorialLayout title={d.title+' — 46K'} description={d.description}>
+<main class={'type-'+d.type}><section class="article-hero"><div class="container"><a href="/explore/" class="kicker">← BACK TO EXPLORE</a><span class="line"></span><p class="kicker">{d.category} / {d.type.toUpperCase()}</p><h1>{d.title}</h1><p class="deck">{d.description}</p><div class="details"><span>46K / DECODING FOOTBALL INTELLIGENCE</span><span>{d.date.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})} · {d.readingTime} MIN READ</span></div></div></section>
+{d.heroImage&&<div class="container"><img class="article-photo" src={d.heroImage} alt={d.heroAlt??''}/></div>}
+<article class="article-body"><Content/></article>
+{d.sources.length>0&&<section class="references"><h2>Sources & further reading</h2><ol>{d.sources.map(s=><li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a></li>)}</ol></section>}
+{related.length>0&&<section class="related"><div class="container"><p class="kicker">KEEP EXPLORING</p>{related.map(a=><a href={'/explore/'+a.id+'/'}>{a.data.title} ↗</a>)}</div></section>}
+</main></EditorialLayout>

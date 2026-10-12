@@ -1,1 +1,14 @@
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Explore — 46K</title></head><body style="margin:0;background:#F5F2E9;color:#383D3E;font-family:Arial;padding:5vw"><a href="/" style="color:inherit">← 46K</a><p style="margin-top:6rem;letter-spacing:.2em">THE JOURNAL / UNDERSTAND · ASSESS · DEVELOP · 2046</p><h1 style="font:normal clamp(4rem,10vw,8rem) Georgia">Explore.</h1><p style="max-width:38rem;font-size:1.25rem;line-height:1.6">Football intelligence is worth understanding. We are developing a research-led editorial library. Articles will appear here following editorial review.</p><a href="/" style="color:#285C43">Back to 46K ↗</a></body></html>
+---
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import { getCollection } from 'astro:content';
+const articles=(await getCollection('articles',({data})=>!data.draft)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const cats=['ALL','UNDERSTAND','ASSESS','DEVELOP','2046'];
+---
+<EditorialLayout title="Explore — 46K" description="Ideas, research and perspectives on football intelligence.">
+<main class="container"><section class="journal-intro"><div class="kicker">46K / THE JOURNAL</div><span class="line"></span><h1 class="serif">Explore.</h1><p>Better questions. Deeper understanding. New perspectives on the unseen side of football.</p></section>
+<nav class="filters" aria-label="Article categories">{cats.map(c=><a href={c==='ALL'?'/explore/':'/explore/?category='+c} data-cat={c} aria-current={c==='ALL'?'page':undefined}>{c}</a>)}</nav>
+<div class="article-grid" id="articles">{articles.map(article=><article class="article-card" data-category={article.data.category}><div class="meta">{article.data.category} / {article.data.type.toUpperCase()} / {article.data.readingTime} MIN</div><h2><a href={'/explore/'+article.id+'/'}>{article.data.title}</a></h2><p>{article.data.description}</p><a class="read" href={'/explore/'+article.id+'/'}>READ ARTICLE ↗</a></article>)}</div>
+</main>
+<script>const query=new URLSearchParams(window.location.search).get('category')?.toUpperCase()??'ALL';document.querySelectorAll<HTMLElement>('[data-category]').forEach(el=>{el.hidden=query!=='ALL'&&el.dataset.category!==query});document.querySelectorAll<HTMLAnchorElement>('[data-cat]').forEach(a=>{if(a.dataset.cat===query)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});</script>
+<style>.article-card[hidden]{display:none}</style>
+</EditorialLayout>

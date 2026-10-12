@@ -1,0 +1,72 @@
+media:
+  input: public/images
+  output: /images
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: src/content/articles
+    view:
+      fields: [title, category, type, draft, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Introduction
+        type: text
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values: [UNDERSTAND, ASSESS, DEVELOP, '2046']
+        required: true
+      - name: type
+        label: Article type
+        type: select
+        options:
+          values: [editorial, research, insight]
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: readingTime
+        label: Reading time in minutes
+        type: number
+        required: true
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+      - name: draft
+        label: Draft (not published)
+        type: boolean
+        default: true
+      - name: heroImage
+        label: Hero image path
+        type: string
+      - name: heroAlt
+        label: Image description
+        type: string
+      - name: sources
+        label: Sources
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Source title
+            type: string
+          - name: url
+            label: Source URL
+            type: string
+      - name: body
+        label: Article
+        type: rich-text

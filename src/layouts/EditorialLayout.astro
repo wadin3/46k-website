@@ -1,0 +1,9 @@
+---
+import '../styles/editorial.css';
+const { title='46K — Decoding Football Intelligence', description='Exploring football intelligence.' } = Astro.props;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><title>{title}</title></head><body>
+<header class="site-header"><a href="/" class="site-mark" aria-label="46K home">46K</a><nav aria-label="Main navigation"><a href="/explore/">Explore</a><a href="/assessment/">Assessment</a><a href="/mission/">The 2046 Mission</a><a href="/connect/">Connect</a></nav></header>
+<slot/>
+<footer class="site-footer"><span>46K / DECODING FOOTBALL INTELLIGENCE</span><span>SWEDEN · 2046</span></footer>
+</body></html>
