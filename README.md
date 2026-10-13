@@ -3,6 +3,7 @@
 Website for 46K - Decoding Football Intelligence.
 
 Astro static site, GitHub Pages deployment and Pages CMS editorial workflow.
+Swedish is the default language; English is available under `/en/`.
 
 ## Development
 
@@ -17,7 +18,9 @@ Use the same base value that was used during the build.
 
 ## Project context
 
+- [Published site](https://wadin3.github.io/46k-website/)
 - [Project status](PROJECT.md)
+- [Language structure](docs/LANGUAGES.md)
 - [Brand library and reading order](docs/brand/README.md)
 - [Editorial workflow](docs/EDITORIAL.md)
 - [Generated supporting imagery](docs/brand/GENERATED_ASSETS.md)
