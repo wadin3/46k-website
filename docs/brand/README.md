@@ -62,7 +62,8 @@ font selections and reusable production templates are not supplied.
 
 ## Website status
 
-GitHub Pages was enabled by the owner on 2026-10-13. The deployment workflow
-is prepared in [PR #1](https://github.com/wadin3/46k-website/pull/1), which
-was still open during this import. A successful live deployment has not
-yet been confirmed. Logo placement and visual redesign are separate work.
+GitHub Pages was enabled by the owner on 2026-10-13.
+[PR #2](https://github.com/wadin3/46k-website/pull/2) now includes the
+deployment work from PR #1 and the complete website preview. Original
+logos are placed in the shared layout. Production builds and desktop/mobile
+browser checks passed; public deployment still awaits preview approval.
