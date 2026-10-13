@@ -1,0 +1,2 @@
+# Preserve supplied documents, including their original line endings.
+*.md -text
