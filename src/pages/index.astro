@@ -1,16 +1,37 @@
 ---
+import EditorialLayout from '../layouts/EditorialLayout.astro';
+import { getCollection } from 'astro:content';
+import { sitePath } from '../lib/paths';
 const features = [
- {name:'UNDERSTAND', body:'Look beyond what happens on the pitch. Explore perception, cognition and the science of football intelligence.',href:'/explore/'},
- {name:'ASSESS', body:'We are developing ways to examine relevant cognitive capabilities. Research and validation come first.',href:'/assessment/'},
- {name:'DEVELOP', body:'Turn insights into better questions about training and development.',href:'/explore/'}
+  { name: 'UNDERSTAND', body: 'Look beyond what happens on the pitch. Explore perception, cognition and the questions behind football intelligence.', path: 'explore/', link: 'Explore our thinking' },
+  { name: 'ASSESS', body: 'We are developing ways to examine relevant cognitive capabilities. Research and validation come first.', path: 'assessment/', link: 'Our approach to assessment' },
+  { name: 'DEVELOP', body: 'Turn insights into better questions about training and development. Measurement should lead somewhere useful.', path: 'explore/?category=DEVELOP', link: 'Explore development' },
 ];
+const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 ---
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>46K — Decoding Football Intelligence</title><meta name="description" content="Decoding football intelligence. Understanding, assessing and developing the cognitive side of football."/></head><body>
-<header><a href="/" class="mark" aria-label="46K home">46K</a><nav><a href="/explore/">Explore</a><a href="/assessment/">Assessment</a><a href="/mission/">The 2046 Mission</a><a href="/connect/">Connect</a></nav></header>
-<main><section class="hero"><div class="eyebrow">46K / FOOTBALL INTELLIGENCE / SWEDEN</div><span class="rule"></span><h1>The game<br/>is played<br/><em>up here.</em></h1><p class="lead">Talent is more than what you can see today. We explore the cognitive side of football — what it is, how to assess it, and how it might be developed.</p><a class="cta" href="/explore/">Explore our thinking ↗</a><div class="index">DECODING FOOTBALL INTELLIGENCE <span>01 — 03</span></div></section>
-<section class="features"><div class="eyebrow">A WAY OF THINKING</div><div class="feature-grid">{features.map(f=><article><h2>{f.name}</h2><p>{f.body}</p><a href={f.href}>Discover ↗</a></article>)}</div></section>
-<section class="mission"><div class="eyebrow">THE 2046 MISSION</div><h2>What if Sweden could see the talent it's currently missing?</h2><p>2046 is not a prediction. It is a direction.</p><a href="/mission/">Discover the mission ↗</a></section></main><footer><span>46K · DECODING FOOTBALL INTELLIGENCE</span><span>SWEDEN / 2046</span></footer>
-</body></html>
-<style is:global>
-:root{--paper:#F5F2E9;--graphite:#383D3E;--pitch:#285C43;--gold:#C29D45}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--graphite);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}header{display:flex;justify-content:space-between;align-items:center;gap:2rem;border-bottom:1px solid #b8b9af;padding:1.5rem max(4vw,1rem)}.mark{font-size:2.4rem;font-weight:900;letter-spacing:-.09em}nav{display:flex;gap:clamp(.6rem,2.7vw,2.5rem);flex-wrap:wrap}nav a,.eyebrow,.index,footer{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}.hero{min-height:85vh;padding:clamp(4rem,8vw,8rem) max(4vw,1rem) 2rem;position:relative}.rule{display:block;background:var(--gold);height:3px;width:48px;margin-top:1.7rem}.hero h1,.mission h2{font-family:Georgia,serif;font-weight:400;line-height:.96;letter-spacing:-.065em}.hero h1{font-size:clamp(4.2rem,10vw,10rem);margin:2rem 0}.hero h1 em{color:var(--pitch);font-weight:400}.lead{font-size:1.07rem;line-height:1.75;max-width:32rem}.cta{display:inline-block;border:1px solid var(--graphite);padding:1rem 1.4rem;margin-top:2rem}.index{margin-top:7rem;display:flex;justify-content:space-between;border-top:1px solid #b8b9af;padding-top:1rem}.features{padding:5rem max(4vw,1rem)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:2rem}.feature-grid article{border-top:2px solid var(--graphite);padding-top:1.2rem}.feature-grid h2{font-size:1.1rem;letter-spacing:.1em}.feature-grid p{line-height:1.7;max-width:25rem}.feature-grid a{border-bottom:1px solid var(--gold);padding-bottom:.4rem}.mission{background:var(--pitch);color:var(--paper);padding:6rem max(4vw,1rem)}.mission h2{font-size:clamp(3rem,6vw,6rem);max-width:900px}.mission p{line-height:1.6}.mission a{display:inline-block;border-bottom:1px solid var(--gold);padding-bottom:.5rem}footer{display:flex;justify-content:space-between;gap:2rem;padding:2rem max(4vw,1rem)}@media(max-width:700px){header{align-items:flex-start;flex-direction:column}.feature-grid{grid-template-columns:1fr}.hero{min-height:75vh}.index{margin-top:4rem}nav{font-size:.8rem}.hero h1{font-size:clamp(3.8rem,14vw,6rem)}}
-</style>
+<EditorialLayout>
+  <main id="main-content">
+    <section class="home-hero">
+      <img class="hero-image" src={sitePath('images/football-attention-editorial.webp')} alt="Illustrative image of an adult football player looking across a training pitch." width="1536" height="1024" fetchpriority="high" />
+      <div class="container hero-content">
+        <p class="kicker">46K / SWEDEN / FOOTBALL INTELLIGENCE</p>
+        <span class="line"></span>
+        <h1 class="serif">Football<br />intelligence.</h1>
+        <p class="hero-statement">Talent is more than<br />what you can see today.</p>
+        <p class="hero-deck">We use cognitive science to understand and develop football intelligence.</p>
+        <a class="button-link" href={sitePath('explore/')}>Explore our thinking <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </section>
+    <section class="home-model container">
+      <p class="kicker">A WAY OF THINKING</p>
+      <div class="model-grid">{features.map((feature, index) => <article>
+        <span class="step-number">0{index + 1}</span><h2>{feature.name}</h2><p>{feature.body}</p><a class="text-link" href={sitePath(feature.path)}>{feature.link} <span aria-hidden="true">&#8599;</span></a>
+      </article>)}</div>
+    </section>
+    <section class="home-journal container">
+      <div class="section-heading"><div><p class="kicker">THE JOURNAL</p><h2 class="serif">Questions worth asking.</h2></div><a class="text-link" href={sitePath('explore/')}>All articles <span aria-hidden="true">&#8599;</span></a></div>
+      <div class="article-grid">{articles.map(article => <article class="article-card"><p class="meta">{article.data.category} / {article.data.readingTime} MIN READ</p><h3><a href={sitePath('explore/' + article.id + '/')}>{article.data.title}</a></h3><p>{article.data.description}</p><a class="read" href={sitePath('explore/' + article.id + '/')}>Read article <span aria-hidden="true">&#8599;</span></a></article>)}</div>
+    </section>
+    <section class="mission-band"><div class="container"><p class="kicker">THE 2046 MISSION</p><span class="line"></span><h2 class="serif">Sweden.<br />World Champions.<br />2046.</h2><p>2046 is not a prediction. It is a direction.</p><a class="text-link" href={sitePath('mission/')}>Explore the ambition <span aria-hidden="true">&#8599;</span></a></div></section>
+  </main>
+</EditorialLayout>

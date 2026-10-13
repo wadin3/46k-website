@@ -43,7 +43,8 @@ Available: REF_02 Overall Creative Direction, REF_03 Graphic Language,
 REF_04 Photography & Imagery, REF_05 Layout, Data & UI, REF_06 Applications,
 and REF_08 Performance Calibration.
 
-REF_07 Gold & Materiality is named in the index but was not supplied.
+REF_07 Gold & Materiality is excluded from the required library by the
+owner's decision on 2026-10-13. It is not a missing prerequisite.
 REF_01 is superseded and is not required. Finished test screens, final
 font selections and reusable production templates are not supplied.
 

@@ -1,9 +1,45 @@
 ---
 import '../styles/editorial.css';
-const { title='46K — Decoding Football Intelligence', description='Exploring football intelligence.' } = Astro.props;
+import { sitePath } from '../lib/paths';
+const { title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.' } = Astro.props;
+const navigation = [
+  { label: 'Explore', path: 'explore/' },
+  { label: 'Assessment', path: 'assessment/' },
+  { label: 'The 2046 Mission', path: 'mission/' },
+  { label: 'Connect', path: 'connect/' },
+];
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><title>{title}</title></head><body>
-<header class="site-header"><a href="/" class="site-mark" aria-label="46K home">46K</a><nav aria-label="Main navigation"><a href="/explore/">Explore</a><a href="/assessment/">Assessment</a><a href="/mission/">The 2046 Mission</a><a href="/connect/">Connect</a></nav></header>
-<slot/>
-<footer class="site-footer"><span>46K / DECODING FOOTBALL INTELLIGENCE</span><span>SWEDEN · 2046</span></footer>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F5F2E9" />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/png" href={sitePath('brand/logos/46K_Essential_Light.png')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {canonical && <meta property="og:url" content={canonical} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a href={sitePath()} class="site-mark" aria-label="46K home">
+        <img src={sitePath('brand/logos/46K_FullSignature_Light.png')} alt="46K - Decoding Football Intelligence" width="2172" height="724" />
+      </a>
+      <nav aria-label="Main navigation">
+        {navigation.map(item => <a href={sitePath(item.path)} aria-current={Astro.url.pathname.startsWith(sitePath(item.path)) ? 'page' : undefined}>{item.label}</a>)}
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <a class="footer-mark" href={sitePath()} aria-label="46K home"><img src={sitePath('brand/logos/46K_Essential_Light.png')} alt="46K" width="1983" height="793" loading="lazy" /></a>
+      <span>DECODING FOOTBALL INTELLIGENCE</span>
+      <a href={sitePath('mission/')}>SWEDEN. WORLD CHAMPIONS. 2046.</a>
+    </footer>
+  </body>
+</html>

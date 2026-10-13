@@ -1,1 +1,10 @@
-<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect — 46K</title></head><body style="margin:0;background:#F5F2E9;color:#383D3E;padding:5vw;font-family:Arial"><a href="/">← 46K</a><p style="margin-top:6rem;letter-spacing:.2em">CONVERSATIONS & COLLABORATIONS</p><h1 style="font:normal clamp(3.5rem,9vw,8rem) Georgia">Connect.</h1><p style="max-width:35rem;line-height:1.8">Interested in the development of football intelligence? We're building the next chapter of 46K.</p></body></html>
+---
+import EditorialLayout from '../layouts/EditorialLayout.astro';
+const email = 'wadin.psykologi@gmail.com';
+---
+<EditorialLayout title="Connect - 46K" description="Conversations and collaborations around football intelligence, cognitive science and player development.">
+  <main id="main-content">
+    <section class="page-intro container"><p class="kicker">CONVERSATIONS &amp; COLLABORATIONS</p><span class="line"></span><h1 class="serif">Connect.</h1><p class="page-deck">Better questions start with a conversation.</p><p class="prose">Interested in football intelligence? We welcome conversations with players, coaches, clubs and researchers about the cognitive side of the game.</p><a class="contact-email" href={'mailto:' + email}>{email} <span aria-hidden="true">&#8599;</span></a></section>
+    <section class="content-band"><div class="container two-column"><h2 class="serif">What are<br />you curious about?</h2><div class="prose"><p>A research question. A coaching observation. An idea about how players learn and develop. Tell us what you are thinking about and where football intelligence fits into your work.</p><a class="button-link" href={'mailto:' + email + '?subject=46K%20-%20A%20conversation'}>Email 46K <span aria-hidden="true">&#8599;</span></a></div></div></section>
+  </main>
+</EditorialLayout>

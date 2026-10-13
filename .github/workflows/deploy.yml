@@ -1,4 +1,4 @@
-name: Build 46K website
+name: Build and deploy 46K website
 on:
   push:
     branches: [main]
@@ -8,6 +8,12 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -17,12 +23,49 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+      - name: Read Pages deployment settings
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
-      - name: Build Astro site
-        run: npm run build
+        run: npm ci --no-audit --no-fund
+      - name: Build and verify Astro site
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          ASTRO_SITE: ${{ steps.pages.outputs.origin || 'https://46k.com' }}
+          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
+        run: |
+          npm run build
+          python3 scripts/check-site.py --base "$ASTRO_BASE"
       - name: Save build output
         uses: actions/upload-artifact@v4
         with:
           name: 46k-site
           path: dist/
+      - name: Verify project-path deployment
+        if: github.event_name == 'pull_request'
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          ASTRO_SITE: https://wadin3.github.io
+          ASTRO_BASE: /46k-website
+        run: |
+          npm run build
+          python3 scripts/check-site.py --base "$ASTRO_BASE"
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
