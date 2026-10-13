@@ -2,6 +2,8 @@
 title: "The 2046 question"
 description: "What would it take for Sweden to become world champions in 2046? The point is not a prediction. It's a direction."
 category: '2046'
+language: en
+translationKey: the-2046-question
 type: insight
 date: 2026-10-10
 readingTime: 3

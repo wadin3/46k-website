@@ -2,6 +2,8 @@
 title: "Can football intelligence be measured?"
 description: "A research question with no shortcut: defining constructs, testing validity and resisting false precision."
 category: ASSESS
+language: en
+translationKey: can-we-measure-it
 type: research
 date: 2026-10-11
 readingTime: 5

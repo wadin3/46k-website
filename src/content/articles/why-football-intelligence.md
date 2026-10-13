@@ -2,6 +2,8 @@
 title: "What do we mean by football intelligence?"
 description: "A starting point for a difficult question: what happens between seeing the game and acting in it?"
 category: UNDERSTAND
+language: en
+translationKey: why-football-intelligence
 type: editorial
 date: 2026-10-12
 readingTime: 4

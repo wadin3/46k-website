@@ -1,10 +1,4 @@
 ---
-import EditorialLayout from '../layouts/EditorialLayout.astro';
-const email = 'wadin.psykologi@gmail.com';
+import Connect from '../components/pages/Connect.astro';
 ---
-<EditorialLayout title="Connect - 46K" description="Conversations and collaborations around football intelligence, cognitive science and player development.">
-  <main id="main-content">
-    <section class="page-intro container"><p class="kicker">CONVERSATIONS &amp; COLLABORATIONS</p><span class="line"></span><h1 class="serif">Connect.</h1><p class="page-deck">Better questions start with a conversation.</p><p class="prose">Interested in football intelligence? We welcome conversations with players, coaches, clubs and researchers about the cognitive side of the game.</p><a class="contact-email" href={'mailto:' + email}>{email} <span aria-hidden="true">&#8599;</span></a></section>
-    <section class="content-band"><div class="container two-column"><h2 class="serif">What are<br />you curious about?</h2><div class="prose"><p>A research question. A coaching observation. An idea about how players learn and develop. Tell us what you are thinking about and where football intelligence fits into your work.</p><a class="button-link" href={'mailto:' + email + '?subject=46K%20-%20A%20conversation'}>Email 46K <span aria-hidden="true">&#8599;</span></a></div></div></section>
-  </main>
-</EditorialLayout>
+<Connect locale="sv" />

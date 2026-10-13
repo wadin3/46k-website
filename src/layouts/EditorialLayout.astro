@@ -1,45 +1,74 @@
 ---
 import '../styles/editorial.css';
 import { sitePath } from '../lib/paths';
-const { title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.' } = Astro.props;
+import { locales, defaultLocale, translate, localePath, relativeRoute, type Locale } from '../i18n';
+interface Props { locale?: Locale; title?: string; description?: string; languageRoutes?: Partial<Record<Locale, string>>; }
+const { locale = defaultLocale, title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.', languageRoutes } = Astro.props;
+const t = (text: string) => translate(locale, text);
 const navigation = [
   { label: 'Explore', path: 'explore/' },
   { label: 'Assessment', path: 'assessment/' },
   { label: 'The 2046 Mission', path: 'mission/' },
   { label: 'Connect', path: 'connect/' },
 ];
+const route = relativeRoute(Astro.url.pathname);
+const languages = Object.entries(locales).map(([code, language]) => ({
+  code: code as Locale, ...language,
+  href: languageRoutes?.[code as Locale] ?? localePath(route, code as Locale),
+}));
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content={description} />
+    <meta name="description" content={t(description)} />
     <meta name="theme-color" content="#F5F2E9" />
-    <title>{title}</title>
+    <title>{t(title)}</title>
     {canonical && <link rel="canonical" href={canonical} />}
+    {Astro.site && languages.map(language => <link rel="alternate" hreflang={language.code} href={new URL(language.href, Astro.site)} />)}
+    {Astro.site && <link rel="alternate" hreflang="x-default" href={new URL(languages.find(language => language.code === defaultLocale)!.href, Astro.site)} />}
     <link rel="icon" type="image/png" href={sitePath('brand/logos/46K_Essential_Light.png')} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={t(title)} />
+    <meta property="og:description" content={t(description)} />
     <meta property="og:type" content="website" />
     {canonical && <meta property="og:url" content={canonical} />}
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">{t('Skip to content')}</a>
     <header class="site-header">
-      <a href={sitePath()} class="site-mark" aria-label="46K home">
+      <a href={localePath('', locale)} class="site-mark" aria-label={t('46K home')}>
         <img src={sitePath('brand/logos/46K_FullSignature_Light.png')} alt="46K - Decoding Football Intelligence" width="2172" height="724" />
       </a>
-      <nav aria-label="Main navigation">
-        {navigation.map(item => <a href={sitePath(item.path)} aria-current={Astro.url.pathname.startsWith(sitePath(item.path)) ? 'page' : undefined}>{item.label}</a>)}
+      <nav aria-label={t('Main navigation')}>
+        {navigation.map(item => <a href={localePath(item.path, locale)} aria-current={Astro.url.pathname.startsWith(localePath(item.path, locale)) ? 'page' : undefined}>{t(item.label)}</a>)}
       </nav>
+      <details class="language-picker">
+        <summary aria-label={t('Choose language')} title={t('Choose language')}>{locales[locale].short}<span aria-hidden="true">⌄</span></summary>
+        <ul>{languages.map(language => <li><a data-language-link href={language.href} lang={language.code} hreflang={language.code} aria-current={language.code === locale ? 'true' : undefined}>{language.name}</a></li>)}</ul>
+      </details>
     </header>
     <slot />
     <footer class="site-footer">
-      <a class="footer-mark" href={sitePath()} aria-label="46K home"><img src={sitePath('brand/logos/46K_Essential_Light.png')} alt="46K" width="1983" height="793" loading="lazy" /></a>
+      <a class="footer-mark" href={localePath('', locale)} aria-label={t('46K home')}><img src={sitePath('brand/logos/46K_Essential_Light.png')} alt="46K" width="1983" height="793" loading="lazy" /></a>
       <span>DECODING FOOTBALL INTELLIGENCE</span>
-      <a href={sitePath('mission/')}>SWEDEN. WORLD CHAMPIONS. 2046.</a>
+      <a href={localePath('mission/', locale)}>{t('SWEDEN. WORLD CHAMPIONS. 2046.')}</a>
     </footer>
+    <script>
+      const picker = document.querySelector<HTMLDetailsElement>('.language-picker');
+      document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+        link.href += window.location.search + window.location.hash;
+      });
+      document.addEventListener('click', event => {
+        if (picker && event.target instanceof Node && !picker.contains(event.target)) picker.open = false;
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && picker?.open) {
+          picker.open = false;
+          picker.querySelector('summary')?.focus();
+        }
+      });
+    </script>
   </body>
 </html>

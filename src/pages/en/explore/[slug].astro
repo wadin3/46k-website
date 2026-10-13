@@ -1,0 +1,8 @@
+---
+import Article from '../../../components/pages/Article.astro';
+import { getArticles, articleSlug } from '../../../lib/articles';
+export async function getStaticPaths() {
+  return (await getArticles('en')).map(article => ({ params: { slug: articleSlug(article) }, props: { article } }));
+}
+---
+<Article locale="en" article={Astro.props.article} />

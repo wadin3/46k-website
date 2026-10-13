@@ -7,7 +7,7 @@ content:
     type: collection
     path: src/content/articles
     view:
-      fields: [title, category, type, draft, date]
+      fields: [title, language, category, type, draft, date]
       primary: title
       sort: [date, title]
       default:
@@ -22,6 +22,16 @@ content:
         label: Introduction
         type: text
         required: true
+      - name: language
+        label: Language
+        type: select
+        options:
+          values: [sv, en]
+        default: sv
+        required: true
+      - name: translationKey
+        label: Translation group (same key for all language versions)
+        type: string
       - name: category
         label: Category
         type: select
