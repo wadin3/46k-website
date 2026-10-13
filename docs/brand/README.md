@@ -62,8 +62,8 @@ font selections and reusable production templates are not supplied.
 
 ## Website status
 
-GitHub Pages was enabled by the owner on 2026-10-13.
-[PR #2](https://github.com/wadin3/46k-website/pull/2) now includes the
-deployment work from PR #1 and the complete website preview. Original
-logos are placed in the shared layout. Production builds and desktop/mobile
-browser checks passed; public deployment still awaits preview approval.
+Published with the owner's approval at https://wadin3.github.io/46k-website/.
+Swedish is the default; English is under `/en/`. PR #2 includes PR #1's
+deployment work and has been merged. Official logos are used unchanged.
+Production deployment, all 16 public routes and live language switching
+have been verified. See `../../PROJECT.md` for current implementation status.
