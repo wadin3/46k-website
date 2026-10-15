@@ -25,7 +25,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={t(description)} />
     <meta name="theme-color" content="#F5F2E9" />
-    {(noindex || import.meta.env.ASTRO_EDITORIAL_PREVIEW === '1') && <meta name="robots" content="noindex, nofollow" />}
+    {(noindex || process.env.ASTRO_EDITORIAL_PREVIEW === '1') && <meta name="robots" content="noindex, nofollow" />}
     <title>{t(title)}</title>
     {canonical && <link rel="canonical" href={canonical} />}
     {Astro.site && languages.map(language => <link rel="alternate" hreflang={language.code} href={new URL(language.href, Astro.site)} />)}
