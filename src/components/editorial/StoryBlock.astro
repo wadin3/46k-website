@@ -13,9 +13,9 @@ const html = block.kind === 'text' || block.kind === 'note' ? await editorialMar
 </section>}
 {block.kind === 'photo' && <figure class={'story-photo photo-' + block.layout}>
   <div class="photo-layout"><img src={assetPath(block.image)} alt={block.alt} width="1536" height="1024" loading="lazy" />
-    {block.second && <img src={assetPath(block.second.image)} alt={block.second.alt} width="1536" height="1024" loading="lazy" />}
+    {block.layout === 'pair' && <img src={assetPath(block.secondImage)} alt={block.secondAlt} width="1536" height="1024" loading="lazy" />}
   </div>
-  <figcaption><span>{block.caption}{block.second?.caption && ' / ' + block.second.caption}</span><small>{block.credit}{block.second?.credit && block.second.credit !== block.credit && ' / ' + block.second.credit}</small></figcaption>
+  <figcaption><span>{block.caption}{block.layout === 'pair' && block.secondCaption && ' / ' + block.secondCaption}</span><small>{block.credit}{block.layout === 'pair' && block.secondCredit && block.secondCredit !== block.credit && ' / ' + block.secondCredit}</small></figcaption>
 </figure>}
 {block.kind === 'quote' && <figure class="story-pullquote"><span class="quote-mark" aria-hidden="true">“</span><blockquote>{block.text}</blockquote><figcaption>{block.attribution}</figcaption></figure>}
 {block.kind === 'note' && <aside class="story-note story-grid"><p class="chapter-marker">{block.label}</p><div class="reading-column"><h2>{block.heading}</h2><div class="reading-copy" set:html={html} /></div></aside>}

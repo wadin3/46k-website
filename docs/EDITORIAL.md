@@ -59,12 +59,20 @@ noindex in production-mode builds. Publication still requires content review.
 ## Checks and limits
 
 - `node scripts/check-editorial.mjs`: CMS block keys, eight content files,
-  YAML load/save round trip, length, metadata and four bilingual categories.
+  YAML load/save round trip, media metadata and source-derived draft expectations.
 - `npm run build`: Astro schema validation and Markdown rendering.
 - `python scripts/check-site.py --base /46k-website`: generated routes,
   links, images, unique h1, languages and deployment base.
 - `python scripts/check-editorial.py`: real rendered block coverage,
   demonstration noindex and draft exclusion. Add `--preview` for preview output.
+- `node scripts/check-publication.mjs` (CI/Linux): temporary CMS-shaped content
+  saved as YAML, built first as a draft and then with draft:false. Verifies both
+  languages, Markdown formatting/media, publication and project-base links.
+  Temporary files are removed before the preview artifact is built.
+
+Reading time for block articles is calculated automatically and shared by
+the article, listing and homepage rail. The CMS reading-time field remains
+the fallback for older body-only articles.
 
 These tests do not claim to validate Pages CMS's authenticated editing UI.
 Actual media upload, rich-text/block save/reorder, branch permissions and an

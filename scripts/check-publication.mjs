@@ -19,7 +19,7 @@ const payload = (language, draft) => ({
     {kind:'quote', text:'An editorial extract.', attribution:'46K / Extract'},
     {kind:'note', label:'LIMIT', heading:'Example only', body:'No actual player data.'},
     {kind:'model', heading:'Two questions', caption:'Editorial model, not evidence.', steps:[{title:'Ask',text:'What do we need?'},{title:'Review',text:'What supports it?'}]},
-    {kind:'photo', layout:'pair', image:'/images/editorial-training.webp', alt:'Illustrative training.', credit:'AI / 46K', second:{image:'/images/editorial-ground.webp',alt:'Illustrative pitch.',credit:'AI / 46K'}},
+    {kind:'photo', layout:'pair', image:'/images/editorial-training.webp', alt:'Illustrative training.', credit:'AI / 46K', secondImage:'/images/editorial-ground.webp',secondAlt:'Illustrative pitch.',secondCredit:'AI / 46K'},
   ],
 });
 try {

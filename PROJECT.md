@@ -1,5 +1,23 @@
 # 46K Website
 
+## Editorial v2 Review Branch (2026-10-15)
+
+Work is on `editorial-redesign-v2`, draft PR #4. The live Pages site is
+unchanged; do not merge until visual and content review. Four long-form
+demonstrations have Swedish/English counterparts and disclosed fictional
+scenes. The Develop example remains a draft, visible only in preview builds.
+
+The article system uses five Pages CMS blocks, photographic category covers,
+neutral-white reading surfaces, numbered chapters, evidence notes, models,
+image pairs/credits, sources and related reading. Existing article URLs and
+body-only Markdown compatibility remain. Original logo PNGs are unchanged.
+
+See `docs/EDITORIAL.md` for editing and preview instructions, tests and the
+remaining authenticated CMS checks. CI validates default/project-path builds,
+draft previews and a temporary CMS-shaped edit/draft/publication lifecycle.
+The actual Pages CMS interface is currently behind sign-in; media upload,
+block editing/reordering and editor-triggered preview have not been verified.
+
 ## Published
 
 Live: https://wadin3.github.io/46k-website/

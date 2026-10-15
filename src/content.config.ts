@@ -7,13 +7,15 @@ const photo = z.object({
 });
 const section = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('text'), heading: z.string().default(''), body: z.string().min(1) }),
-  photo.extend({ kind: z.literal('photo'), layout: z.enum(['wide', 'offset', 'pair']).default('wide'), second: photo.optional() }),
+  photo.extend({ kind: z.literal('photo'), layout: z.enum(['wide', 'offset', 'pair']).default('wide'),
+    secondImage: z.string().default(''), secondAlt: z.string().default(''),
+    secondCaption: z.string().default(''), secondCredit: z.string().default('') }),
   z.object({ kind: z.literal('quote'), text: z.string().min(1), attribution: z.string().default('46K') }),
   z.object({ kind: z.literal('note'), heading: z.string().min(1), body: z.string().min(1), label: z.string().default('46K') }),
   z.object({ kind: z.literal('model'), heading: z.string().min(1), caption: z.string().min(1),
     steps: z.array(z.object({ title: z.string().min(1), text: z.string().min(1) })).min(2).max(5) }),
 ]).superRefine((value, context) => {
-  if (value.kind === 'photo' && value.layout === 'pair' && !value.second)
+  if (value.kind === 'photo' && value.layout === 'pair' && (!value.secondImage || !value.secondAlt))
     context.addIssue({ code: z.ZodIssueCode.custom, message: 'A picture pair needs a second image.' });
 });
 const articles = defineCollection({

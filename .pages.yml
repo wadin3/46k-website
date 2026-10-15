@@ -49,7 +49,7 @@ content:
         type: date
         required: true
       - name: readingTime
-        label: Reading time in minutes
+        label: Lästid för äldre artiklar (blockartiklar räknas automatiskt) / Legacy reading time
         type: number
         required: true
       - name: featured
@@ -124,20 +124,18 @@ content:
               - name: credit
                 label: Bildkälla / Credit
                 type: string
-              - name: second
+              - name: secondImage
                 label: Andra bilden (bara för bildpar) / Second image
-                type: object
-                fields:
-                  - name: image
-                    type: image
-                    required: true
-                  - name: alt
-                    type: string
-                    required: true
-                  - name: caption
-                    type: text
-                  - name: credit
-                    type: string
+                type: image
+              - name: secondAlt
+                label: Andra bildens beskrivning / Second alt text
+                type: string
+              - name: secondCaption
+                label: Andra bildtexten / Second caption
+                type: text
+              - name: secondCredit
+                label: Andra bildkällan / Second credit
+                type: string
           - name: quote
             label: Utdrag eller citat / Pull quote
             fields:

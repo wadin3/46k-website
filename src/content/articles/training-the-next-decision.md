@@ -94,11 +94,10 @@ sections:
     caption: 'An illustrative football situation: a starting point for questions, not research evidence.'
     credit: AI-generated illustration / 46K
     layout: pair
-    second:
-      image: /images/football-attention-editorial.webp
-      alt: Illustrative adult female football player beside a training pitch.
-      caption: The player's perspective is part of the question.
-      credit: AI-generated illustration / 46K
+    secondImage: /images/football-attention-editorial.webp
+    secondAlt: Illustrative adult female football player beside a training pitch.
+    secondCaption: The player's perspective is part of the question.
+    secondCredit: AI-generated illustration / 46K
   - kind: text
     heading: Return to the same question
     body: >-

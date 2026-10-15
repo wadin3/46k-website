@@ -27,7 +27,7 @@ for (const folder of ['src/content/articles', 'src/content/articles/sv']) {
       assert(blocks.blocks.some(definition => definition.name === block.kind));
       if (block.kind === 'photo') {
         assert(block.alt && block.credit);
-        if (block.layout === 'pair') assert(block.second?.image && block.second?.alt);
+        if (block.layout === 'pair') assert(block.secondImage && block.secondAlt);
       }
     }
     expectations.push({ slug:name.slice(0,-3), language:data.language || 'en', draft:data.draft !== false,

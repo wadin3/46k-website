@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { translate, localePath, type Locale } from '../i18n';
-import { articleSlug } from '../lib/articles';
+import { articleSlug, readingMinutes } from '../lib/articles';
 import { sitePath } from '../lib/paths';
 interface Props { articles: CollectionEntry<'articles'>[]; locale: Locale; }
 const { articles, locale } = Astro.props;
@@ -11,7 +11,7 @@ const icons = Object.fromEntries(['arrow-left','arrow-right','pause','play'].map
 <div class="article-carousel" data-carousel role="region" aria-label={t('Articles')} aria-roledescription={t('carousel')}>
   <div class="article-rail" data-rail tabindex="0" aria-label={t('Articles')}>
     {articles.map(article => <article class="rail-card">
-      <p class="meta">{t(article.data.category)} / {article.data.readingTime} {t('MIN READ')}</p>
+      <p class="meta">{t(article.data.category)} / {readingMinutes(article)} {t('MIN READ')}</p>
       <h3><a href={localePath('explore/' + articleSlug(article) + '/', locale)}>{article.data.title}</a></h3>
       <p class="rail-description">{article.data.description}</p>
       <a class="read" href={localePath('explore/' + articleSlug(article) + '/', locale)}>{t('Read article')} <span aria-hidden="true">&#8599;</span></a>

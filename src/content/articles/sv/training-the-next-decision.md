@@ -94,11 +94,10 @@ sections:
     caption: Plats för återkoppling, utan att spelaren reduceras till ett tränaromdöme.
     credit: AI-genererad illustration / 46K
     layout: pair
-    second:
-      image: /images/football-attention-editorial.webp
-      alt: Illustrativ vuxen kvinnlig fotbollsspelare vid en träningsplan.
-      caption: Spelarens perspektiv är en del av frågan.
-      credit: AI-genererad illustration / 46K
+    secondImage: /images/football-attention-editorial.webp
+    secondAlt: Illustrativ vuxen kvinnlig fotbollsspelare vid en träningsplan.
+    secondCaption: Spelarens perspektiv är en del av frågan.
+    secondCredit: AI-genererad illustration / 46K
   - kind: text
     heading: Följ upp samma fråga
     body: >-

@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import { translate, localePath, locales, type Locale } from '../../i18n';
-import { getArticles, articleSlug, translationKey } from '../../lib/articles';
+import { getArticles, articleSlug, translationKey, readingMinutes } from '../../lib/articles';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
 import StoryBlock from '../editorial/StoryBlock.astro';
 import { assetPath } from '../../lib/paths';
@@ -23,8 +23,7 @@ const languageRoutes = Object.fromEntries(await Promise.all((Object.keys(locales
 let chapter = 0;
 const blocks = d.sections.map((block, index) => ({ block, index, number: block.kind === 'text' ? ++chapter : chapter }));
 const chapters = blocks.filter(item => item.block.kind === 'text' && item.block.heading);
-const wordCount = [article.body ?? '', ...d.sections.map(block => block.kind === 'text' || block.kind === 'note' ? block.body : '')].join(' ').split(/\s+/).length;
-const minutes = d.sections.length ? Math.max(1, Math.ceil(wordCount / 200)) : d.readingTime;
+const minutes = readingMinutes(article);
 ---
 <EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' — 46K'} description={d.description} noindex={d.demonstration || d.draft}>
   <main id="main-content" class={'magazine category-' + d.category.toLowerCase()} style={`--paper-texture: url('${assetPath('/brand/backgrounds/46K_Paper_Graphite_Texture.png')}')`}>
