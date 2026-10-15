@@ -1,6 +1,12 @@
 import { sitePath } from '../lib/paths';
 
 export const locales = {
+  sv: { name: 'Svenska', short: 'SV', flag: 'se' },
+  en: { name: 'English', short: 'EN', flag: 'gb' },
+} as const;
+export type Locale = keyof typeof locales;
+export const defaultLocale: Locale = 'sv';
+const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   sv: {
   "Understand": "Förstå",
   "Measure": "Mäta",
@@ -23,13 +29,7 @@ export const locales = {
   "Pause article rotation": "Pausa artikelrullningen",
   "Resume article rotation": "Starta artikelrullningen",
   "Articles": "Artiklar",
-  "carousel": "karusell", name: 'Svenska', short: 'SV', flag: 'se' },
-  en: { name: 'English', short: 'EN', flag: 'gb' },
-} as const;
-export type Locale = keyof typeof locales;
-export const defaultLocale: Locale = 'sv';
-const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
-  sv: {
+  "carousel": "karusell",
   "Explore": "Utforska",
   "Assessment": "Bedömning",
   "The 2046 Mission": "2046-visionen",
