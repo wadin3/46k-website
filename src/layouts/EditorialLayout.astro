@@ -58,9 +58,14 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     </footer>
     <script>
       const picker = document.querySelector<HTMLDetailsElement>('.language-picker');
-      document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
-        link.href += window.location.search + window.location.hash;
+      const syncLanguageDestinations = () => document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+        const destination = new URL(link.href);
+        destination.search = window.location.search;
+        destination.hash = window.location.hash;
+        link.href = destination.href;
       });
+      syncLanguageDestinations();
+      window.addEventListener('hashchange', syncLanguageDestinations);
       document.addEventListener('click', event => {
         if (picker && event.target instanceof Node && !picker.contains(event.target)) picker.open = false;
       });

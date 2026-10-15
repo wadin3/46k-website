@@ -59,6 +59,13 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
+      - name: Check CMS-shaped edit and publication lifecycle
+        if: github.event_name == 'pull_request'
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          ASTRO_SITE: https://46k-preview.invalid
+          ASTRO_BASE: /46k-website
+        run: node scripts/check-publication.mjs
       - name: Build editorial draft preview
         if: github.event_name == 'pull_request'
         env:
