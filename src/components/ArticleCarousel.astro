@@ -1,0 +1,87 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { translate, localePath, type Locale } from '../i18n';
+import { articleSlug } from '../lib/articles';
+import { sitePath } from '../lib/paths';
+interface Props { articles: CollectionEntry<'articles'>[]; locale: Locale; }
+const { articles, locale } = Astro.props;
+const t = (text: string) => translate(locale, text);
+const icons = Object.fromEntries(['arrow-left','arrow-right','pause','play'].map(name => [name, sitePath('icons/lucide/' + name + '.svg')]));
+---
+<div class="article-carousel" data-carousel role="region" aria-label={t('Articles')} aria-roledescription={t('carousel')}>
+  <div class="article-rail" data-rail tabindex="0" aria-label={t('Articles')}>
+    {articles.map(article => <article class="rail-card">
+      <p class="meta">{t(article.data.category)} / {article.data.readingTime} {t('MIN READ')}</p>
+      <h3><a href={localePath('explore/' + articleSlug(article) + '/', locale)}>{article.data.title}</a></h3>
+      <p class="rail-description">{article.data.description}</p>
+      <a class="read" href={localePath('explore/' + articleSlug(article) + '/', locale)}>{t('Read article')} <span aria-hidden="true">&#8599;</span></a>
+    </article>)}
+  </div>
+  <div class="carousel-controls">
+    <button type="button" data-previous aria-label={t('Previous article')} title={t('Previous article')}><span class="control-icon" aria-hidden="true" style={`--icon: url('${icons['arrow-left']}')`}></span></button>
+    <button type="button" data-autoplay aria-label={t('Pause article rotation')} title={t('Pause article rotation')} data-pause-label={t('Pause article rotation')} data-play-label={t('Resume article rotation')} data-paused="false"><span class="control-icon pause-icon" aria-hidden="true" style={`--icon: url('${icons.pause}')`}></span><span class="control-icon play-icon" aria-hidden="true" style={`--icon: url('${icons.play}')`}></span></button>
+    <button type="button" data-next aria-label={t('Next article')} title={t('Next article')}><span class="control-icon" aria-hidden="true" style={`--icon: url('${icons['arrow-right']}')`}></span></button>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
+    const rail = carousel.querySelector<HTMLElement>('[data-rail]')!;
+    const autoplay = carousel.querySelector<HTMLButtonElement>('[data-autoplay]')!;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = motion.matches;
+    let hovered = false;
+    let focused = false;
+    let inView = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const updateButton = () => {
+      autoplay.dataset.paused = String(paused);
+      autoplay.setAttribute('aria-label', (paused ? autoplay.dataset.playLabel : autoplay.dataset.pauseLabel)!);
+      autoplay.title = autoplay.getAttribute('aria-label')!;
+    };
+    const advance = (direction: number) => {
+      const maximum = rail.scrollWidth - rail.clientWidth;
+      const first = rail.firstElementChild as HTMLElement | null;
+      if (!first || maximum <= 1) return;
+      const positions = [...new Set(Array.from(rail.children).map(child =>
+        Math.min(maximum, (child as HTMLElement).offsetLeft - first.offsetLeft)
+      ))];
+      const current = rail.scrollLeft;
+      const target = direction > 0
+        ? positions.find(position => position > current + 2) ?? 0
+        : positions.filter(position => position < current - 2).at(-1) ?? maximum;
+      rail.scrollTo({ left: target, behavior: motion.matches ? 'instant' : 'smooth' });
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      if (paused || hovered || focused || !inView || document.hidden || motion.matches) return;
+      timer = setTimeout(() => { advance(1); schedule(); }, 6000);
+    };
+    carousel.querySelector('[data-next]')!.addEventListener('click', () => { advance(1); schedule(); });
+    carousel.querySelector('[data-previous]')!.addEventListener('click', () => { advance(-1); schedule(); });
+    autoplay.addEventListener('click', () => { paused = !paused; updateButton(); schedule(); });
+    carousel.addEventListener('pointerenter', () => { hovered = true; schedule(); });
+    carousel.addEventListener('pointerleave', () => { hovered = false; schedule(); });
+    carousel.addEventListener('focusin', () => { focused = true; schedule(); });
+    carousel.addEventListener('focusout', event => {
+      focused = event.relatedTarget instanceof Node && carousel.contains(event.relatedTarget);
+      schedule();
+    });
+    const pauseManualScroll = () => { paused = true; updateButton(); schedule(); };
+    rail.addEventListener('pointerdown', pauseManualScroll, { passive: true });
+    rail.addEventListener('wheel', pauseManualScroll, { passive: true });
+    rail.addEventListener('keydown', event => {
+      if (event.target === rail && (event.key === 'ArrowRight' || event.key === 'ArrowLeft')) {
+        event.preventDefault();
+        pauseManualScroll();
+        advance(event.key === 'ArrowRight' ? 1 : -1);
+      }
+    });
+    document.addEventListener('visibilitychange', schedule);
+    motion.addEventListener('change', () => { paused = true; updateButton(); schedule(); });
+    new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      schedule();
+    }, { threshold: 0.3 }).observe(carousel);
+    updateButton();
+  });
+</script>

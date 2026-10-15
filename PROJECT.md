@@ -5,11 +5,23 @@
 Live: https://wadin3.github.io/46k-website/
 English: https://wadin3.github.io/46k-website/en/
 
-Swedish is the default. The upper-right language menu uses native names,
-not flags, and switches to the equivalent page or translated article.
-The owner approved publication; PR #2 was merged. Pages build and deployment
-passed in Actions run `38460785714`, release commit
-`39be83eee7d5338eb997e52850106c3ecb0733c0`.
+Swedish is the default. The upper-right language menu uses native names;
+the selected language has a small accompanying flag. Switching preserves
+the equivalent page, translated article and active article category.
+The owner approved ongoing publication to Pages. PR #3 contains the
+2026-10-15 homepage refinements, following the deployed bilingual release.
+
+## Homepage Refinements (2026-10-15)
+
+- Updated navigation and all requested homepage copy in Swedish and English.
+- Generated adult male football-player hero, optimized as WebP; prompt and
+  provenance are recorded in `docs/brand/GENERATED_ASSETS.md`.
+- Contrasting Graphite insights band with a native horizontal article rail.
+- Six-second auto advance pauses on hover, focus, manual scrolling, hidden
+  tabs and when the section leaves view. Previous/next and pause controls
+  remain available. Reduced motion disables auto advance and animations.
+- Subtle entrance/photo-settle effects, responsive hero sizing and small
+  licensed flag/Lucide icon assets. Original logos are unchanged.
 
 ## Implementation
 
@@ -28,11 +40,14 @@ passed in Actions run `38460785714`, release commit
 
 ## Verification
 
-PR run `38460160777` passed production/HTML checks for all 16 pages at both
+PR run `38708764900` passed production/HTML checks for all 16 pages at both
 root and project paths: internal links, assets, language, menu destinations,
 main landmark, unique h1 and image alt. Browser QA passed all 16 routes at
 320, 390 and 1440px, images, overflow, same-page switches, article translation
-matching, filters, Escape and click-away. Screenshots were inspected.
+matching, filters, Escape and click-away. The homepage refinement checks
+also passed exact Swedish copy, flags/photo, hero containment, carousel
+auto advance/pause/controls, keyboard scrolling and reduced-motion behavior.
+Updated Swedish/English desktop/mobile screenshots were inspected.
 
 All 16 public routes returned HTTP 200 with the correct language.
 Swedish-to-English switching was verified on the public site in a browser.

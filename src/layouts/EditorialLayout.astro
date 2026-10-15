@@ -6,9 +6,9 @@ interface Props { locale?: Locale; title?: string; description?: string; languag
 const { locale = defaultLocale, title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.', languageRoutes } = Astro.props;
 const t = (text: string) => translate(locale, text);
 const navigation = [
-  { label: 'Explore', path: 'explore/' },
-  { label: 'Assessment', path: 'assessment/' },
-  { label: 'The 2046 Mission', path: 'mission/' },
+  { label: 'Understand', path: 'explore/' },
+  { label: 'Measure', path: 'assessment/' },
+  { label: '2046', path: 'mission/' },
   { label: 'Connect', path: 'connect/' },
 ];
 const route = relativeRoute(Astro.url.pathname);
@@ -45,7 +45,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
         {navigation.map(item => <a href={localePath(item.path, locale)} aria-current={Astro.url.pathname.startsWith(localePath(item.path, locale)) ? 'page' : undefined}>{t(item.label)}</a>)}
       </nav>
       <details class="language-picker">
-        <summary aria-label={t('Choose language')} title={t('Choose language')}>{locales[locale].short}<span aria-hidden="true">⌄</span></summary>
+        <summary aria-label={t('Choose language') + ': ' + locales[locale].name} title={t('Choose language')}>{locales[locale].short}<img class="language-flag" src={sitePath('flags/' + locales[locale].flag + '.svg')} alt="" width="18" height="14" /><span aria-hidden="true">⌄</span></summary>
         <ul>{languages.map(language => <li><a data-language-link href={language.href} lang={language.code} hreflang={language.code} aria-current={language.code === locale ? 'true' : undefined}>{language.name}</a></li>)}</ul>
       </details>
     </header>
