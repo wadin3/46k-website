@@ -10,6 +10,7 @@ export function translationKey(article: CollectionEntry<'articles'>) {
 }
 
 export async function getArticles(locale: Locale) {
-  return (await getCollection('articles', ({ data }) => !data.draft && data.language === locale))
+  const preview = import.meta.env.ASTRO_EDITORIAL_PREVIEW === '1';
+  return (await getCollection('articles', ({ data }) => (preview || !data.draft) && data.language === locale))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }

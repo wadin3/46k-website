@@ -43,3 +43,30 @@ glamorous fashion photo. No text, no lettering, no logos, no watermark, no
 data, no charts, no arrows, no decorative circles, no luxury gold, no
 science-fiction effects. All people adults. This is generated supporting
 imagery, not documentary evidence of a real 46K player or event.
+# Editorial redesign asset supplement
+
+## Editorial redesign v2 (2026-10-15)
+
+Built-in image generation, fictional adult players and environments. Not
+photographs of research participants, actual clubs or documented results.
+No logos generated. Originals remain in the Codex generated-images library.
+WebP exports below are optimized format conversions, not logo edits.
+
+### `public/images/editorial-feedback.webp`
+
+Prompt:
+
+> Photorealistic-natural editorial documentary photograph for a Scandinavian football and psychology magazine, landscape 1536x1024. A thoughtful adult female football player age 24 and male coach age 40 on a simple bench beside a real local training pitch, reviewing a small tablet together; blank/unreadable tablet display, body language attentive and equal, player dark graphite training top, coach muted forest green jacket. Candid unposed side view, both at right half, pitch and distant goal visible at left with generous breathing room. Soft neutral overcast Nordic daylight, rich readable midtones, restrained green turf and graphite, not yellow/sepia. Natural skin and fabric detail, no glamour lighting, no excessive blur. Ordinary practice environment, calm human feedback rather than sports-tech advertising. No logos, no typography, no annotations, no charts, no HUD, no brain graphics, no stock celebration. Fictional adults, not actual research participants.
+
+### `public/images/editorial-training.webp`
+
+Prompt:
+
+> Photorealistic-natural documentary sports editorial photograph, wide landscape 1536x1024, for a contemporary Scandinavian football magazine. An adult male midfielder age 25 in unbranded charcoal graphite training kit receiving a ball while glancing over his left shoulder, another adult player in muted forest-green bib closing space from the right, third adult player distant near a small training goal. Full legs and ball visible, believable anatomically correct athletic movement. Subject at right of center, open grass at left for separate editorial type overlay. Camera low at sideline, real local Nordic training ground, fine drizzle after rain, natural cool afternoon light, detailed grass and restrained pitch-green/graphite palette. Crisp main subject, only very subtle movement in background, readable midtones, not cinematic darkness. Human perception and decisions in an ordinary training situation. No brands, no text, no logos, no watermarks, no HUD, no arrows, no neon, no celebratory poses, no fake data or exaggerated heroism. Fictional adults.
+
+### `public/images/editorial-ground.webp`
+
+Prompt:
+
+> Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
+

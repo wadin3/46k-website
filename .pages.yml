@@ -42,7 +42,7 @@ content:
         label: Article type
         type: select
         options:
-          values: [editorial, research, insight]
+          values: [editorial, research, insight, practice]
         required: true
       - name: date
         label: Date
@@ -61,11 +61,131 @@ content:
         type: boolean
         default: true
       - name: heroImage
-        label: Hero image path
-        type: string
+        label: Omslagsbild / Cover image
+        type: image
       - name: heroAlt
         label: Image description
         type: string
+      - name: heroCaption
+        label: Bildtext / Cover caption
+        type: text
+      - name: heroCredit
+        label: Bildkälla / Cover credit
+        type: string
+      - name: cover
+        label: Ljust eller mörkt omslag / Cover tone
+        type: select
+        options:
+          values: [light, dark]
+        default: light
+      - name: demonstration
+        label: Exempelmaterial / Demonstration (noindex)
+        type: boolean
+        default: false
+      - name: sections
+        label: Artikelns delar / Story blocks
+        type: block
+        list:
+          collapsible: true
+        blockKey: kind
+        blocks:
+          - name: text
+            label: Textavsnitt / Text section
+            fields:
+              - name: heading
+                label: Mellanrubrik / Heading
+                type: string
+              - name: body
+                label: Text
+                type: rich-text
+                required: true
+                options:
+                  format: markdown
+          - name: photo
+            label: Bild eller bildpar / Photo
+            fields:
+              - name: layout
+                label: Bildformat / Layout
+                type: select
+                options:
+                  values: [wide, offset, pair]
+                default: wide
+              - name: image
+                label: Bild / Image
+                type: image
+                required: true
+              - name: alt
+                label: Bildbeskrivning / Alt text
+                type: string
+                required: true
+              - name: caption
+                label: Bildtext / Caption
+                type: text
+              - name: credit
+                label: Bildkälla / Credit
+                type: string
+              - name: second
+                label: Andra bilden (bara för bildpar) / Second image
+                type: object
+                fields:
+                  - name: image
+                    type: image
+                    required: true
+                  - name: alt
+                    type: string
+                    required: true
+                  - name: caption
+                    type: text
+                  - name: credit
+                    type: string
+          - name: quote
+            label: Utdrag eller citat / Pull quote
+            fields:
+              - name: text
+                label: Utdrag / Quote
+                type: text
+                required: true
+              - name: attribution
+                label: Avsändare (ange om det är ett utdrag) / Attribution
+                type: string
+          - name: note
+            label: Faktaruta / Evidence note
+            fields:
+              - name: label
+                label: Etikett / Label
+                type: string
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: rich-text
+                required: true
+                options:
+                  format: markdown
+          - name: model
+            label: Förklaringsmodell / Information model
+            fields:
+              - name: heading
+                type: string
+                required: true
+              - name: caption
+                label: Förklaring och evidensstatus / Caption and evidence status
+                type: text
+                required: true
+              - name: steps
+                label: Delar / Steps (2–5)
+                type: object
+                list:
+                  min: 2
+                  max: 5
+                  collapsible: true
+                fields:
+                  - name: title
+                    type: string
+                    required: true
+                  - name: text
+                    type: text
+                    required: true
       - name: sources
         label: Sources
         type: object
@@ -78,5 +198,7 @@ content:
             label: Source URL
             type: string
       - name: body
-        label: Article
+        label: Ingress (eller hela texten för äldre artiklar) / Opening
         type: rich-text
+        options:
+          format: markdown

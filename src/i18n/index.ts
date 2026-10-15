@@ -41,7 +41,7 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "We use cognitive science to understand and develop football intelligence.": "Vi använder kognitionsvetenskap för att förstå och utveckla spelintelligens.",
   "SWEDEN. WORLD CHAMPIONS. 2046.": "SVERIGE. VÄRLDSMÄSTARE. 2046.",
   "UNDERSTAND": "FÖRSTÅ",
-  "ASSESS": "BEDÖMA",
+  "ASSESS": "MÄTA",
   "DEVELOP": "UTVECKLA",
   "ALL": "ALLA",
   "Look beyond what happens on the pitch. Explore perception, cognition and the questions behind football intelligence.": "Se bortom det som händer på planen. Utforska perception, kognition och frågorna bakom spelintelligens.",
@@ -117,7 +117,18 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "KEEP EXPLORING": "FORTSÄTT UTFORSKA",
   "EDITORIAL": "PERSPEKTIV",
   "RESEARCH": "FORSKNING",
-  "INSIGHT": "INSIKT"
+  "INSIGHT": "INSIKT",
+  "PRACTICE": "PRAKTIK",
+  "The journal": "Insikter",
+  "Editorial": "Redaktionen",
+  "Editorial draft": "Redaktionellt utkast",
+  "Demonstration article": "Demonstrationsartikel",
+  "Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.": "Exempelmaterial för redaktionell granskning. Scenerna är illustrativa; förslagen är 46K:s tolkningar, inte validerade resultat.",
+  "In this article": "I den här artikeln",
+  "The opening": "Utgångspunkten",
+  "Reading room": "Läs vidare",
+  "Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.": "Källorna stöder de specifika påståenden som länkas i texten, inte hela 46K-modellen eller en individuell talangprognos.",
+  "The next question.": "Nästa fråga."
 },
 };
 
