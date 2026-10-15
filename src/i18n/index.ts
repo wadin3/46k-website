@@ -1,8 +1,30 @@
 import { sitePath } from '../lib/paths';
 
 export const locales = {
-  sv: { name: 'Svenska', short: 'SV' },
-  en: { name: 'English', short: 'EN' },
+  sv: {
+  "Understand": "Förstå",
+  "Measure": "Mäta",
+  "MEASURE": "MÄTA",
+  "NEUROPSYCHOLOGY x FOOTBALL": "NEUROPSYKOLOGI x FOTBOLL",
+  "Football Intelligence": "Spelintelligens",
+  "Decoded": "Avkodad",
+  "Talent is more than physique and technique": "Talang är mer än fysik och teknik",
+  "We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.": "Vi utforskar vetenskapen bakom spelintelligens – och skapar verktyg som hjälper spelare att förstå sin potential och utvecklas på planen.",
+  "What we do": "Vad vi gör",
+  "We use neuropsychological research to understand football intelligence in depth. Which fundamental psychological characteristics influence how a player's brain perceives the game around them and makes decisions on the pitch?": "Vi använder neuropsykologisk forskning för att förstå spelintelligens på djupet. Vilka grundläggande psykologiska egenskaper påverkar hur spelarens hjärna uppfattar spelet runt sig och fattar beslut på planen?",
+  "We develop psychometric tests that measure the abilities underlying football intelligence. This helps players discover their strengths and areas for development.": "Vi utvecklar psykometriska tester som mäter de förmågor som ligger bakom spelintelligens. Så hjälper vi spelare att upptäcka sina styrkor och utvecklingsområden.",
+  "We combine test results with knowledge of training methods from football and psychology to provide practical advice and exercises for each player's individual development.": "Vi kombinerar resultat från testerna med kunskap om träningsmetoder från fotbollen och psykologin, för att ge konkreta råd och övningar för spelarens individuella utveckling.",
+  "Understand more about football intelligence.": "Förstå mer om spelintelligens.",
+  "Sweden, Football World Champions 2046": "Sverige Världsmästare i fotboll 2046",
+  "It began with an unreasonable ambition.": "Det började med en orimlig ambition.",
+  "Illustrative image of an adult male football player scanning a training pitch.": "Illustrativ bild av en vuxen manlig fotbollsspelare som blickar över en träningsplan.",
+  "Previous article": "Föregående artikel",
+  "Next article": "Nästa artikel",
+  "Pause article rotation": "Pausa artikelrullningen",
+  "Resume article rotation": "Starta artikelrullningen",
+  "Articles": "Artiklar",
+  "carousel": "karusell", name: 'Svenska', short: 'SV', flag: 'se' },
+  en: { name: 'English', short: 'EN', flag: 'gb' },
 } as const;
 export type Locale = keyof typeof locales;
 export const defaultLocale: Locale = 'sv';
