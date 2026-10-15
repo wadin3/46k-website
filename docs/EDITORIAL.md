@@ -39,7 +39,8 @@ setting; a different photograph creates variation without a page builder.
 
 Formats: editorial, research, practice and insight. Official colors remain
 unchanged. `#FAFAF7` is a functional neutral reading surface, not a new Paper
-brand token. The approved paper texture is used very faintly in notes only.
+brand token. An optimized WebP copy of the approved paper texture is used
+very faintly in notes only. Its original PNG remains unchanged.
 
 ## Draft preview and publication
 
