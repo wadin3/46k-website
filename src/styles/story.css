@@ -2,6 +2,7 @@
 .magazine { --reading-paper: #FAFAF7; --category-ink: var(--pitch); background: var(--reading-paper); }
 .story-cover { position: relative; isolation: isolate; min-height: 660px; display: flex; align-items: end; padding-block: 42px; overflow: clip; }
 .cover-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
+.category-develop .cover-photo { object-position: 65% 20%; }
 .story-cover::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #FAFAF7FA 0%, #FAFAF7ED 30%, #FAFAF7B8 52%, #FAFAF70A 78%); }
 .cover-content { position: relative; }
 .story-back { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; margin-bottom: 52px; }
