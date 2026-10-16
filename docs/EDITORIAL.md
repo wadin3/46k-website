@@ -39,8 +39,16 @@ setting; a different photograph creates variation without a page builder.
 
 Formats: editorial, research, practice and insight. Official colors remain
 unchanged. `#FAFAF7` is a functional neutral reading surface, not a new Paper
-brand token. An optimized WebP copy of the approved paper texture is used
-very faintly in notes only. Its original PNG remains unchanged.
+brand token. As of 2026-10-16, a neutral fine-fibre layer sits behind the
+reading surface. Grayscale/luminosity treatment preserves its hue; the low
+contrast is checked against the unchanged base tone. The official texture
+PNG is unchanged. New supporting-image prompts are in the asset provenance.
+
+The homepage marquee uses native horizontal scrolling and identical replicated
+sequences, with just one accessible keyboard/screen-reader sequence. Movement
+is continuous, not timed slide advancement. Hover/focus, visibility, manual
+interaction, the pause button and reduced-motion preferences stop it. Touch
+scrolling and arrow controls remain available; no library is required.
 
 ## Draft preview and publication
 
