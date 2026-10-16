@@ -35,13 +35,15 @@ const articles = await getArticles(locale);
     </section>
     <section class="home-journal">
       <div class="container">
-        <div class="section-heading" data-reveal><div><p class="kicker">{t('THE JOURNAL')}</p><h2 class="serif">{t('Understand more about football intelligence.')}</h2></div><a class="text-link" href={href('explore/')}>{t('All articles')} <span aria-hidden="true">&#8599;</span></a></div>
+        <div class="section-heading" data-reveal><div><p class="kicker">{t('THE JOURNAL')}</p><h2 class="serif">{t('Understand more about football intelligence')}</h2></div><a class="text-link" href={href('explore/')}>{t('All articles')} <span aria-hidden="true">&#8599;</span></a></div>
         <ArticleCarousel articles={articles} locale={locale} />
       </div>
     </section>
-    <section class="mission-band home-mission"><div class="container">
+    <section class="mission-band home-mission">
+      <img class="mission-image" src={sitePath('images/editorial-ground.webp')} alt="" aria-hidden="true" width="1536" height="1024" loading="lazy" />
+      <div class="container">
       <p class="kicker" data-reveal>2046</p><span class="line"></span>
-      <h2 class="serif" data-reveal>{t('Sweden, Football World Champions 2046')}</h2>
+      <h2 class="serif" data-reveal><span>{t('Sweden')}</span><span class="mission-title-middle">{t('Football World Champions')}</span><span>2046</span></h2>
       <p data-reveal>{t('It began with an unreasonable ambition.')}</p>
       <a class="text-link" href={href('mission/')}>{t('Explore the ambition')} <span aria-hidden="true">&#8599;</span></a>
     </div></section>
