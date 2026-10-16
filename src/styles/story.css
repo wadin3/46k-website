@@ -1,5 +1,6 @@
 /* A neutral reading surface; the official Paper token remains unchanged. */
-.magazine { --reading-paper: #FAFAF7; --category-ink: var(--pitch); background: var(--reading-paper); }
+.magazine { --reading-paper: #FAFAF7; --category-ink: var(--pitch); background: var(--reading-paper); position: relative; isolation: isolate; }
+.magazine::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--fine-paper); background-size: 1254px 1254px; filter: grayscale(1) brightness(1.055); mix-blend-mode: luminosity; opacity: .4; }
 .story-cover { position: relative; isolation: isolate; min-height: 660px; display: flex; align-items: end; padding-block: 42px; overflow: clip; }
 .cover-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
 .category-develop .cover-photo { object-position: 65% 20%; }
@@ -64,7 +65,7 @@
 .quote-mark { position: absolute; left: 0; top: 0; font: 400 86px/1 Georgia, serif; color: var(--pitch); }
 .story-pullquote blockquote { font: 400 42px/1.25 Georgia, serif; margin: 0 0 24px; text-wrap: balance; }
 .story-pullquote figcaption { font-size: 12px; border-top: 2px solid var(--gold); padding-top: 16px; max-width: 360px; }
-.story-note { margin-block: 72px; padding-block: 32px; border-block: 1px solid #383D3E33; background-image: linear-gradient(#FAFAF7F8, #FAFAF7F8), var(--paper-texture); background-size: 200% auto; background-position: left top; }
+.story-note { margin-block: 72px; padding-block: 32px; border-block: 1px solid #383D3E33; }
 .story-note .reading-copy { font-size: 16px; line-height: 1.85; }
 .story-note h2 { font-size: 30px; }
 .story-model { margin: 72px 0; padding: 40px; background: #EBEFEB; border-top: 3px solid var(--pitch); }
@@ -149,6 +150,7 @@
   .cover-category::before { width: 20px; }
 }
 @media print {
+  .magazine::before { display: none; }
   .site-header, .site-footer, .story-contents, .story-related { display: none; }
   .story-cover { min-height: 0; color: var(--graphite); }
   .cover-photo, .story-cover::after { display: none; }

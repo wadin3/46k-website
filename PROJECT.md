@@ -2,6 +2,16 @@
 
 ## Editorial v2 Review Branch (2026-10-15)
 
+### Follow-up (2026-10-16)
+
+The same PR also refines the homepage: a wider football-ground photograph,
+framed navigation and continuously moving native-scroll article cards.
+The marquee repeats visually identical sequences with one canonical keyboard
+and screen-reader sequence. Hover/focus, reduced motion and the pause button
+stop movement; touch/wheel/arrow controls support manual use. No dependency added.
+Articles retain `#FAFAF7` with a neutral low-contrast fine-fibre layer behind
+the text. Generated photo/texture prompts are in the asset provenance file.
+
 Work is on `editorial-redesign-v2`, draft PR #4. The live Pages site is
 unchanged; do not merge until visual and content review. Four long-form
 demonstrations have Swedish/English counterparts and disclosed fictional

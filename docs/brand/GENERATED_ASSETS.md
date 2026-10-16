@@ -69,3 +69,22 @@ Prompt:
 Prompt:
 
 > Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
+# 2026-10-16 asset supplement
+
+## Homepage motion and neutral paper refinements (2026-10-16)
+
+Built-in image generation; fictional adult player and environment. Originals
+remain in the generated-images library; project copies are format-optimized WebP.
+The neutral paper layer is a new supporting texture, not a brand color change.
+
+### `public/images/football-ground-hero-v2.webp`
+
+Prompt:
+
+> Photorealistic-natural editorial documentary football photograph for a Scandinavian football magazine website, extra wide landscape 2400x1024. Adult male midfielder age 25 in unbranded dark graphite training kit on the RIGHT THIRD of a real Nordic community training pitch, seen from head to below knees with a clearly visible football at his feet. He glances sideways to read the play. Another distant adult player near a full football goal, goal and modest spectator stand clearly identifiable behind him. The pitch occupies the lower TWO THIRDS; the sky occupies at most the top 12 percent. Camera eye level, slightly distant, not a portrait and not a close-up. Place the male player's head well below the top edge with generous room around his whole figure, so wide browser crops still show football context. Left half contains real shaded stands, fence and rich green turf with restrained detail, darker readable area for a separate off-white text overlay. Right half crisply shows the player, ball and goal. Natural neutral overcast daylight, deep but readable greens, graphite clothing, no pale sky wash, no sepia or orange. Authentic human football, fine fabric and turf detail, no heroic posing, no heavy blur, no gaming graphics, no annotations, no typography, no logos, no brand marks, no watermark. Fictional adults and place.
+
+### `public/images/fine-paper-grain.webp`
+
+Prompt:
+
+> A flat overhead macro material scan, seamless edge-to-edge neutral white high-quality uncoated magazine paper. Square 1536x1536 bitmap texture only, no objects or page edges. Extremely fine irregular cellulose paper fibres subtly embedded in the surface, varying directions and lengths, naturally random and very low contrast. Smooth matte paper-white base, sparse soft pale grey microfibres, mostly near-white with delicate physical variation. The texture should become perceptible only on close inspection, not look like digital static, film grain, visible noise, woven fabric, dotted pattern, scratches, crumples or grunge. Colour must be strictly achromatic white and neutral grey: NO yellow, cream, beige, brown or blue tint. Even diffuse scanner lighting across the entire sheet, no shadow, no vignette, no gradient, no embossed forms, no repeated geometric motifs, no text, no logos, no watermark. Suitable as a restrained realistic fine-paper layer under dark text on a bright editorial website.

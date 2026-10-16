@@ -26,7 +26,7 @@ const chapters = blocks.filter(item => item.block.kind === 'text' && item.block.
 const minutes = readingMinutes(article);
 ---
 <EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' — 46K'} description={d.description} noindex={d.demonstration || d.draft}>
-  <main id="main-content" class={'magazine category-' + d.category.toLowerCase()} style={`--paper-texture: url('${assetPath('/images/editorial-paper.webp')}')`}>
+  <main id="main-content" class={'magazine category-' + d.category.toLowerCase()} style={`--fine-paper: url('${assetPath('/images/fine-paper-grain.webp')}')`}>
     <header class={'story-cover cover-' + d.cover + (d.heroImage ? '' : ' cover-without-photo')}>
       {d.heroImage && <img class="cover-photo" src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height="1024" fetchpriority="high" />}
       <div class="cover-content container">

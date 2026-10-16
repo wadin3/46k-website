@@ -10,12 +10,13 @@ const icons = Object.fromEntries(['arrow-left','arrow-right','pause','play'].map
 ---
 <div class="article-carousel" data-carousel role="region" aria-label={t('Articles')} aria-roledescription={t('carousel')}>
   <div class="article-rail" data-rail tabindex="0" aria-label={t('Articles')}>
-    {articles.map(article => <article class="rail-card">
-      <p class="meta">{t(article.data.category)} / {readingMinutes(article)} {t('MIN READ')}</p>
-      <h3><a href={localePath('explore/' + articleSlug(article) + '/', locale)}>{article.data.title}</a></h3>
-      <p class="rail-description">{article.data.description}</p>
-      <a class="read" href={localePath('explore/' + articleSlug(article) + '/', locale)}>{t('Read article')} <span aria-hidden="true">&#8599;</span></a>
-    </article>)}
+    <div class="marquee-group" data-canonical>
+      {articles.map(article => <a class="rail-card" data-article href={localePath('explore/' + articleSlug(article) + '/', locale)}>
+        <p class="meta">{t(article.data.category)} / {readingMinutes(article)} {t('MIN READ')}</p>
+        <h3>{article.data.title}</h3><p class="rail-description">{article.data.description}</p>
+        <span class="read">{t('Read article')} <span aria-hidden="true">&#8599;</span></span>
+      </a>)}
+    </div>
   </div>
   <div class="carousel-controls">
     <button type="button" data-previous aria-label={t('Previous article')} title={t('Previous article')}><span class="control-icon" aria-hidden="true" style={`--icon: url('${icons['arrow-left']}')`}></span></button>
@@ -26,62 +27,115 @@ const icons = Object.fromEntries(['arrow-left','arrow-right','pause','play'].map
 <script>
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
     const rail = carousel.querySelector<HTMLElement>('[data-rail]')!;
+    const sequence = rail.querySelector<HTMLElement>('[data-canonical]')!;
+    const originals = Array.from(sequence.children) as HTMLElement[];
+    if (!originals.length) return;
     const autoplay = carousel.querySelector<HTMLButtonElement>('[data-autoplay]')!;
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
     let paused = motion.matches;
     let hovered = false;
     let focused = false;
     let inView = false;
-    let timer: ReturnType<typeof setTimeout> | undefined;
+    let cycle = 0;
+    let position = 0;
+    let frame: number | undefined;
+    let lastTime: number | undefined;
+    let measuredWidth = 0;
+    const hideReplica = (element: HTMLElement) => {
+      element.setAttribute('aria-hidden', 'true');
+      element.removeAttribute('data-canonical');
+      if (element.matches('a')) element.tabIndex = -1;
+      element.querySelectorAll<HTMLElement>('a, button, [tabindex]').forEach(link => link.tabIndex = -1);
+      return element;
+    };
+    const wrap = (value: number) => cycle ? cycle + ((value - cycle) % cycle + cycle) % cycle : 0;
     const updateButton = () => {
       autoplay.dataset.paused = String(paused);
       autoplay.setAttribute('aria-label', (paused ? autoplay.dataset.playLabel : autoplay.dataset.pauseLabel)!);
       autoplay.title = autoplay.getAttribute('aria-label')!;
+      autoplay.disabled = motion.matches;
     };
-    const advance = (direction: number) => {
-      const maximum = rail.scrollWidth - rail.clientWidth;
-      const first = rail.firstElementChild as HTMLElement | null;
-      if (!first || maximum <= 1) return;
-      const positions = [...new Set(Array.from(rail.children).map(child =>
-        Math.min(maximum, (child as HTMLElement).offsetLeft - first.offsetLeft)
-      ))];
-      const current = rail.scrollLeft;
-      const target = direction > 0
-        ? positions.find(position => position > current + 2) ?? 0
-        : positions.filter(position => position < current - 2).at(-1) ?? maximum;
-      rail.scrollTo({ left: target, behavior: motion.matches ? 'instant' : 'smooth' });
+    const canMove = () => !paused && !hovered && !focused && inView && !document.hidden && !motion.matches && cycle > 0;
+    const tick = (time: number) => {
+      if (!canMove()) { frame = undefined; lastTime = undefined; return; }
+      if (lastTime !== undefined) {
+        position = wrap(position + Math.min(time - lastTime, 64) * 0.028);
+        rail.scrollLeft = position;
+      }
+      lastTime = time;
+      frame = requestAnimationFrame(tick);
     };
     const schedule = () => {
-      clearTimeout(timer);
-      if (paused || hovered || focused || !inView || document.hidden || motion.matches) return;
-      timer = setTimeout(() => { advance(1); schedule(); }, 6000);
+      if (!canMove()) {
+        if (frame !== undefined) cancelAnimationFrame(frame);
+        frame = undefined;
+        lastTime = undefined;
+        position = rail.scrollLeft;
+      } else if (frame === undefined) {
+        position = rail.scrollLeft;
+        frame = requestAnimationFrame(tick);
+      }
     };
-    carousel.querySelector('[data-next]')!.addEventListener('click', () => { advance(1); schedule(); });
-    carousel.querySelector('[data-previous]')!.addEventListener('click', () => { advance(-1); schedule(); });
+    const rebuild = () => {
+      const width = rail.clientWidth;
+      if (!width || width === measuredWidth) return;
+      measuredWidth = width;
+      const progress = cycle ? ((rail.scrollLeft - cycle) % cycle + cycle) % cycle / cycle : 0;
+      rail.querySelectorAll('[data-replica-group]').forEach(group => group.remove());
+      sequence.querySelectorAll('[data-filler]').forEach(card => card.remove());
+      // Each sequence must cover a viewport, even with just one published article.
+      while (sequence.getBoundingClientRect().width < width) {
+        originals.forEach(original => {
+          const copy = hideReplica(original.cloneNode(true) as HTMLElement);
+          copy.dataset.filler = '';
+          sequence.append(copy);
+        });
+      }
+      cycle = sequence.getBoundingClientRect().width;
+      for (const side of ['before', 'after']) {
+        const copy = hideReplica(sequence.cloneNode(true) as HTMLElement);
+        copy.dataset.replicaGroup = '';
+        if (side === 'before') rail.prepend(copy); else rail.append(copy);
+      }
+      position = cycle * (1 + progress);
+      rail.scrollLeft = position;
+      carousel.dataset.enhanced = 'true';
+      schedule();
+    };
+    const manual = () => { paused = true; updateButton(); schedule(); };
+    const advance = (direction: number) => {
+      manual();
+      const step = originals[0].getBoundingClientRect().width + parseFloat(getComputedStyle(sequence).columnGap);
+      position = wrap(rail.scrollLeft + direction * step);
+      rail.scrollLeft = position;
+    };
+    carousel.querySelector('[data-next]')!.addEventListener('click', () => advance(1));
+    carousel.querySelector('[data-previous]')!.addEventListener('click', () => advance(-1));
     autoplay.addEventListener('click', () => { paused = !paused; updateButton(); schedule(); });
-    carousel.addEventListener('pointerenter', () => { hovered = true; schedule(); });
-    carousel.addEventListener('pointerleave', () => { hovered = false; schedule(); });
+    carousel.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; schedule(); } });
+    carousel.addEventListener('pointerleave', event => { if (event.pointerType === 'mouse') { hovered = false; schedule(); } });
     carousel.addEventListener('focusin', () => { focused = true; schedule(); });
     carousel.addEventListener('focusout', event => {
       focused = event.relatedTarget instanceof Node && carousel.contains(event.relatedTarget);
       schedule();
     });
-    const pauseManualScroll = () => { paused = true; updateButton(); schedule(); };
-    rail.addEventListener('pointerdown', pauseManualScroll, { passive: true });
-    rail.addEventListener('wheel', pauseManualScroll, { passive: true });
+    rail.addEventListener('pointerdown', manual, { passive: true });
+    rail.addEventListener('wheel', manual, { passive: true });
+    rail.addEventListener('scroll', () => {
+      if (frame !== undefined) return;
+      position = wrap(rail.scrollLeft);
+      if (Math.abs(position - rail.scrollLeft) > 1) rail.scrollLeft = position;
+    }, { passive: true });
     rail.addEventListener('keydown', event => {
       if (event.target === rail && (event.key === 'ArrowRight' || event.key === 'ArrowLeft')) {
-        event.preventDefault();
-        pauseManualScroll();
-        advance(event.key === 'ArrowRight' ? 1 : -1);
+        event.preventDefault(); advance(event.key === 'ArrowRight' ? 1 : -1);
       }
     });
     document.addEventListener('visibilitychange', schedule);
     motion.addEventListener('change', () => { paused = true; updateButton(); schedule(); });
-    new IntersectionObserver(entries => {
-      inView = entries[0].isIntersecting;
-      schedule();
-    }, { threshold: 0.3 }).observe(carousel);
+    new IntersectionObserver(entries => { inView = entries[0].isIntersecting; schedule(); }, { threshold: 0.1 }).observe(rail);
+    new ResizeObserver(rebuild).observe(rail);
+    rebuild();
     updateButton();
   });
 </script>

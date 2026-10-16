@@ -9,6 +9,7 @@ export const defaultLocale: Locale = 'sv';
 const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   sv: {
   "Understand": "Förstå",
+  "Illustrative male football player with a ball on a training pitch beside a goal and stand.": "Illustrativ manlig fotbollsspelare med boll på en träningsplan, intill mål och läktare.",
   "Measure": "Mäta",
   "MEASURE": "MÄTA",
   "NEUROPSYCHOLOGY x FOOTBALL": "NEUROPSYKOLOGI x FOTBOLL",
