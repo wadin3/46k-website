@@ -9,6 +9,7 @@ export const defaultLocale: Locale = 'sv';
 const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   sv: {
   "Understand": "Förstå",
+  "Illustrative male football player with a ball on a training pitch beside a goal and stand.": "Illustrativ manlig fotbollsspelare med boll på en träningsplan, intill mål och läktare.",
   "Measure": "Mäta",
   "MEASURE": "MÄTA",
   "NEUROPSYCHOLOGY x FOOTBALL": "NEUROPSYKOLOGI x FOTBOLL",
@@ -18,9 +19,12 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.": "Vi utforskar vetenskapen bakom spelintelligens – och skapar verktyg som hjälper spelare att förstå sin potential och utvecklas på planen.",
   "What we do": "Vad vi gör",
   "We use neuropsychological research to understand football intelligence in depth. Which fundamental psychological characteristics influence how a player's brain perceives the game around them and makes decisions on the pitch?": "Vi använder neuropsykologisk forskning för att förstå spelintelligens på djupet. Vilka grundläggande psykologiska egenskaper påverkar hur spelarens hjärna uppfattar spelet runt sig och fattar beslut på planen?",
-  "We develop psychometric tests that measure the abilities underlying football intelligence. This helps players discover their strengths and areas for development.": "Vi utvecklar psykometriska tester som mäter de förmågor som ligger bakom spelintelligens. Så hjälper vi spelare att upptäcka sina styrkor och utvecklingsområden.",
+  "We develop tests that map the cognitive characteristics behind football intelligence. Our aim is to give players new insights into their individual strengths, and create better conditions for discovering and developing potential.": "Vi utvecklar tester som kartlägger de kognitiva egenskaperna bakom spelintelligens. Målet är att ge spelare nya insikter om sina individuella styrkor, och skapa bättre förutsättningar för att upptäcka och utveckla potential.",
   "We combine test results with knowledge of training methods from football and psychology to provide practical advice and exercises for each player's individual development.": "Vi kombinerar resultat från testerna med kunskap om träningsmetoder från fotbollen och psykologin, för att ge konkreta råd och övningar för spelarens individuella utveckling.",
-  "Understand more about football intelligence.": "Förstå mer om spelintelligens.",
+  "Understand more about football intelligence": "Förstå mer om spelintelligens",
+  "Sweden": "Sverige",
+  "Football World Champions": "Världsmästare i fotboll",
+  "WORLD CHAMPIONS 2046": "VÄRLDSMÄSTARE 2046",
   "Sweden, Football World Champions 2046": "Sverige Världsmästare i fotboll 2046",
   "It began with an unreasonable ambition.": "Det började med en orimlig ambition.",
   "Illustrative image of an adult male football player scanning a training pitch.": "Illustrativ bild av en vuxen manlig fotbollsspelare som blickar över en träningsplan.",
@@ -41,7 +45,7 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "We use cognitive science to understand and develop football intelligence.": "Vi använder kognitionsvetenskap för att förstå och utveckla spelintelligens.",
   "SWEDEN. WORLD CHAMPIONS. 2046.": "SVERIGE. VÄRLDSMÄSTARE. 2046.",
   "UNDERSTAND": "FÖRSTÅ",
-  "ASSESS": "BEDÖMA",
+  "ASSESS": "MÄTA",
   "DEVELOP": "UTVECKLA",
   "ALL": "ALLA",
   "Look beyond what happens on the pitch. Explore perception, cognition and the questions behind football intelligence.": "Se bortom det som händer på planen. Utforska perception, kognition och frågorna bakom spelintelligens.",
@@ -117,7 +121,18 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "KEEP EXPLORING": "FORTSÄTT UTFORSKA",
   "EDITORIAL": "PERSPEKTIV",
   "RESEARCH": "FORSKNING",
-  "INSIGHT": "INSIKT"
+  "INSIGHT": "INSIKT",
+  "PRACTICE": "PRAKTIK",
+  "The journal": "Insikter",
+  "Editorial": "Redaktionen",
+  "Editorial draft": "Redaktionellt utkast",
+  "Demonstration article": "Demonstrationsartikel",
+  "Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.": "Exempelmaterial för redaktionell granskning. Scenerna är illustrativa; förslagen är 46K:s tolkningar, inte validerade resultat.",
+  "In this article": "I den här artikeln",
+  "The opening": "Utgångspunkten",
+  "Reading room": "Läs vidare",
+  "Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.": "Källorna stöder de specifika påståenden som länkas i texten, inte hela 46K-modellen eller en individuell talangprognos.",
+  "The next question.": "Nästa fråga."
 },
 };
 

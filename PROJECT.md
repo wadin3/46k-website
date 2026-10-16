@@ -1,5 +1,33 @@
 # 46K Website
 
+## Editorial v2 Review Branch (2026-10-15)
+
+### Follow-up (2026-10-16)
+
+The same PR also refines the homepage: a wider football-ground photograph,
+framed navigation and continuously moving native-scroll article cards.
+The marquee repeats visually identical sequences with one canonical keyboard
+and screen-reader sequence. Hover/focus, reduced motion and the pause button
+stop movement; touch/wheel/arrow controls support manual use. No dependency added.
+Articles retain `#FAFAF7` with a neutral low-contrast fine-fibre layer behind
+the text. Generated photo/texture prompts are in the asset provenance file.
+
+Work is on `editorial-redesign-v2`, draft PR #4. The live Pages site is
+unchanged; do not merge until visual and content review. Four long-form
+demonstrations have Swedish/English counterparts and disclosed fictional
+scenes. The Develop example remains a draft, visible only in preview builds.
+
+The article system uses five Pages CMS blocks, photographic category covers,
+neutral-white reading surfaces, numbered chapters, evidence notes, models,
+image pairs/credits, sources and related reading. Existing article URLs and
+body-only Markdown compatibility remain. Original logo PNGs are unchanged.
+
+See `docs/EDITORIAL.md` for editing and preview instructions, tests and the
+remaining authenticated CMS checks. CI validates default/project-path builds,
+draft previews and a temporary CMS-shaped edit/draft/publication lifecycle.
+The actual Pages CMS interface is currently behind sign-in; media upload,
+block editing/reordering and editor-triggered preview have not been verified.
+
 ## Published
 
 Live: https://wadin3.github.io/46k-website/

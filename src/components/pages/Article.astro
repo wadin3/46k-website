@@ -1,26 +1,49 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 import { translate, localePath, locales, type Locale } from '../../i18n';
-import { getArticles, articleSlug } from '../../lib/articles';
-const { locale = 'sv' } = Astro.props as { locale: Locale };
+import { getArticles, articleSlug, translationKey, readingMinutes } from '../../lib/articles';
+import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import StoryBlock from '../editorial/StoryBlock.astro';
+import { assetPath } from '../../lib/paths';
+import '../../styles/story.css';
+interface Props { locale: Locale; article: CollectionEntry<'articles'>; }
+const { locale = 'sv', article } = Astro.props;
 const t = (text: string) => translate(locale, text);
 const href = (route = '') => localePath(route, locale);
-import { getCollection, render } from 'astro:content';
-import EditorialLayout from '../../layouts/EditorialLayout.astro';
-import { sitePath, assetPath } from '../../lib/paths';
-const {article}=Astro.props;
-const {Content}=await render(article);
+const d = article.data;
+const { Content } = await render(article);
 const all = await getArticles(locale);
-const related=all.filter(a=>a.id!==article.id&&(a.data.category===article.data.category||a.data.type===article.data.type)).slice(0,2);
-const d=article.data;
+const related = all.filter(a => a.id !== article.id)
+  .sort((a,b) => Number(b.data.category === d.category) - Number(a.data.category === d.category)).slice(0, 3);
 const languageRoutes = Object.fromEntries(await Promise.all((Object.keys(locales) as Locale[]).map(async language => {
-  const match = (await getArticles(language)).find(other => (other.data.translationKey ?? articleSlug(other)) === (d.translationKey ?? articleSlug(article)));
+  const match = (await getArticles(language)).find(other => translationKey(other) === translationKey(article));
   return [language, localePath(match ? 'explore/' + articleSlug(match) + '/' : 'explore/', language)];
 })));
+let chapter = 0;
+const blocks = d.sections.map((block, index) => ({ block, index, number: block.kind === 'text' ? ++chapter : chapter }));
+const chapters = blocks.filter(item => item.block.kind === 'text' && item.block.heading);
+const minutes = readingMinutes(article);
 ---
-<EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title+' — 46K'} description={d.description}>
-<main id="main-content" class={'type-'+d.type}><section class="article-hero"><div class="container"><a href={href('explore/')} class="kicker"><span aria-hidden="true">←</span> {t("BACK TO EXPLORE")}</a><span class="line"></span><p class="kicker">{t(d.category)} / {t(d.type.toUpperCase())}</p><h1>{d.title}</h1><p class="deck">{d.description}</p><div class="details"><span>46K / DECODING FOOTBALL INTELLIGENCE</span><span>{d.date.toLocaleDateString(locale === 'sv' ? 'sv-SE' : 'en-GB',{day:'2-digit',month:'short',year:'numeric'})} · {d.readingTime} {t("MIN READ")}</span></div></div></section>
-{d.heroImage&&<div class="container"><img class="article-photo" src={assetPath(d.heroImage)} alt={d.heroAlt??''}/></div>}
-<article class="article-body"><Content/></article>
-{d.sources.length>0&&<section class="references"><h2>{t("Sources & further reading")}</h2><ol>{d.sources.map(s=><li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a></li>)}</ol></section>}
-{related.length>0&&<section class="related"><div class="container"><p class="kicker">{t("KEEP EXPLORING")}</p>{related.map(a=><a href={href('explore/'+articleSlug(a)+'/')}>{a.data.title} ↗</a>)}</div></section>}
-</main></EditorialLayout>
+<EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' — 46K'} description={d.description} noindex={d.demonstration || d.draft}>
+  <main id="main-content" class={'magazine category-' + d.category.toLowerCase()} style={`--fine-paper: url('${assetPath('/images/fine-paper-grain.webp')}')`}>
+    <header class={'story-cover cover-' + d.cover + (d.heroImage ? '' : ' cover-without-photo')}>
+      {d.heroImage && <img class="cover-photo" src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height="1024" fetchpriority="high" />}
+      <div class="cover-content container">
+        <a class="story-back kicker" href={href('explore/')}><span aria-hidden="true">&#8592;</span> {t('The journal')}</a>
+        <p class="cover-category kicker">{t(d.category)} <span>/ {t(d.type.toUpperCase())}</span></p>
+        <h1>{d.title}</h1><p class="cover-deck">{d.description}</p>
+        <div class="cover-byline"><span>46K / {t('Editorial')}</span><span><time datetime={d.date.toISOString()}>{d.date.toLocaleDateString(locale === 'sv' ? 'sv-SE' : 'en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</time> · {minutes} {t('MIN READ')}</span></div>
+      </div>
+    </header>
+    {(d.heroCaption || d.heroCredit) && <p class="cover-credit container"><span>{d.heroCaption}</span><small>{d.heroCredit}</small></p>}
+    {(d.demonstration || d.draft) && <aside class="story-status container"><strong>{d.draft ? t('Editorial draft') : t('Demonstration article')}</strong><p>{t('Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.')}</p></aside>}
+    {chapters.length > 0 && <nav class="story-contents container" aria-label={t('In this article')}><p class="kicker">{t('In this article')}</p><ol>{chapters.map(item => <li><a href={'#section-' + item.index}><span>{String(item.number).padStart(2, '0')}</span>{item.block.kind === 'text' && item.block.heading}</a></li>)}</ol></nav>}
+    <article class="story-flow container" aria-label={d.title}>
+      {article.body?.trim() && <div class="story-introduction story-grid"><p class="kicker">{t('The opening')}</p><div class="reading-column reading-copy"><Content /></div></div>}
+      {blocks.map(item => <StoryBlock {...item} />)}
+    </article>
+    {d.sources.length > 0 && <section class="story-sources container" aria-labelledby="sources-title"><div class="story-grid"><p class="kicker">{t('Reading room')}</p><div class="reading-column"><h2 id="sources-title">{t('Sources & further reading')}</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<span aria-hidden="true"> &#8599;</span></a></li>)}</ol><p>{t('Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.')}</p></div></div></section>}
+    {related.length > 0 && <section class="story-related"><div class="container"><div class="section-heading"><div><p class="kicker">{t('KEEP EXPLORING')}</p><h2 class="serif">{t('The next question.')}</h2></div><a class="text-link" href={href('explore/')}>{t('All articles')} <span aria-hidden="true">&#8599;</span></a></div><div class="related-grid">{related.map(a => <article>{a.data.heroImage && <a href={href('explore/' + articleSlug(a) + '/')} tabindex="-1" aria-hidden="true"><img src={assetPath(a.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" /></a>}<p class="kicker">{t(a.data.category)}</p><h3><a href={href('explore/' + articleSlug(a) + '/')}>{a.data.title}<span aria-hidden="true"> &#8599;</span></a></h3><p>{a.data.description}</p></article>)}</div></div></section>}
+  </main>
+</EditorialLayout>

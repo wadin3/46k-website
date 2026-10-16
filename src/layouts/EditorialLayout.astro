@@ -2,8 +2,8 @@
 import '../styles/editorial.css';
 import { sitePath } from '../lib/paths';
 import { locales, defaultLocale, translate, localePath, relativeRoute, type Locale } from '../i18n';
-interface Props { locale?: Locale; title?: string; description?: string; languageRoutes?: Partial<Record<Locale, string>>; }
-const { locale = defaultLocale, title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.', languageRoutes } = Astro.props;
+interface Props { locale?: Locale; title?: string; description?: string; languageRoutes?: Partial<Record<Locale, string>>; noindex?: boolean; }
+const { locale = defaultLocale, title = '46K - Decoding Football Intelligence', description = 'We use cognitive science to understand and develop football intelligence.', languageRoutes, noindex = false } = Astro.props;
 const t = (text: string) => translate(locale, text);
 const navigation = [
   { label: 'Understand', path: 'explore/' },
@@ -25,6 +25,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={t(description)} />
     <meta name="theme-color" content="#F5F2E9" />
+    {(noindex || process.env.ASTRO_EDITORIAL_PREVIEW === '1') && <meta name="robots" content="noindex, nofollow" />}
     <title>{t(title)}</title>
     {canonical && <link rel="canonical" href={canonical} />}
     {Astro.site && languages.map(language => <link rel="alternate" hreflang={language.code} href={new URL(language.href, Astro.site)} />)}
@@ -53,13 +54,18 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
     <footer class="site-footer">
       <a class="footer-mark" href={localePath('', locale)} aria-label={t('46K home')}><img src={sitePath('brand/logos/46K_Essential_Light.png')} alt="46K" width="1983" height="793" loading="lazy" /></a>
       <span>DECODING FOOTBALL INTELLIGENCE</span>
-      <a href={localePath('mission/', locale)}>{t('SWEDEN. WORLD CHAMPIONS. 2046.')}</a>
+      <a href={localePath('mission/', locale)}>{t('WORLD CHAMPIONS 2046')}</a>
     </footer>
     <script>
       const picker = document.querySelector<HTMLDetailsElement>('.language-picker');
-      document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
-        link.href += window.location.search + window.location.hash;
+      const syncLanguageDestinations = () => document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+        const destination = new URL(link.href);
+        destination.search = window.location.search;
+        destination.hash = window.location.hash;
+        link.href = destination.href;
       });
+      syncLanguageDestinations();
+      window.addEventListener('hashchange', syncLanguageDestinations);
       document.addEventListener('click', event => {
         if (picker && event.target instanceof Node && !picker.contains(event.target)) picker.open = false;
       });

@@ -36,8 +36,10 @@ jobs:
           ASTRO_SITE: ${{ steps.pages.outputs.origin || 'https://46k.com' }}
           ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
         run: |
+          node scripts/check-editorial.mjs
           npm run build
           python3 scripts/check-site.py --base "$ASTRO_BASE"
+          python3 scripts/check-editorial.py
       - name: Save build output
         uses: actions/upload-artifact@v4
         with:
@@ -56,6 +58,30 @@ jobs:
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
+          path: dist/
+      - name: Check CMS-shaped edit and publication lifecycle
+        if: github.event_name == 'pull_request'
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          ASTRO_SITE: https://46k-preview.invalid
+          ASTRO_BASE: /46k-website
+        run: node scripts/check-publication.mjs
+      - name: Build editorial draft preview
+        if: github.event_name == 'pull_request'
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          ASTRO_EDITORIAL_PREVIEW: '1'
+          ASTRO_SITE: https://46k-preview.invalid
+          ASTRO_BASE: /
+        run: |
+          npm run build
+          python3 scripts/check-site.py
+          python3 scripts/check-editorial.py --preview
+      - name: Save editorial preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: 46k-editorial-preview
           path: dist/
 
   deploy:

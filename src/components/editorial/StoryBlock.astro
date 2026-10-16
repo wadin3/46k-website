@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { editorialMarkdown } from '../../lib/editorial';
+import { assetPath } from '../../lib/paths';
+type Block = CollectionEntry<'articles'>['data']['sections'][number];
+interface Props { block: Block; index: number; number: number; }
+const { block, index, number } = Astro.props;
+const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body) : '';
+---
+{block.kind === 'text' && <section class="story-text story-grid" id={'section-' + index}>
+  <div class="chapter-marker" aria-hidden="true">{String(number).padStart(2, '0')}<span></span></div>
+  <div class="reading-column">{block.heading && <h2>{block.heading}</h2>}<div class="reading-copy" set:html={html} /></div>
+</section>}
+{block.kind === 'photo' && <figure class={'story-photo photo-' + block.layout}>
+  <div class="photo-layout"><img src={assetPath(block.image)} alt={block.alt} width="1536" height="1024" loading="lazy" />
+    {block.layout === 'pair' && <img src={assetPath(block.secondImage)} alt={block.secondAlt} width="1536" height="1024" loading="lazy" />}
+  </div>
+  <figcaption><span>{block.caption}{block.layout === 'pair' && block.secondCaption && ' / ' + block.secondCaption}</span><small>{block.credit}{block.layout === 'pair' && block.secondCredit && block.secondCredit !== block.credit && ' / ' + block.secondCredit}</small></figcaption>
+</figure>}
+{block.kind === 'quote' && <figure class="story-pullquote"><span class="quote-mark" aria-hidden="true">“</span><blockquote>{block.text}</blockquote><figcaption>{block.attribution}</figcaption></figure>}
+{block.kind === 'note' && <aside class="story-note story-grid"><p class="chapter-marker">{block.label}</p><div class="reading-column"><h2>{block.heading}</h2><div class="reading-copy" set:html={html} /></div></aside>}
+{block.kind === 'model' && <figure class="story-model"><header><p class="kicker">46K / {String(number).padStart(2, '0')}</p><h2>{block.heading}</h2></header><ol>{block.steps.map((step, i) => <li><span class="model-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><figcaption>{block.caption}</figcaption></figure>}
