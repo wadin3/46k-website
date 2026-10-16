@@ -71,6 +71,20 @@ Prompt:
 > Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
 # 2026-10-16 asset supplement
 
+## Homepage publication edit (2026-10-16)
+
+### `public/images/football-ground-hero-v3.webp`
+
+Built-in image generation, editing `football-ground-hero-v2.webp`.
+Fictional adult player, approximately 20, and fictional environment; not
+documentary evidence. No official logo generated or modified. Optimized
+WebP conversion preserves the 1920x819 composition. Original generated PNG
+is retained in the Codex generated-images library.
+
+Prompt:
+
+> Use case: precise-object-edit. Edit the supplied existing 1920x819 extra-wide photographic website hero. Preserve the same composition, camera, realistic Nordic football training pitch, shaded stand on left, full goal and distant adult player, overcast lighting, subdued natural greens and graphite clothes. Preserve primary player's exact right-third placement, sideways attentive look, full-body pose and ball and all crop-safe margins. Change ONLY these details: make the male primary player clearly a young ADULT approximately 20 years old, youthful face with no beard, not a child; reduce the exaggerated bulk/definition of his thighs and calves to a naturally lean, athletic young football midfielder, plausible anatomy. Add one exquisitely restrained editorial perception annotation near his head/upper torso: a fine muted-gold open arc suggesting field of attention, two or three tiny muted-gold points and a very fine short sightline pointing into the field to his left. These marks should be sparse, delicate, low-opacity and almost discovered on a second look, loosely evoking scanning/reading the game, no literal numbers or data claims. No circles covering eyes, no helmet effect, no concentric rings, no glowing elements, no gaming HUD, sci-fi, screens, boxes, labels, typography, logos or branding imitation. Do not add a 46K wordmark. Maintain the original extra-wide aspect ratio and composition. Keep the pitch, stand, goal and ball recognizable and preserve empty left half for existing website text. Photorealistic human editorial/Core feel, not sports-tech advertising.
+
 ## Homepage motion and neutral paper refinements (2026-10-16)
 
 Built-in image generation; fictional adult player and environment. Originals

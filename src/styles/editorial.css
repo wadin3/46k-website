@@ -164,6 +164,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .hero-content .line { margin: 18px 0 24px; }
 .hero-content h1 { font-size: 64px; max-width: 700px; margin-bottom: 24px; }
 .hero-content h1 span { display: block; }
+.hero-content h1 .hero-decoded { color: var(--gold); }
 .hero-statement { max-width: 610px; margin-bottom: 16px; }
 .hero-deck { max-width: 490px; }
 .model-grid article { display: flex; flex-direction: column; }

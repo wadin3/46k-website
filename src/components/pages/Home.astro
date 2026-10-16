@@ -9,7 +9,7 @@ const t = (text: string) => translate(locale, text);
 const href = (route = '') => localePath(route, locale);
 const features = [
   { name: t('UNDERSTAND'), body: t("We use neuropsychological research to understand football intelligence in depth. Which fundamental psychological characteristics influence how a player's brain perceives the game around them and makes decisions on the pitch?"), path: 'explore/', link: t('Explore our thinking') },
-  { name: t('MEASURE'), body: t('We develop psychometric tests that measure the abilities underlying football intelligence. This helps players discover their strengths and areas for development.'), path: 'assessment/', link: t('Our approach to assessment') },
+  { name: t('MEASURE'), body: t('We develop tests that map the cognitive characteristics behind football intelligence. Our aim is to give players new insights into their individual strengths, and create better conditions for discovering and developing potential.'), path: 'assessment/', link: t('Our approach to assessment') },
   { name: t('DEVELOP'), body: t("We combine test results with knowledge of training methods from football and psychology to provide practical advice and exercises for each player's individual development."), path: 'explore/?category=DEVELOP', link: t('Explore development') },
 ];
 const articles = await getArticles(locale);
@@ -17,11 +17,11 @@ const articles = await getArticles(locale);
 <EditorialLayout locale={locale} description={t('We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.')}>
   <main id="main-content">
     <section class="home-hero">
-      <img class="hero-image" src={sitePath('images/football-ground-hero-v2.webp')} alt={t('Illustrative male football player with a ball on a training pitch beside a goal and stand.')} width="1920" height="819" fetchpriority="high" />
+      <img class="hero-image" src={sitePath('images/football-ground-hero-v3.webp')} alt={t('Illustrative male football player with a ball on a training pitch beside a goal and stand.')} width="1920" height="819" fetchpriority="high" />
       <div class="container hero-content">
         <p class="kicker hero-eyebrow">{t('NEUROPSYCHOLOGY x FOOTBALL')}</p>
         <span class="line"></span>
-        <h1 class="serif"><span>{t('Football Intelligence')}</span>{' '}<span>{t('Decoded')}</span></h1>
+        <h1 class="serif"><span>{t('Football Intelligence')}</span>{' '}<span class="hero-decoded">{t('Decoded')}</span></h1>
         <p class="hero-statement">{t('Talent is more than physique and technique')}</p>
         <p class="hero-deck">{t('We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.')}</p>
         <a class="button-link" href={href('explore/')}>{t('Explore our thinking')} <span aria-hidden="true">&#8599;</span></a>
