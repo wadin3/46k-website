@@ -203,6 +203,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 }
 @media (max-width: 1000px) {
   .hero-content h1 { font-size: 56px; max-width: 600px; }
+  .home-mission h2 .mission-title-middle { font-size: 48px; }
 }
 @media (max-width: 700px) {
   .home-hero { min-height: 0; }
