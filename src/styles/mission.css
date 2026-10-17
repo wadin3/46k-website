@@ -123,7 +123,7 @@
 }
 @media (max-width: 700px) {
   .mission-cover { height: min(660px, calc(100svh - 190px)); min-height: 540px; }
-  .mission-cover-image { object-position: 68% center; }
+  .mission-cover-image { object-position: 76% center; }
   .mission-cover::after { background: linear-gradient(90deg, #383D3EEB, #383D3E99 65%, #383D3E55); }
   .mission-cover h1 { font-size: 56px; }
   .mission-cover .cover-champions { font-size: 32px; margin-top: 14px; }
