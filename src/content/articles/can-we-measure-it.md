@@ -20,7 +20,7 @@ sections:
     body: >-
       Suppose a club wants to understand why a player finds certain situations difficult.
       Looking for a test immediately might seem appealing. Our proposed starting point is
-      different: first formulate the question a result is meant to help answer.
+      different: **first formulate the question** a result is meant to help answer.
 
 
       If the question is broad, an individual measure may be difficult to interpret. If it is
@@ -28,7 +28,7 @@ sections:
       intended interpretation and uses that should be ruled out all need to be clear.
 
 
-      For 46K, this is development work. We are not claiming that our current tools have
+      For 46K, this is *development work*. We are not claiming that our current tools have
       demonstrated the information the club is seeking. Methods and interpretations need to be
       tested before such use is justified. An attractive interface does not support a stronger
       conclusion. Nor does a longer report necessarily make an uncertain result more useful.

@@ -15,7 +15,7 @@ sections:
     heading: An ambition that asks something of daily work
     body: >-
       Sweden, football world champions, 2046. It is a large statement. Its size is not the
-      interesting part. The real question is which tasks it makes visible today.
+      interesting part. **The real question** is which tasks it makes visible today.
 
 
       For 46K, it raises questions about how football understands potential. What do we choose
@@ -130,7 +130,7 @@ sections:
 
 
       If the large ambition makes those questions more pressing, it already has a function. It
-      can look further ahead without pretending to see the future. That is the balance we want:
+      can look further ahead *without pretending to see the future*. That is the balance we want:
       boldness in direction, care in the work and respect for a player's path exceeding any
       slogan. 2046 begins where we can do something: on an ordinary training ground.
 language: en

@@ -13,7 +13,7 @@ sections:
     heading: En ambition som ställer krav på vardagen
     body: >-
       Sverige världsmästare i fotboll 2046. Det är en stor formulering. Men storleken på
-      formuleringen är inte det intressanta i sig. Den verkliga frågan är vilka arbetsuppgifter
+      formuleringen är inte det intressanta i sig. **Den verkliga frågan** är vilka arbetsuppgifter
       den gör synliga i dag.
 
 
@@ -130,7 +130,7 @@ sections:
 
 
       Om den stora ambitionen gör sådana frågor mer angelägna har den en funktion redan nu. Den
-      kan hålla blicken längre fram utan att låtsas se framtiden. Det är den balansen vi vill
+      kan hålla blicken längre fram *utan att låtsas se framtiden*. Det är den balansen vi vill
       åt: djärvhet i riktningen, noggrannhet i arbetet och respekt för att en spelares väg inte
       får plats i en slogan. 2046 börjar där vi faktiskt kan göra något: på en vanlig
       träningsplan.

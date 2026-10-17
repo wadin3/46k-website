@@ -16,7 +16,7 @@ sections:
   - kind: text
     heading: Det synliga är inte hela händelsen
     body: >-
-      Vi brukar börja med det som går att se. En passning genom en lagdel. En förflyttning som
+      **Vi brukar börja med det som går att se.** En passning genom en lagdel. En förflyttning som
       öppnar en yta. Ett beslut att vänta när alla andra vill framåt. Det är användbara
       observationer. Men aktionen i sig berättar inte allt om hur spelaren kom fram till den.
 
@@ -51,7 +51,7 @@ sections:
       eller validering av fotbollens spelintelligens.
 
 
-      För 46K blir uppgiften därför att översätta med försiktighet. Vi kan fråga vilken typ av
+      För 46K blir uppgiften därför att *översätta med försiktighet*. Vi kan fråga vilken typ av
       information en situation ställer krav på. Vi kan inte sätta likhetstecken mellan en
       kognitiv term och allt det som händer i spelet. Fotbollens egna detaljer måste finnas kvar
       i modellen.

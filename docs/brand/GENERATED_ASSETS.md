@@ -71,6 +71,42 @@ Prompt:
 > Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
 # 2026-10-16 asset supplement
 
+## Editorial ink plate, second mission review (2026-10-17)
+
+### `public/images/editorial-ink-plate.webp`
+
+Built-in generation using REF_03 EDITORIAL as a style reference only. Transparent
+1536x1024 supporting print collage; optimized WebP retains alpha. No official
+logo generated or changed, no scientific data. Used as sparse, non-repeated
+margin artwork on mission and article reading surfaces, not as paper wallpaper.
+
+Prompt:
+
+> Create a new transparent-background editorial print collage asset for a refined Swedish football and psychology magazine website. Use the supplied REF_03 only for the aesthetic of its left EDITORIAL panel: imperfect photographic ink transfer, offset print registration, quiet grayscale and worn muted gold. Do not reproduce any text, logos, people or page layout from the reference. Landscape 1920x1280 transparent PNG, alpha background. Composition: LEFT 60 PERCENT is completely transparent empty space for separately rendered readable website text. On far RIGHT, a tall irregular-edge monochrome photographic fragment of modest football stands, fence and a small piece of a goal net, treated as a realistic dry-ink halftone transfer with softly broken and torn edges, middle-grey and charcoal inks, preserving recognizability. Layer one large incomplete worn matte gold circle/arc segment behind the far-right architectural fragment, subtle muted #C29D45 gold with missing flecks like old print ink, no shiny metal. A few restrained irregular graphite print smudges attached to the collage edges, not freestanding dots or noise. Everything is clustered near the right outer edge and partly cropped by it. At least 65 percent of overall canvas remains genuinely transparent, not white. Low-key fine physical ink texture rather than a tiled paper-grain wallpaper. No full-page fibre texture, no parchment, beige wash, crumples, grunge noise, repeated pattern, gradient blobs, bokeh, data charts, tactical diagrams, UI or abstract tech. No lettering, digits, brand marks, sponsors, watermarks, no 46K logo. The asset is purely a decorative photographic print fragment; all exact text and logos are separate HTML layers. Crisp premium editorial print material, irregular yet restrained.
+
+## Mission storytelling preview (2026-10-17)
+
+New supporting images generated with the built-in image tool. Fictional adult
+players and venues, not documentary photographs, future event evidence or
+research participants. Official logo originals are unchanged. Optimized WebP
+copies are in public/images/; original PNGs remain in the generated-images library.
+
+### `public/images/mission-arena.webp`
+
+Prompt:
+
+> Photorealistic editorial documentary-style still for the opening of a Scandinavian football documentary, wide panoramic landscape 2400x1024. View from the edge of a players' tunnel onto a large modern but believable Swedish football stadium at blue-grey evening dusk, vivid readable muted green full pitch, crisp white field markings, goal clearly visible in distance, sweeping stands and soft white floodlights. One small adult male football player approximately 22 years old seen from behind at the right third near the sideline, naturally lean athletic build, plain unbranded graphite training kit, contemplating the field, no heroic pose, not a star portrait. Football architecture and open field should be recognizable, not a dark abstract atmosphere. Left half has subdued shaded empty seating and tunnel edge for separate large light headline placed later; field and player dominate right half. Sense of a very large dream beginning at a human scale, dignified, spacious, photographic texture, natural grey sky and forest-green/graphite palette, neutral whites, no orange sunset, no purple. No cup, trophy, visible logos, sponsors, signage lettering, flags, FIFA symbols or national team emblems; no celebratory event or fake match result, no children, no posed crowd, no HUD, no data, no graphic overlays. Fictional venue and adult, aspirational illustrative supporting imagery, NOT a photograph of an actual future World Cup or real research participant. High-quality cinematic editorial realism, no heavy blur. Extra-wide 2400x1024 framing with generous full-stadium context.
+
+### `public/images/mission-training.webp`
+
+Prompt:
+
+> Photorealistic-natural candid editorial photograph for a Swedish football documentary website. Landscape 1536x1024. A modest Scandinavian community football training pitch in neutral overcast daylight, wire fence, trees and a small plain stand, no luxury stadium. Two clearly ADULT young football players ages 20 and 22, a naturally lean young man near foreground right looking attentively toward play out of frame, adult young woman in the midground left receiving a pass; no children anywhere. Plain graphite and muted pitch-green training kits without marks, believable slim athletic bodies, real football boots, ball and ordinary training cones visible. Calm observant human expression, no heroic pose or glamour. Wide sideline view with full legs and grounding on the turf, loose natural composition, generous surroundings, recognizable Swedish everyday football culture. Muted green grass and graphite, subtle filmic photographic texture but readable details, gentle neutral contrast suitable beside off-white editorial text surface. No golden sunset or sepia. No text, numbers, sponsors, logos, badges, FIFA symbols, protected team identities, charts, HUD or overlays. Fictional adults and venue, not actual research participants or documented event. Human potential can be overlooked; evoke attention and an ordinary training day, not disappointment or artificial drama.
+
+Cleanup edit prompt:
+
+> Precise local cleanup edit. Keep this entire football photograph unchanged, including both adults, faces, ages, bodies, clothes colours, movement, scene, lighting, camera and framing. Remove all tiny white or other manufacturer marks, logos, swooshes or lettering from ALL clothing and boots, especially the man's shorts on the right. Replace these marks with continuous plain fabric of the same dark green or graphite shade, boots with plain matching material. No added logos or letters. No other changes.
+
 ## Scanning annotation refinement (2026-10-17)
 
 ### `public/images/football-ground-hero-v4.webp`
