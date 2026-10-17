@@ -112,6 +112,7 @@ const href = (route: string) => localePath(route, locale);
     const chapters = Array.from(story.querySelectorAll<HTMLElement>('[data-mission-chapter]'));
     const links = Array.from(story.querySelectorAll<HTMLAnchorElement>('[data-mission-link]'));
     let scheduled = false;
+    let activeId = '';
     const updateChapter = () => {
       scheduled = false;
       const current = chapters.filter(chapter => chapter.getBoundingClientRect().top <= innerHeight * .4).at(-1) ?? chapters[0];
@@ -119,6 +120,18 @@ const href = (route: string) => localePath(route, locale);
         if (link.hash === '#' + current.id) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
+      if (current.id !== activeId) {
+        const active = links.find(link => link.hash === '#' + current.id);
+        const rail = active?.closest('ol');
+        if (active && rail) {
+          const item = active.getBoundingClientRect();
+          const viewport = rail.getBoundingClientRect();
+          if (item.left < viewport.left + 12 || item.right > viewport.right - 12) {
+            rail.scrollTo({ left: rail.scrollLeft + item.left - viewport.left - (rail.clientWidth - item.width) / 2, behavior: motion.matches ? 'auto' : 'smooth' });
+          }
+        }
+        activeId = current.id;
+      }
     };
     addEventListener('scroll', () => {
       if (!scheduled) { scheduled = true; requestAnimationFrame(updateChapter); }
