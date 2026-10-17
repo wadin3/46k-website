@@ -71,6 +71,20 @@ Prompt:
 > Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
 # 2026-10-16 asset supplement
 
+## Scanning annotation refinement (2026-10-17)
+
+### `public/images/football-ground-hero-v4.webp`
+
+Built-in image editing of v3; REF_03 PERFORMANCE panel is style reference
+only. The requested change is restricted to perception graphics; player,
+football environment and framing are retained. Fictional adult player,
+not documentary evidence or a measurement result. No logo edits. Optimized
+1920x819 WebP; generated PNG retained in the Codex generated-images library.
+
+Prompt:
+
+> Precise image edit. Image 1 is the ONLY photographic edit target: the existing extra-wide 1920x819 football hero. Image 2 is STYLE REFERENCE ONLY: look exclusively at the thin circular/perception graphics around the player in its right-hand PERFORMANCE panel. Do not copy its player, words, logos, layout, colors, background or photography. In Image 1 change ONLY the existing gold graphical perception annotations around the main player. Keep his face, age, body, legs, clothes, pose, ball, all other people, goal, stands, trees, grass, sky, lighting, perspective and framing exactly unchanged. Strengthen the current tiny upper-right scanning arc into a clearly visible but elegant open circular sweep around the upper body, extending from above his head around the right side toward hip level; a second finer offset partial arc, a few restrained short radial tick marks, two or three small gold nodes and a delicate directional sightline toward the play on his left. Inspired by the PERFORMANCE panel's restrained editorial analytic geometry. Use a refined muted 46K gold approximately #C29D45, crisp thin strokes slightly more prominent than the existing almost invisible marks. Clear enough to read at website hero scale, not heavy and not fluorescent. Keep marks around, not across, face and body, no obscuring player or ball, no enclosing complete rings. Preserve the empty left half for HTML headline. No text, no numbers, no labels, no brand marks or logo, no boxes or panels, no lens reticle over eyes, no neon, no glow, no science-fiction or gaming HUD. This is just a more intentional editorial scanning/perception layer on the SAME photograph. Preserve identical 1920x819 panoramic aspect ratio.
+
 ## Homepage publication edit (2026-10-16)
 
 ### `public/images/football-ground-hero-v3.webp`
