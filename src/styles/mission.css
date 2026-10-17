@@ -183,6 +183,24 @@
   .mission-cover { min-height: 520px; }
   .mission-origin h2, .mission-heading, .mission-expertise .mission-heading, .mission-method-section .mission-heading, .mission-finale .mission-heading { font-size: 32px; }
 }
+@media (max-height: 720px) and (max-width: 700px) {
+  .mission-cover { min-height: 460px; height: calc(100svh - 170px); }
+  .mission-cover-content { padding-block: 24px; }
+  .mission-cover .mission-chapter-label { margin-bottom: 20px; }
+  .mission-cover h1 { font-size: 48px; }
+  .mission-cover .cover-champions { font-size: 28px; }
+  .mission-cover .cover-year { font-size: 100px; }
+  .cover-deck { font-size: 21px; margin-top: 18px; }
+}
+@media (max-height: 620px) and (max-width: 700px) {
+  .mission-cover { min-height: 410px; height: calc(100svh - 160px); }
+  .mission-cover-content { padding-block: 20px; }
+  .mission-cover .mission-chapter-label { margin-bottom: 16px; }
+  .mission-cover h1 { font-size: 44px; }
+  .mission-cover .cover-champions { font-size: 26px; }
+  .mission-cover .cover-year { font-size: 88px; }
+  .cover-deck { font-size: 20px; margin-top: 16px; }
+}
 @media (max-height: 720px) and (min-width: 701px) {
   .mission-cover { min-height: 460px; height: calc(100svh - 140px); }
   .mission-cover h1 { font-size: 58px; }
