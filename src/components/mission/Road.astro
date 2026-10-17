@@ -1,0 +1,9 @@
+---
+interface Props { now: string; labels: string[]; caption: string; }
+const { now, labels, caption } = Astro.props;
+---
+<figure class="mission-road-model" data-mission-reveal>
+  <div class="road-endpoints"><span>{now}</span><span>2046</span></div>
+  <ol>{labels.map(label => <li><span class="road-node" aria-hidden="true"></span>{label}</li>)}</ol>
+  <figcaption>{caption}</figcaption>
+</figure>

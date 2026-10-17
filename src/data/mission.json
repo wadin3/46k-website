@@ -1,0 +1,298 @@
+{
+  "sv": {
+    "title": "46K — Vägen till 2046",
+    "description": "Drömmen, frågorna och arbetet bakom 46K. Från neuropsykologi och spelintelligens till en lagom orimlig ambition för svensk fotboll.",
+    "chapters": [
+      "Drömmen",
+      "Problemet",
+      "Möjligheten",
+      "Vår kompetens",
+      "Metoden",
+      "Vägen till 2046",
+      "Följ resan"
+    ],
+    "chapterLabel": "Berättelsens kapitel",
+    "hero": {
+      "country": "Sverige",
+      "champions": "Världsmästare",
+      "deck": "En lagom orimlig ambition.",
+      "begin": "Där börjar berättelsen",
+      "imageAlt": "Illustration av en vuxen spelare vid kanten av en stor fotbollsarena i skymningen."
+    },
+    "origin": {
+      "lead": "Det började med samma dröm som vi alla har:",
+      "paragraphs": [
+        "Sverige ska vinna VM-guld i fotboll.",
+        "En lagom orimlig ambition tycker vi, frågan var bara:",
+        "Vad skulle egentligen krävas för att Sverige ska bli bäst i världen?",
+        "Och framför allt: Hur kan vi bidra till att det ska bli verklighet?",
+        "Vi har inte tänkt göra det genom att springa snabbare, skjuta hårdare eller utveckla nästa taktiska revolution.",
+        "Vår kompetens finns någon helt annanstans - inom psykologin.",
+        "Tänk om Sverige kunde bli världsledande på att förstå något som fotbollen ännu inte riktigt kan förklara?",
+        "Spelintelligens.",
+        "Där föddes idén om 46K.",
+        "46 för året vi drömmer om. K för karat i guldet vi jagar."
+      ]
+    },
+    "problem": {
+      "title": "Tänk om vi missar våra största talanger?",
+      "paragraphs": [
+        "Fotbollen har blivit allt bättre på att mäta och utveckla det vi kan se.",
+        "Vi analyserar snabbhet, styrka, löpmeter och tekniska prestationer. Vi följer belastning, återhämtning och utveckling med en precision som tidigare generationer knappt kunde föreställa sig.",
+        "Men vi är fortfarande långt ifrån lika bra på att veta vilka unga spelare som kommer att bli morgondagens bästa.",
+        "Den som är bäst idag är inte nödvändigtvis den som har störst potential imorgon.",
+        "Vi vet att ålder och biologisk mognad kan påverka vilka unga spelare som uppmärksammas, väljs ut och får tillgång till de bästa utvecklingsmiljöerna.",
+        "Den tidigt utvecklade 14-åringen kan dominera, medan den sent utvecklade lagkamraten kan försvinna ur systemet.",
+        "Och någonstans på vägen riskerar talang att gå förlorad. Inte för att den saknas, utan för att vi ännu inte är tillräckligt bra på att upptäcka den."
+      ],
+      "present": "Nuvarande prestation",
+      "future": "Framtida potential",
+      "imageAlt": "Illustration av två vuxna unga spelare under träning på en vanlig svensk fotbollsplan."
+    },
+    "opportunity": {
+      "title": "Det viktigaste syns inte alltid.",
+      "paragraphs": [
+        "Vad är det som gör att vissa spelare tycks ligga steget före?",
+        "De ser ytor innan de öppnas, uppfattar alternativ som andra missar, fattar rätt beslut under press och anpassar sig när spelet förändras.",
+        "Vi brukar kalla det spelsinne, spelförståelse, eller fotbollshjärna. Vi har valt att kalla det Spelintelligens.",
+        "Men vad består det egentligen av?",
+        "Bakom varje beslut på planen arbetar hjärnan med att uppfatta, sortera, hålla kvar och bearbeta information. Spelaren måste rikta uppmärksamheten, uppdatera sin bild av situationen, värdera alternativ och ibland bromsa en impuls för att hitta en bättre lösning.",
+        "Allt detta sker på bråkdelar av en sekund, medan spelet fortsätter.",
+        "Vi tror att en viktig del av spelintelligensen går att förstå genom de kognitiva förmågor som gör sådana processer möjliga.",
+        "Och om vi kan förstå dem bättre kanske vi också kan upptäcka sådant som dagens bedömningar missar."
+      ],
+      "signals": [
+        "Uppfatta",
+        "Sortera",
+        "Värdera",
+        "Besluta"
+      ],
+      "caption": "Konceptuell illustration av speluppfattning. Inga uppmätta data.",
+      "imageAlt": "Illustrativ spelare som läser spelet, med konceptuella scanningbågar runt sig."
+    },
+    "expertise": {
+      "title": "Neuropsykologi möter fotboll.",
+      "paragraphs": [
+        "46K grundades med kompetens från psykologin.",
+        "Genom mer än ett decennium av psykologiska utredningar har vi arbetat med att förstå människors förmågor och använda den kunskapen för att hjälpa individer i deras utveckling.",
+        "Psykologin har under lång tid utvecklat teorier, experiment och tester för att undersöka sådant som inte går att observera direkt: Uppmärksamhet, Arbetsminne, Koncentration, Impulskontroll, Logisk förmåga, Kognitiv flexibilitet, Informationsbearbetning....",
+        "Samtidigt växer forskningen om vilken betydelse sådana förmågor kan ha inom fotbollen.",
+        "Det är i mötet mellan de två världarna vi ser en möjlighet.",
+        "Inte genom att ta ett vanligt psykologiskt test och kalla resultatet spelintelligens. Utan genom att förstå vilka kognitiva förmågor som faktiskt är relevanta för att hantera de krav fotbollen ställer.",
+        "Det är grunden för den modell vi utvecklar."
+      ],
+      "imageAlt": "Illustrativ vuxen spelare och tränare i ett uppmärksamt samtal vid en fotbollsplan."
+    },
+    "method": {
+      "title": "Decoding Football Intelligence.",
+      "intro": [
+        "Vårt mål är att avkoda spelintelligens. Vi vill göra delar av det svårfångade mer begripliga, mätbara och användbara.",
+        "Vi arbetar utifrån tre steg:"
+      ],
+      "steps": [
+        {
+          "label": "Förstå",
+          "body": "Vi använder kunskap från psykologi, kognitionsvetenskap och fotbollsforskning för att förstå vilka förmågor som kan bidra till intelligent spel."
+        },
+        {
+          "label": "Mäta",
+          "body": "Vi utvecklar psykometriska tester för att undersöka viktiga kognitiva förmågor, och ge spelare en tydligare bild av sina individuella styrkor och utvecklingsområden."
+        },
+        {
+          "label": "Utveckla",
+          "body": "Vi vill omsätta resultaten i praktiska insikter som kan bidra till bättre individuell utveckling, mer informerade beslut, och på sikt bättre förutsättningar för lag att utvecklas."
+        }
+      ],
+      "bridge": "Från förståelse till insikt. Från insikt till utveckling.",
+      "outro": [
+        "Vi är fortfarande i början. Modellen och testerna behöver prövas, utvärderas och vidareutvecklas.",
+        "Vissa samband har starkt forskningsstöd, andra är fortfarande hypoteser och idéer. Vi vill vara tydliga med skillnaden, men vi kommer inte vara rädda för att använda det vi tror på för att hjälpa lag och spelare att utvecklas."
+      ]
+    },
+    "road": {
+      "title": "Vi har lite bråttom.",
+      "intro": "Den vetenskapliga vägen från idé till etablerad kunskap är lång. Det finns goda skäl till att vetenskap fungerar så, men för oss uppstår då ett problem.",
+      "quote": "VM-finalen 2046 väntar inte på peerreview.",
+      "paragraphs": [
+        "De spelare som ska representera Sverige 2046 utvecklas redan idag. Några är barn. Andra är kanske inte ens födda ännu.",
+        "Om vi ska kunna bidra till deras utveckling behöver vi börja nu.",
+        "Vi vill undersöka om vår metod kan hjälpa oss att upptäcka fler talanger, förstå enskilda spelares förutsättningar bättre och hitta nya vägar till individuell och kollektiv utveckling.",
+        "Vi vill att spelintelligens ska bli en av Sveriges fördelar.",
+        "För någonstans finns spelarna som ska representera Sverige 2046.",
+        "Kanske är det 13-åringen som ingen riktigt lägger märke till idag, eller spelaren som ännu inte vuxit ikapp sina lagkamrater. Kanske är det någon som läser spelet på ett sätt som ingen riktigt ser från sidlinjen.",
+        "Vi vill bidra till att de får chansen."
+      ],
+      "now": "I dag",
+      "path": [
+        "Spelare",
+        "Utvecklingsmiljöer",
+        "Lag",
+        "Svensk fotboll"
+      ],
+      "caption": "En riktning för arbetet, inte beslutade milstolpar."
+    },
+    "journey": {
+      "title": "2046 är inte en prognos. Det är vår riktning.",
+      "question": "Hur kan vi hjälpa svensk fotboll att bli smartare?",
+      "paragraphs": [
+        "46K är vårt försök att hitta svaret.",
+        "46K — Decoding Football Intelligence.",
+        "Följ vår resa mot 2046.",
+        "Och om du forskar, tränar, spelar eller arbetar inom fotbollen och tror att du kan bidra:",
+        "Hör av dig."
+      ],
+      "follow": "Följ vår resa",
+      "contact": "Kontakta oss",
+      "signoff": "Vi har ett VM att vinna."
+    },
+    "disclosure": "Bilderna är AI-genererade illustrationer med fiktiva vuxna spelare och miljöer, inte dokumentation av verkliga händelser eller forskningsdeltagare."
+  },
+  "en": {
+    "title": "46K — The Road to 2046",
+    "description": "The dream, the questions and the work behind 46K. From neuropsychology and football intelligence to a reasonably unreasonable ambition for Swedish football.",
+    "chapters": [
+      "The dream",
+      "The problem",
+      "The opportunity",
+      "Our expertise",
+      "The method",
+      "The road to 2046",
+      "Follow the journey"
+    ],
+    "chapterLabel": "Story chapters",
+    "hero": {
+      "country": "Sweden",
+      "champions": "World Champions",
+      "deck": "A reasonably unreasonable ambition.",
+      "begin": "This is where the story begins",
+      "imageAlt": "Illustration of an adult player at the edge of a large football stadium at dusk."
+    },
+    "origin": {
+      "lead": "It began with a dream we all share:",
+      "paragraphs": [
+        "Sweden winning the football World Cup.",
+        "A reasonably unreasonable ambition, we thought. The question was:",
+        "What would it actually take for Sweden to become the best in the world?",
+        "And, above all, how could we help make it happen?",
+        "We are not planning to do it by running faster, shooting harder or inventing the next tactical revolution.",
+        "Our expertise lies somewhere else entirely: in psychology.",
+        "What if Sweden could lead the world in understanding something football still struggles to explain?",
+        "Football intelligence.",
+        "That was the beginning of 46K.",
+        "46 for the year we dream of. K for the carats in the gold we are chasing."
+      ]
+    },
+    "problem": {
+      "title": "What if we are missing our greatest talents?",
+      "paragraphs": [
+        "Football has become much better at measuring and developing what we can see.",
+        "We analyse speed, strength, distance covered and technical performance. We track workload, recovery and development with a precision previous generations could barely imagine.",
+        "Yet we are still much less certain about which young players will become the best of tomorrow.",
+        "The best player today is not necessarily the one with the greatest potential tomorrow.",
+        "We know that age and biological maturation can influence which young players attract attention, are selected and gain access to the best development environments.",
+        "An early-maturing 14-year-old may dominate, while a later-maturing teammate may slip out of the system.",
+        "Somewhere along the way, talent risks being lost. Not because it is absent, but because we are not yet good enough at recognising it."
+      ],
+      "present": "Current performance",
+      "future": "Future potential",
+      "imageAlt": "Illustration of two young adult players training on an ordinary Swedish football pitch."
+    },
+    "opportunity": {
+      "title": "What matters most is not always visible.",
+      "paragraphs": [
+        "What makes some players seem a step ahead?",
+        "They see spaces before they open up, notice options others miss, make good decisions under pressure and adapt as the game changes.",
+        "We call it game sense, reading the game or a football brain. We have chosen to call it football intelligence.",
+        "But what is it actually made of?",
+        "Behind every decision on the pitch, the brain is perceiving, sorting, retaining and processing information. A player needs to direct attention, update their picture of the situation, weigh alternatives and sometimes hold back an impulse to find a better solution.",
+        "All of this happens in fractions of a second, while the game keeps moving.",
+        "We believe an important part of football intelligence can be understood through the cognitive abilities that make these processes possible.",
+        "And if we understand them better, perhaps we can also discover things that current assessments miss."
+      ],
+      "signals": [
+        "Perceive",
+        "Sort",
+        "Evaluate",
+        "Decide"
+      ],
+      "caption": "Conceptual illustration of perception. No measured data.",
+      "imageAlt": "Illustrative player reading the game, surrounded by conceptual scanning arcs."
+    },
+    "expertise": {
+      "title": "Neuropsychology meets football.",
+      "paragraphs": [
+        "46K was founded on expertise in psychology.",
+        "Through more than a decade of psychological assessment, we have worked to understand people's abilities and use that knowledge to support their development.",
+        "Psychology has long developed theories, experiments and tests to investigate things we cannot observe directly: attention, working memory, concentration, impulse control, reasoning, cognitive flexibility, information processing...",
+        "Meanwhile, research into the role these abilities may play in football is growing.",
+        "We see an opportunity where these two worlds meet.",
+        "Not by taking a standard psychological test and calling its result football intelligence. But by understanding which cognitive abilities are actually relevant to the demands of the game.",
+        "That is the foundation of the model we are developing."
+      ],
+      "imageAlt": "Illustrative adult player and coach in an attentive conversation beside a football pitch."
+    },
+    "method": {
+      "title": "Decoding Football Intelligence.",
+      "intro": [
+        "Our aim is to decode football intelligence: to make parts of this elusive quality easier to understand, measure and use.",
+        "Our work follows three steps:"
+      ],
+      "steps": [
+        {
+          "label": "Understand",
+          "body": "We draw on psychology, cognitive science and football research to understand which abilities may contribute to intelligent play."
+        },
+        {
+          "label": "Assess",
+          "body": "We are developing psychometric tests to examine important cognitive abilities and give players a clearer picture of their individual strengths and areas for development."
+        },
+        {
+          "label": "Develop",
+          "body": "We want to turn results into practical insights that can support individual development, better-informed decisions and, over time, better conditions for teams to develop."
+        }
+      ],
+      "bridge": "From understanding to insight. From insight to development.",
+      "outro": [
+        "We are still at the beginning. The model and tests need to be tried, evaluated and refined.",
+        "Some relationships have strong research support; others remain hypotheses and ideas. We want to make that distinction clear, without being afraid to use what we believe in to help teams and players develop."
+      ]
+    },
+    "road": {
+      "title": "We have some ground to cover.",
+      "intro": "The scientific path from an idea to established knowledge is a long one. There are good reasons for science to work this way. For us, though, it creates a problem.",
+      "quote": "The 2046 World Cup final will not wait for peer review.",
+      "paragraphs": [
+        "The players who will represent Sweden in 2046 are already developing today. Some are children. Others may not even have been born yet.",
+        "If we are to contribute to their development, we need to start now.",
+        "We want to investigate whether our approach can help us discover more talent, better understand individual players' circumstances and find new paths to individual and collective development.",
+        "We want football intelligence to become one of Sweden's advantages.",
+        "Because somewhere out there are the players who will represent Sweden in 2046.",
+        "Perhaps it is the 13-year-old no one really notices today, or the player who has not yet caught up physically with their teammates. Perhaps it is someone who reads the game in a way that is hard to see from the touchline.",
+        "We want to help give them their chance."
+      ],
+      "now": "Today",
+      "path": [
+        "Players",
+        "Development environments",
+        "Teams",
+        "Swedish football"
+      ],
+      "caption": "A direction for our work, not a set of agreed milestones."
+    },
+    "journey": {
+      "title": "2046 is not a prediction. It is our direction.",
+      "question": "How can we help Swedish football become smarter?",
+      "paragraphs": [
+        "46K is our attempt to find an answer.",
+        "46K — Decoding Football Intelligence.",
+        "Follow our journey towards 2046.",
+        "And if you research, coach, play or work in football and think you could contribute:",
+        "Get in touch."
+      ],
+      "follow": "Follow our journey",
+      "contact": "Contact us",
+      "signoff": "We have a World Cup to win."
+    },
+    "disclosure": "Images are AI-generated illustrations of fictional adult players and places, not documentation of actual events or research participants."
+  }
+}
