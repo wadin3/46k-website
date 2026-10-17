@@ -26,7 +26,7 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "Football World Champions": "Världsmästare i fotboll",
   "WORLD CHAMPIONS 2046": "VÄRLDSMÄSTARE 2046",
   "Sweden, Football World Champions 2046": "Sverige Världsmästare i fotboll 2046",
-  "It began with an unreasonable ambition.": "Det började med en orimlig ambition.",
+  "A reasonably unreasonable ambition.": "En lagom orimlig ambition.",
   "Illustrative image of an adult male football player scanning a training pitch.": "Illustrativ bild av en vuxen manlig fotbollsspelare som blickar över en träningsplan.",
   "Previous article": "Föregående artikel",
   "Next article": "Nästa artikel",
