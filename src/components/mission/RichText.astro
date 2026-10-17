@@ -1,0 +1,6 @@
+---
+import { editorialSegments } from '../../lib/editorial-emphasis';
+interface Props { text: string; }
+const { text } = Astro.props;
+---
+{editorialSegments(text).map(segment => segment.kind === 'strong' ? <strong>{segment.text}</strong> : segment.kind === 'em' ? <em>{segment.text}</em> : segment.text)}

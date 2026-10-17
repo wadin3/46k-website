@@ -15,7 +15,7 @@ sections:
   - kind: text
     heading: Välj ett ögonblick, inte en etikett
     body: >-
-      Börja med en situation som går att beskriva utan att värdera spelarens person. I vårt
+      **Börja med en situation** som går att beskriva utan att värdera spelarens person. I vårt
       exempel handlar det om ett mottag när en motståndare kommer från sidan. Tränaren vill
       förstå vilka alternativ spelaren uppfattar före och efter mottagningen.
 
@@ -138,7 +138,7 @@ sections:
 
 
       Utveckling behöver fotboll att hända i. För 46K är ambitionen att föra samman idéer om
-      information, samtal och övning utan att tappa bort själva spelet. Börja där bollen är på
+      information, samtal och övning *utan att tappa bort själva spelet*. Börja där bollen är på
       väg, där motståndaren rör sig och där spelaren fortfarande har något eget att berätta.
 language: sv
 translationKey: training-the-next-decision

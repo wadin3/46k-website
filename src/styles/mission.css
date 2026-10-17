@@ -6,7 +6,10 @@
 .mission-chapter-label > span { color: var(--gold); font-weight: 400; }
 .mission-chapter-label > span::after { content: ''; display: inline-block; width: 28px; height: 1px; margin: 0 0 4px 14px; background: var(--gold); }
 .mission-paper { position: relative; isolation: isolate; background: var(--mission-reading); }
-.mission-paper::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--mission-paper); background-size: 1254px 1254px; filter: grayscale(1) brightness(1.055); mix-blend-mode: luminosity; opacity: .24; }
+.mission-paper::before { content: ''; position: absolute; inset: 0 0 auto; height: min(100%, 850px); z-index: -1; pointer-events: none; background: var(--print-plate) right top / min(1200px, 100%) auto no-repeat; opacity: .24; }
+.mission-origin::before, .mission-road-section::before { transform: scaleX(-1); background-position: right bottom; }
+.mission-problem::before { display: none; }
+.mission-expertise::before { top: auto; bottom: 0; opacity: .18; }
 .mission-cover { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 600px; height: min(760px, calc(100svh - 140px)); background: var(--graphite); color: var(--paper); }
 .mission-cover-image, .mission-finale-image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .mission-cover::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #383D3EF5, #383D3E99 42%, #383D3E10 77%); }
@@ -26,6 +29,10 @@
 .mission-prose { max-width: 640px; font: 400 18px/1.85 Arial, sans-serif; }
 .mission-prose p { margin: 0 0 22px; }
 .mission-prose p:last-child { margin-bottom: 0; }
+.mission-prose strong { font-weight: 700; }
+.mission-prose em { font-family: Georgia, serif; font-size: 1.04em; }
+.mission-prose .mission-inline-quote { padding: 24px 0 24px 28px; margin: 36px 0; border-left: 3px solid var(--gold); font: italic 27px/1.45 Georgia, serif; color: var(--pitch); }
+.mission-prose .mission-subheading { font: 600 20px/1.4 Arial, sans-serif; margin: 36px 0 22px; }
 .mission-origin .mission-prose p:first-child { font: 400 28px/1.4 Georgia, serif; margin-bottom: 28px; }
 .mission-origin .mission-prose p:nth-child(8) { font: 400 32px/1.3 Georgia, serif; color: var(--pitch); }
 .mission-chapters { position: sticky; top: 0; z-index: 4; background: var(--paper); border-block: 1px solid var(--border); }
@@ -45,7 +52,8 @@
 .mission-equation { display: flex; justify-content: space-between; align-items: center; gap: 40px; margin: 80px 0 0; padding-top: 36px; border-top: 1px solid var(--border); font: 400 32px/1.25 Georgia, serif; }
 .mission-equation > span:not(.equation-symbol) { max-width: 370px; }
 .equation-symbol { color: var(--gold); font: 400 96px/1 Georgia, serif; }
-.mission-opportunity { padding-block: 96px; color: var(--paper); background: var(--graphite); }
+.mission-opportunity { padding-block: 96px; color: var(--paper); background: var(--graphite); position: relative; isolation: isolate; }
+.mission-opportunity::before, .mission-method-section::before { content: ''; position: absolute; inset: 0 0 auto; height: 850px; max-height: 100%; z-index: -1; background: var(--print-plate) right top / min(1500px, 100%) auto no-repeat; filter: grayscale(1); mix-blend-mode: screen; opacity: .17; pointer-events: none; }
 .mission-opportunity .mission-heading { max-width: 850px; }
 .mission-perception { position: relative; }
 .mission-perception > img { width: 100%; max-height: 660px; object-fit: cover; object-position: right center; }
@@ -61,7 +69,8 @@
 .mission-expertise figure { position: sticky; top: 100px; margin-top: 100px; }
 .mission-expertise figure img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 67% center; }
 .expertise-photo-note { font-size: 30px; line-height: 1.3; max-width: 370px; margin: 0; }
-.mission-method-section { padding-block: 96px; background: var(--graphite); color: var(--paper); }
+.mission-method-section { padding-block: 96px; background: var(--graphite); color: var(--paper); position: relative; isolation: isolate; }
+.mission-method-section::before { transform: scaleX(-1); opacity: .12; }
 .mission-method-section .mission-heading { font-size: 52px; }
 .mission-method { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding: 0; margin: 56px 0 64px; list-style: none; }
 .mission-method::before { content: ''; position: absolute; top: 24px; left: 0; right: 0; height: 1px; background: #C29D4580; }
@@ -75,24 +84,18 @@
 .mission-road-section .mission-editorial-grid { align-items: end; }
 .mission-road-section .mission-heading { margin-bottom: 0; }
 .mission-deadline { max-width: 1100px; padding-block: 80px; font-size: 58px; line-height: 1.15; color: var(--pitch); }
-.mission-road-model { padding-block: 32px 56px; }
-.road-endpoints { display: flex; justify-content: space-between; align-items: baseline; color: var(--pitch); font-size: 14px; }
-.road-endpoints > span:last-child { font: 400 64px/1 Georgia, serif; color: var(--graphite); }
-.mission-road-model ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 24px 0; padding: 0; list-style: none; }
-.mission-road-model li { min-width: 0; position: relative; padding: 36px 24px 0 0; border-top: 1px solid var(--gold); font-size: 17px; line-height: 1.5; }
-.road-node { position: absolute; top: -5px; left: 0; width: 9px; height: 9px; background: var(--gold); border-radius: 50%; }
-.mission-road-model figcaption { font-size: 12px; line-height: 1.6; color: var(--muted); }
 .mission-road-copy { max-width: 760px; margin: 0 0 80px auto; }
 .mission-road-photo { width: 100%; max-height: 500px; object-fit: cover; object-position: center 68%; }
 .mission-finale { position: relative; isolation: isolate; padding-block: 96px; color: var(--paper); background: var(--graphite); }
 .mission-finale-image { object-position: right center; }
-.mission-finale::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #383D3EF5, #285C43EB 60%, #383D3EAE); }
+.mission-finale::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #383D3EF5, #285C43C7 60%, #383D3E80); }
 .mission-finale .mission-heading { max-width: 1050px; font-size: 64px; }
 .mission-finale-copy { max-width: 650px; }
 .finale-question { font-size: 30px; line-height: 1.3; margin: 0 0 28px; }
-.mission-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; margin-top: 36px; }
-.mission-actions .button-link { background: var(--paper); border-color: var(--paper); color: var(--graphite); }
-.mission-actions .button-link:hover { background: var(--gold); border-color: var(--gold); }
+.mission-follow-heading { margin: 40px 0 24px; color: var(--gold); font-size: 36px; line-height: 1.25; }
+.mission-invitation { margin: 0 0 18px; font-size: 18px; line-height: 1.8; }
+.mission-contact { font-weight: 600; }
+.signoff-gold { color: var(--gold); }
 .mission-signoff { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 96px; padding-top: 36px; border-top: 1px solid #F5F2E966; }
 .mission-signoff img { width: 264px; }
 .mission-signoff p { margin: 0; font-size: 36px; line-height: 1.25; }
@@ -163,14 +166,12 @@
   .method-caveat { font-size: 15px; }
   .mission-road-section { padding-top: 56px; }
   .mission-deadline { padding-block: 48px; font-size: 36px; }
-  .mission-road-model { padding-block: 0 40px; }
-  .mission-road-model ol { grid-template-columns: 1fr; margin-left: 4px; }
-  .mission-road-model li { border-top: 0; border-left: 1px solid var(--gold); padding: 0 0 36px 28px; font-size: 17px; }
-  .mission-road-model li:last-child { padding-bottom: 0; }
-  .road-node { top: 7px; left: -5px; }
   .mission-road-copy { margin-bottom: 48px; }
   .mission-road-photo { height: 290px; object-position: 72% center; }
-  .road-endpoints > span:last-child { font-size: 52px; }
+  .mission-follow-heading { font-size: 30px; }
+  .mission-invitation { font-size: 17px; }
+  .mission-prose .mission-inline-quote { font-size: 24px; padding-left: 22px; }
+  .mission-paper::before { background-size: 700px auto; opacity: .12; }
   .finale-question { font-size: 27px; }
   .mission-signoff { flex-direction: column; align-items: start; margin-top: 64px; gap: 32px; }
   .mission-signoff img { width: 228px; }

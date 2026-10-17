@@ -15,7 +15,7 @@ sections:
   - kind: text
     heading: Choose a moment, not a label
     body: >-
-      Start with a situation you can describe without judging the player's character. In our
+      **Start with a situation** you can describe without judging the player's character. In our
       example, it is a reception with an opponent approaching from the side. The coach wants to
       understand which options the player notices before and after receiving.
 
@@ -138,7 +138,7 @@ sections:
 
 
       Development needs football to happen in. For 46K, the ambition is to bring ideas about
-      information, conversation and practice together without losing the game. Start where the
+      information, conversation and practice together *without losing the game*. Start where the
       ball is travelling, where the opponent is moving and where the player still has something
       of their own to say.
 language: en

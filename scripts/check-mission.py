@@ -36,7 +36,7 @@ copy = json.loads(Path("src/data/mission.json").read_text(encoding="utf-8"))
 for locale, route in [("sv", "mission"), ("en", "en/mission")]:
     page = Mission(Path(f"dist/{route}/index.html").read_text(encoding="utf-8"))
     content = copy[locale]
-    text = normalized(" ".join(page.text))
+    text = normalized("".join(page.text))
     assert page.chapters == ["dream", "problem", "opportunity", "expertise", "method", "road", "journey"]
     assert len(page.ids) == len(set(page.ids)), f"{locale}: duplicate IDs"
     assert page.h1 == 1
@@ -45,7 +45,9 @@ for locale, route in [("sv", "mission"), ("en", "en/mission")]:
         paragraphs.extend(content[section]["paragraphs"])
     paragraphs.extend(content["method"]["intro"] + content["method"]["outro"])
     paragraphs.extend(step["body"] for step in content["method"]["steps"])
-    paragraphs.extend([content["method"]["bridge"], content["road"]["intro"], content["road"]["quote"], content["journey"]["question"], content["journey"]["signoff"], content["disclosure"], content["opportunity"]["caption"], content["road"]["caption"]])
+    paragraphs.extend([content["method"]["bridge"], content["road"]["intro"], content["road"]["quote"], content["journey"]["question"], content["journey"]["followHeading"], content["journey"]["invitation"], content["journey"]["contact"], content["journey"]["signoff"], content["disclosure"], content["opportunity"]["caption"]])
+    assert "peer review" in content["road"]["quote"]
+    assert content["journey"]["title"] == "46K — Decoding Football Intelligence"
     for paragraph in paragraphs:
         assert normalized(paragraph) in text, f"{locale}: missing approved text: {paragraph}"
     assert any(image["src"].endswith("46K_FullSignature_Dark.png") for image in page.images)

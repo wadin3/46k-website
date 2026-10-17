@@ -112,7 +112,7 @@
     "road": {
       "title": "Vi har lite bråttom.",
       "intro": "Den vetenskapliga vägen från idé till etablerad kunskap är lång. Det finns goda skäl till att vetenskap fungerar så, men för oss uppstår då ett problem.",
-      "quote": "VM-finalen 2046 väntar inte på peerreview.",
+      "quote": "VM-finalen 2046 väntar inte på peer review.",
       "paragraphs": [
         "De spelare som ska representera Sverige 2046 utvecklas redan idag. Några är barn. Andra är kanske inte ens födda ännu.",
         "Om vi ska kunna bidra till deras utveckling behöver vi börja nu.",
@@ -121,29 +121,19 @@
         "För någonstans finns spelarna som ska representera Sverige 2046.",
         "Kanske är det 13-åringen som ingen riktigt lägger märke till idag, eller spelaren som ännu inte vuxit ikapp sina lagkamrater. Kanske är det någon som läser spelet på ett sätt som ingen riktigt ser från sidlinjen.",
         "Vi vill bidra till att de får chansen."
-      ],
-      "now": "I dag",
-      "path": [
-        "Spelare",
-        "Utvecklingsmiljöer",
-        "Lag",
-        "Svensk fotboll"
-      ],
-      "caption": "En riktning för arbetet, inte beslutade milstolpar."
+      ]
     },
     "journey": {
-      "title": "2046 är inte en prognos. Det är vår riktning.",
+      "title": "46K — Decoding Football Intelligence",
       "question": "Hur kan vi hjälpa svensk fotboll att bli smartare?",
       "paragraphs": [
-        "46K är vårt försök att hitta svaret.",
-        "46K — Decoding Football Intelligence.",
-        "Följ vår resa mot 2046.",
-        "Och om du forskar, tränar, spelar eller arbetar inom fotbollen och tror att du kan bidra:",
-        "Hör av dig."
+        "46K är vårt försök att hitta svaret."
       ],
-      "follow": "Följ vår resa",
-      "contact": "Kontakta oss",
-      "signoff": "Vi har ett VM att vinna."
+      "contact": "Hör av dig.",
+      "signoff": "Vi har ett VM att vinna.",
+      "followHeading": "Följ vår resa mot 2046.",
+      "invitation": "Och om du forskar, tränar, spelar eller arbetar inom fotbollen och tror att du kan bidra:",
+      "signoffAccent": "VM"
     },
     "disclosure": "Bilderna är AI-genererade illustrationer med fiktiva vuxna spelare och miljöer, inte dokumentation av verkliga händelser eller forskningsdeltagare."
   },
@@ -269,29 +259,19 @@
         "Because somewhere out there are the players who will represent Sweden in 2046.",
         "Perhaps it is the 13-year-old no one really notices today, or the player who has not yet caught up physically with their teammates. Perhaps it is someone who reads the game in a way that is hard to see from the touchline.",
         "We want to help give them their chance."
-      ],
-      "now": "Today",
-      "path": [
-        "Players",
-        "Development environments",
-        "Teams",
-        "Swedish football"
-      ],
-      "caption": "A direction for our work, not a set of agreed milestones."
+      ]
     },
     "journey": {
-      "title": "2046 is not a prediction. It is our direction.",
+      "title": "46K — Decoding Football Intelligence",
       "question": "How can we help Swedish football become smarter?",
       "paragraphs": [
-        "46K is our attempt to find an answer.",
-        "46K — Decoding Football Intelligence.",
-        "Follow our journey towards 2046.",
-        "And if you research, coach, play or work in football and think you could contribute:",
-        "Get in touch."
+        "46K is our attempt to find an answer."
       ],
-      "follow": "Follow our journey",
-      "contact": "Contact us",
-      "signoff": "We have a World Cup to win."
+      "contact": "Get in touch.",
+      "signoff": "We have a World Cup to win.",
+      "followHeading": "Follow our journey towards 2046.",
+      "invitation": "And if you research, coach, play or work in football and think you could contribute:",
+      "signoffAccent": "World Cup"
     },
     "disclosure": "Images are AI-generated illustrations of fictional adult players and places, not documentation of actual events or research participants."
   }

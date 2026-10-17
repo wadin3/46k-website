@@ -71,6 +71,19 @@ Prompt:
 > Photorealistic-natural editorial documentary photograph, landscape 1536x1024, of a modest Swedish community football ground after an ordinary evening training session. Wide angle from low standing height on the sideline, full white goal visible at right, damp green turf and clean white sideline receding into distance, two small adult players age 22-30 walking away carrying footballs on the right half, dark unbranded training clothes. Open sky and pitch on left for an editorial headline composed later. Residential roofs and trees in the far background, blue-grey neutral evening daylight with soft white floodlights, not sunset orange and not night. Realistic, understated football romance, human scale, no stadium spectacle, no empty luxury aesthetic. Clear detail, deep restrained pitch green, graphite and neutral grey-white sky. No text, no logos, no marks, no overlays, no diagrams, no trophy, no celebration, no children. Fictional scene, not actual documentary evidence.
 # 2026-10-16 asset supplement
 
+## Editorial ink plate, second mission review (2026-10-17)
+
+### `public/images/editorial-ink-plate.webp`
+
+Built-in generation using REF_03 EDITORIAL as a style reference only. Transparent
+1536x1024 supporting print collage; optimized WebP retains alpha. No official
+logo generated or changed, no scientific data. Used as sparse, non-repeated
+margin artwork on mission and article reading surfaces, not as paper wallpaper.
+
+Prompt:
+
+> Create a new transparent-background editorial print collage asset for a refined Swedish football and psychology magazine website. Use the supplied REF_03 only for the aesthetic of its left EDITORIAL panel: imperfect photographic ink transfer, offset print registration, quiet grayscale and worn muted gold. Do not reproduce any text, logos, people or page layout from the reference. Landscape 1920x1280 transparent PNG, alpha background. Composition: LEFT 60 PERCENT is completely transparent empty space for separately rendered readable website text. On far RIGHT, a tall irregular-edge monochrome photographic fragment of modest football stands, fence and a small piece of a goal net, treated as a realistic dry-ink halftone transfer with softly broken and torn edges, middle-grey and charcoal inks, preserving recognizability. Layer one large incomplete worn matte gold circle/arc segment behind the far-right architectural fragment, subtle muted #C29D45 gold with missing flecks like old print ink, no shiny metal. A few restrained irregular graphite print smudges attached to the collage edges, not freestanding dots or noise. Everything is clustered near the right outer edge and partly cropped by it. At least 65 percent of overall canvas remains genuinely transparent, not white. Low-key fine physical ink texture rather than a tiled paper-grain wallpaper. No full-page fibre texture, no parchment, beige wash, crumples, grunge noise, repeated pattern, gradient blobs, bokeh, data charts, tactical diagrams, UI or abstract tech. No lettering, digits, brand marks, sponsors, watermarks, no 46K logo. The asset is purely a decorative photographic print fragment; all exact text and logos are separate HTML layers. Crisp premium editorial print material, irregular yet restrained.
+
 ## Mission storytelling preview (2026-10-17)
 
 New supporting images generated with the built-in image tool. Fictional adult

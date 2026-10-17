@@ -1,5 +1,7 @@
 ---
+import RichText from './RichText.astro';
+import { missionPullQuotes, missionSubheadings } from '../../lib/editorial-emphasis';
 interface Props { items: string[]; }
 const { items } = Astro.props;
 ---
-{items.map(paragraph => <p>{paragraph}</p>)}
+{items.map(paragraph => missionPullQuotes.has(paragraph) ? <blockquote class="mission-inline-quote"><RichText text={paragraph} /></blockquote> : missionSubheadings.has(paragraph) ? <h3 class="mission-subheading">{paragraph}</h3> : <p><RichText text={paragraph} /></p>)}

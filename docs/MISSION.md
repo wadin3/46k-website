@@ -20,10 +20,21 @@ header, footer, language links, official logos and site routes are unchanged.
 
 The arena opening returns in the final chapter. Ordinary adult training,
 perception and player/coach conversation provide a human counterpoint. The
-method connects three steps; the route to 2046 is explicitly conceptual, not a
-schedule or forecast. Follow our journey leads to existing 2046 editorial
-content; Contact us leads to the existing contact page, with no non-functional
-newsletter form or invented social account.
+method connects three steps. The former timeline is removed by the owner's
+second review. The finale now uses the 46K brand statement as its section title,
+a separate journey subheading and a single Get in touch link to the existing
+contact page. VM / World Cup is Gold in the closing line.
+
+## Second visual review
+
+The repeated paper-fibre wallpaper is removed from mission and article reading
+surfaces. A single transparent photographic ink plate brings irregular grayscale
+print, worn Gold and football architecture into selected margins, never tiled.
+Dark chapters use a restrained monochrome treatment; reading columns retain their
+light neutral base. Curated semantic strong/emphasis, subheadings and pull quotes
+vary the rhythm without changing approved wording or evidence qualifications.
+All eight demonstration article language files receive selected Markdown emphasis.
+The new print plate is generated using REF_03 EDITORIAL as style reference only.
 
 ## Motion and access
 
