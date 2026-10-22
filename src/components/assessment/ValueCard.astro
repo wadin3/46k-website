@@ -1,0 +1,16 @@
+---
+interface Props {
+  card: { label: string; title: string; lead: string; paragraphs: string[]; bullets: string[]; closing: string };
+}
+const { card } = Astro.props;
+---
+<article class="assessment-value-card" data-assessment-reveal>
+  <p class="kicker">{card.label}</p>
+  <h3 class="serif">{card.title}</h3>
+  <div class="assessment-card-copy">
+    {card.lead && <p class="assessment-card-lead"><strong>{card.lead}</strong></p>}
+    {card.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+  </div>
+  <ul>{card.bullets.map(bullet => <li>{bullet}</li>)}</ul>
+  <p class="assessment-card-closing">{card.closing}</p>
+</article>
