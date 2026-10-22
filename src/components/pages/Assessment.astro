@@ -3,6 +3,7 @@ import { localePath, type Locale } from '../../i18n';
 import copy from '../../data/assessment.json';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
 import ValueCard from '../assessment/ValueCard.astro';
+import ProductShowcase from '../assessment/ProductShowcase.astro';
 import { sitePath } from '../../lib/paths';
 import '../../styles/assessment.css';
 const { locale = 'sv' } = Astro.props as { locale: Locale };
@@ -50,6 +51,7 @@ const evidence = ['WE KNOW', 'EVIDENCE SUGGESTS', 'WE THINK'];
     </section>
     <section class="assessment-outcome" id="outcome" aria-labelledby="assessment-outcome-title">
       <div class="container"><h2 class="kicker assessment-section-label" id="assessment-outcome-title">{c.outcome.eyebrow}</h2></div>
+      <ProductShowcase locale={locale} />
     </section>
     <section class="assessment-science" id="science" aria-labelledby="assessment-science-title">
       <div class="container assessment-science-grid">
