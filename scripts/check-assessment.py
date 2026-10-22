@@ -7,7 +7,7 @@ class Assessment(HTMLParser):
     def __init__(self, source):
         super().__init__(convert_charrefs=True)
         self.ids, self.images, self.text = [], [], []
-        self.h1 = self.cards = self.arrows = 0
+        self.h1 = self.cards = self.arrows = self.showcase_cards = self.showcase_groups = 0
         self.feed(source)
 
     def handle_starttag(self, tag, attributes):
@@ -19,6 +19,8 @@ class Assessment(HTMLParser):
         self.h1 += tag == 'h1'
         self.cards += 'assessment-value-card' in attrs.get('class', '').split()
         self.arrows += 'evidence-arrow' in attrs.get('class', '').split()
+        self.showcase_cards += 'showcase-card' in attrs.get('class', '').split()
+        self.showcase_groups += 'showcase-group' in attrs.get('class', '').split()
 
     def handle_data(self, text):
         self.text.append(text)
@@ -34,6 +36,8 @@ for locale, route in [('sv', 'assessment'), ('en', 'en/assessment')]:
     text = normalize(''.join(page.text))
     content = copy[locale]
     assert page.h1 == 1 and page.cards == 2 and page.arrows == 2
+    assert page.showcase_cards == 12 and page.showcase_groups == 3
+    assert len([image for image in page.images if '/showcase/' in image['src']]) == 12
     assert len(page.ids) == len(set(page.ids))
     assert all(section in page.ids for section in ['start', 'why', 'audience', 'outcome', 'science', 'contact'])
     strings = [content['hero']['title'], content['hero']['body'], content['hero']['status'], content['why']['title'], content['why']['quote'], content['why']['caption'], content['science']['body'], content['science']['note']]

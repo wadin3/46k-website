@@ -56,7 +56,7 @@
 .showcase-narrow { grid-column: span 1; }
 .showcase-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .showcase-text img { position: absolute; inset: 0; }
-.showcase-text p { position: relative; z-index: 1; margin: 0; padding: 28px; color: var(--paper); font-size: 32px; line-height: 1.2; }
+.showcase-text p { position: relative; z-index: 1; min-width: 0; width: 100%; box-sizing: border-box; overflow-wrap: anywhere; hyphens: auto; margin: 0; padding: 28px; color: var(--paper); font-size: 32px; line-height: 1.2; }
 .showcase-text { display: flex; align-items: center; }
 .showcase-profile .showcase-text p { color: var(--graphite); }
 .showcase-disclosure { margin: 16px 24px 0; font-size: 12px; line-height: 1.65; color: var(--muted); }
