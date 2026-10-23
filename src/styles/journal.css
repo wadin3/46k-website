@@ -8,6 +8,7 @@
 .journal-page .filters { gap: 8px; margin: 0 0 32px; }
 .journal-page .filters a { border-radius: 3px; background: transparent; font-weight: 600; }
 .journal-page .filters a[aria-current] { background: var(--pitch); }
+.journal-page .filters a:hover { background: var(--pitch); color: var(--paper); }
 .journal-results { overflow-anchor: none; }
 .journal-page .article-grid { align-items: stretch; gap: 32px; }
 .journal-page .article-card { padding: 0; border: 1px solid #383D3E33; border-radius: 0; background: #FAFAF7; box-shadow: 0 5px 14px #383D3E12; }
