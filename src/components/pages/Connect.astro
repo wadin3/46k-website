@@ -1,15 +1,29 @@
 ---
-import { translate, localePath, type Locale } from '../../i18n';
-import { getArticles, articleSlug } from '../../lib/articles';
-const { locale = 'sv' } = Astro.props as { locale: Locale };
-const t = (text: string) => translate(locale, text);
-const href = (route = '') => localePath(route, locale);
+import type { Locale } from '../../i18n';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
+import copy from '../../data/connect.json';
+import { sitePath } from '../../lib/paths';
+import '../../styles/connect.css';
+const { locale = 'sv' } = Astro.props as { locale: Locale };
+const c = copy[locale];
 const email = 'wadin.psykologi@gmail.com';
 ---
-<EditorialLayout locale={locale} title={t("Connect - 46K")} description={t("Conversations and collaborations around football intelligence, cognitive science and player development.")}>
-  <main id="main-content">
-    <section class="page-intro container"><p class="kicker">{t("CONVERSATIONS & COLLABORATIONS")}</p><span class="line"></span><h1 class="serif">{t("Connect.")}</h1><p class="page-deck">{t("Better questions start with a conversation.")}</p><p class="prose">{t("Interested in football intelligence? We welcome conversations with players, coaches, clubs and researchers about the cognitive side of the game.")}</p><a class="contact-email" href={'mailto:' + email}>{email} <span aria-hidden="true">&#8599;</span></a></section>
-    <section class="content-band"><div class="container two-column"><h2 class="serif">{t("What are")}<br />{t("you curious about?")}</h2><div class="prose"><p>{t("A research question. A coaching observation. An idea about how players learn and develop. Tell us what you are thinking about and where football intelligence fits into your work.")}</p><a class="button-link" href={'mailto:' + email + '?subject=' + encodeURIComponent('46K - ' + t('A conversation'))}>{t("Email 46K")} <span aria-hidden="true">&#8599;</span></a></div></div></section>
+<EditorialLayout locale={locale} title={c.title} description={c.description}>
+  <main id="main-content" class="connect-page">
+    <section class="connect-hero" aria-labelledby="connect-title" style={`--connect-print: url('${sitePath('images/editorial-ink-plate.webp')}')`}>
+      <div class="container connect-content">
+        <p class="kicker connect-eyebrow">{c.eyebrow}</p>
+        <span class="line" aria-hidden="true"></span>
+        <div class="connect-columns">
+          <div class="connect-lead">
+            <h1 class="serif" id="connect-title">{c.heading[0]}<br />{c.heading[1]}</h1>
+            <a class="button-link connect-action" href={`mailto:${email}?subject=${encodeURIComponent(c.subject)}`}>{c.action}<span aria-hidden="true">&#8599;</span></a>
+          </div>
+          <ul class="connect-topics">
+            {c.topics.map(topic => <li><strong>{topic.title}</strong>{' – '}{topic.body}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 </EditorialLayout>

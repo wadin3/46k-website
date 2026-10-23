@@ -1,0 +1,32 @@
+{
+  "sv": {
+    "title": "Kontakt - 46K",
+    "description": "Samtal och samarbeten om 46K Assessment, föreläsningar, kognitiv testning och spelarutveckling.",
+    "eyebrow": "SAMTAL OCH SAMARBETEN",
+    "heading": ["Vad är", "du nyfiken på?"],
+    "topics": [
+      { "title": "46K Assessment", "body": "Anmäl förhandsintresse för våra kommande kognitiva tester, som spelare, förälder eller klubb." },
+      { "title": "Föreläsningar", "body": "Boka en föreläsning om spelintelligens ur ett psykologiskt och kognitionsvetenskapligt perspektiv." },
+      { "title": "Kognitiv testning i klubben", "body": "Diskutera hur kognitiv testning skulle kunna införas och användas i er verksamhet." },
+      { "title": "Pilotprojekt", "body": "Utforska möjligheten att delta i utprovning och vidareutveckling av 46K Assessment." },
+      { "title": "Idéer och samarbeten", "body": "Har du en idé, fråga eller erfarenhet som kan bidra till att utveckla 46K? Hör av dig." }
+    ],
+    "action": "Mejla 46K",
+    "subject": "46K - Ett samtal"
+  },
+  "en": {
+    "title": "Connect - 46K",
+    "description": "Conversations and collaborations around 46K Assessment, talks, cognitive assessment and player development.",
+    "eyebrow": "CONVERSATIONS & COLLABORATIONS",
+    "heading": ["What are", "you curious about?"],
+    "topics": [
+      { "title": "46K Assessment", "body": "Register your early interest in our upcoming cognitive assessments as a player, parent or club." },
+      { "title": "Talks", "body": "Book a talk on football intelligence from a psychological and cognitive science perspective." },
+      { "title": "Cognitive assessment at your club", "body": "Discuss how cognitive assessment could be introduced and used within your club." },
+      { "title": "Pilot projects", "body": "Explore the possibility of taking part in testing and further developing 46K Assessment." },
+      { "title": "Ideas and collaborations", "body": "Have an idea, question or experience that could help develop 46K? Get in touch." }
+    ],
+    "action": "Email 46K",
+    "subject": "46K - A conversation"
+  }
+}
