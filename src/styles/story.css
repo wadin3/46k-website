@@ -120,6 +120,7 @@
   .paper-spread, .story-sources .story-grid, .story-contents ol, .related-grid { grid-template-columns: 1fr; }
   .paper-spread > * { grid-column: 1; grid-row: auto; }
   .surface-0 .paper-spread:not(.spread-prose) > *, .paper-spread:not(:has(.story-text)) > * { grid-column: 1; grid-row: auto; }
+  .surface-0 .paper-spread:not(.spread-prose) > .story-text { grid-column: 1; }
   .paper-spread { gap: 32px; }
   .story-text h2, .reading-copy h2, .story-sources h2 { font-size: 29px; }
   .reading-copy { font-size: 17px; line-height: 1.85; }
