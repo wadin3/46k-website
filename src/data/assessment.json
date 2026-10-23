@@ -1,0 +1,128 @@
+{
+  "sv": {
+    "title": "Mäta — 46K Assessment",
+    "description": "46K Assessment är en kommande tjänst. Vi utvecklar kognitiva tester för att ge spelare och klubbar nya perspektiv på styrkor, potential och utveckling.",
+    "hero": {
+      "eyebrow": "46K ASSESSMENT / KOMMANDE TJÄNST",
+      "title": "Intelligensen bakom spelet",
+      "lines": ["Intelligensen", "bakom spelet"],
+      "body": "Spelintelligens syns inte alltid från sidlinjen. Vi utvecklar kognitiva tester för att hjälpa spelare och klubbar att förstå mer om spelares styrkor och potential.",
+      "action": "Upptäck vad vi mäter",
+      "status": "Utveckling och vetenskaplig utvärdering pågår.",
+      "alt": "Konceptuell bild av en vuxen fotbollsspelare som tittar på en kognitiv profil i mobilen vid en träningsplan."
+    },
+    "why": {
+      "eyebrow": "01 / GÖRA SYNLIGT",
+      "title": "Vi mäter hjärnans förmågor",
+      "paragraphs": [
+        "Bakom intelligent spel finns hjärnans grundläggande funktioner att uppfatta, sortera, förstå, minnas och bearbeta information.",
+        "Dessa kognitiva förmågor skiljer sig mellan människor. Vi undersöker hur de bidrar till spelintelligens och vilken betydelse de har för hur spelare lär sig och utvecklas."
+      ],
+      "quote": "Tänk om vi kan förstå potentialen bakom prestation – inte bara det som syns idag?",
+      "alt": "Konceptuell fotbollsillustration där en vuxen spelare läser spelet, med scanningbågar och visuella informationslager.",
+      "caption": "Konceptuell illustration. Diagram, tidsangivelser och markeringar i bilderna är illustrativa, inte uppmätta resultat."
+    },
+    "value": {
+      "eyebrow": "02 / VÄRDET",
+      "title": "Ett nytt perspektiv på varje spelare.",
+      "intro": ["Personlig insikt för spelaren.", "Bredare utvecklingsunderlag för klubben."],
+      "cards": [
+        {
+          "label": "INDIVID",
+          "title": "För dig som spelar.",
+          "lead": "Hitta ditt försprång.",
+          "paragraphs": [
+            "Alla vill bli snabbare, starkare och skickligare med bollen. Men kanske finns ditt försprång någon annanstans – i hur du uppfattar spelet, bearbetar information, hittar lösningar och fattar bättre beslut.",
+            "Vi vill hjälpa dig att förstå de kognitiva egenskaper som påverkar ditt sätt att spela – och vad du kan arbeta vidare med."
+          ],
+          "bullets": ["Upptäck din individuella kognitiva profil.", "Få nya perspektiv på styrkor och utvecklingsområden.", "Få vägledning för matchsituationer och egen träning."],
+          "closing": "Förstå mer av spelaren du kan bli."
+        },
+        {
+          "label": "KLUBB / AKADEMI",
+          "title": "För er som utvecklar.",
+          "lead": "",
+          "paragraphs": ["Alla spelare utvecklas olika – och det som syns idag säger inte allt om vad en spelare kan bli i framtiden. Vi vill ge tränare och klubbar ytterligare ett perspektiv för att utveckla fler spelare bättre."],
+          "bullets": ["Komplettera observationer och matchdata.", "Skapa bättre underlag för individuell utveckling.", "Undersök styrkor och potential som annars kan förbises."],
+          "closing": "Bättre information - bättre utvecklingsbeslut."
+        }
+      ]
+    },
+    "outcome": { "eyebrow": "FRÅN INSIKT TILL FÖRSPRÅNG" },
+    "science": {
+      "eyebrow": "04 / VETENSKAPLIG GRUND",
+      "body": "Vår modell bygger på etablerad kunskap från psykometri och kognitionspsykologi, i mötet med forskning om fotboll. Nu utvecklar vi nya tillämpningar – med ambitionen att skapa insikter som både är vetenskapligt hållbara och användbara i praktiken.",
+      "note": "Metoderna testas och valideras stegvis. Vi skiljer mellan kunskap, lovande samband och hypoteser.",
+      "evidenceLabel": "Tre evidensnivåer"
+    },
+    "contact": {
+      "eyebrow": "05 / VAR MED FRÅN BÖRJAN",
+      "title": "Nyfiken på vad du kan upptäcka?",
+      "paragraphs": ["Vi utvecklar just nu 46K Assessment.", "Är du spelare, tränare eller klubb och vill veta mer om framtida tester och samarbeten?", "Vi vill gärna höra från dig."],
+      "action": "Kontakta 46K"
+    }
+  },
+  "en": {
+    "title": "Assess — 46K Assessment",
+    "description": "46K Assessment is an upcoming service. We are developing cognitive tests to give players and clubs new perspectives on strengths, potential and development.",
+    "hero": {
+      "eyebrow": "46K ASSESSMENT / UPCOMING SERVICE",
+      "title": "The intelligence behind the game",
+      "lines": ["The intelligence", "behind the game"],
+      "body": "Football intelligence is not always visible from the touchline. We are developing cognitive tests to help players and clubs better understand players' strengths and potential.",
+      "action": "Discover what we measure",
+      "status": "Development and scientific evaluation are ongoing.",
+      "alt": "Conceptual image of an adult football player looking at a cognitive profile on a phone beside a training pitch."
+    },
+    "why": {
+      "eyebrow": "01 / MAKING IT VISIBLE",
+      "title": "We measure the brain's abilities",
+      "paragraphs": [
+        "Behind intelligent play are the brain's fundamental abilities to perceive, sort, understand, remember and process information.",
+        "These cognitive abilities vary between people. We investigate how they contribute to football intelligence and what they mean for how players learn and develop."
+      ],
+      "quote": "What if we could understand the potential behind performance, not just what is visible today?",
+      "alt": "Conceptual football illustration of an adult player reading the game, with scanning arcs and visual information layers.",
+      "caption": "Conceptual illustration. Charts, timings and markers in these images are illustrative, not measured results."
+    },
+    "value": {
+      "eyebrow": "02 / THE VALUE",
+      "title": "A new perspective on every player.",
+      "intro": ["Personal insight for the player.", "A broader basis for development for the club."],
+      "cards": [
+        {
+          "label": "INDIVIDUAL",
+          "title": "For those who play.",
+          "lead": "Find your edge.",
+          "paragraphs": [
+            "Everyone wants to become faster, stronger and more skilful with the ball. But perhaps your edge lies somewhere else: in how you read the game, process information, find solutions and make better decisions.",
+            "We want to help you understand the cognitive characteristics that influence how you play, and what you can work on next."
+          ],
+          "bullets": ["Discover your individual cognitive profile.", "Gain new perspectives on strengths and areas for development.", "Get guidance for match situations and individual training."],
+          "closing": "Understand more about the player you could become."
+        },
+        {
+          "label": "CLUB / ACADEMY",
+          "title": "For those who develop players.",
+          "lead": "",
+          "paragraphs": ["Every player develops differently, and what is visible today does not tell us everything about who a player could become. We want to give coaches and clubs another perspective to help more players develop better."],
+          "bullets": ["Complement observation and match data.", "Build a better basis for individual development.", "Investigate strengths and potential that might otherwise be overlooked."],
+          "closing": "Better information - better development decisions."
+        }
+      ]
+    },
+    "outcome": { "eyebrow": "FROM INSIGHT TO ADVANTAGE" },
+    "science": {
+      "eyebrow": "04 / SCIENTIFIC FOUNDATION",
+      "body": "Our model brings established knowledge from psychometrics and cognitive psychology together with football research. We are developing new applications, aiming for insights that are both scientifically sound and useful in practice.",
+      "note": "Methods are tested and validated step by step. We distinguish between established knowledge, promising relationships and hypotheses.",
+      "evidenceLabel": "Three evidence levels"
+    },
+    "contact": {
+      "eyebrow": "05 / BE PART OF THE BEGINNING",
+      "title": "Curious about what you could discover?",
+      "paragraphs": ["We are currently developing 46K Assessment.", "Are you a player, coach or club interested in future tests and collaborations?", "We would love to hear from you."],
+      "action": "Contact 46K"
+    }
+  }
+}

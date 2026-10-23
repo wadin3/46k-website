@@ -1,0 +1,10 @@
+---
+interface Props { steps: { label: string; body: string }[]; }
+const { steps } = Astro.props;
+---
+<ol class="mission-method" data-mission-reveal>
+  {steps.map((step, index) => <li>
+    <span class="method-node" aria-hidden="true">0{index + 1}</span>
+    <h3>{step.label}</h3><p>{step.body}</p>
+  </li>)}
+</ol>

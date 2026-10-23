@@ -20,7 +20,7 @@ sections:
     body: >-
       Anta att en klubb vill förstå varför en spelare upplever vissa situationer som svåra. Det
       kan vara lockande att börja leta efter ett test direkt. Vår föreslagna startpunkt är en
-      annan: formulera först vilken fråga ett resultat ska hjälpa till att besvara.
+      annan: **formulera först vilken fråga** ett resultat ska hjälpa till att besvara.
 
 
       Är frågan bred kan ett enskilt mått bli svårt att tolka. Är den alltför snäv kan
@@ -29,7 +29,7 @@ sections:
       inte ska användas till.
 
 
-      För 46K är detta ett utvecklingsarbete. Vi påstår inte att våra nuvarande verktyg har
+      För 46K är detta *ett utvecklingsarbete*. Vi påstår inte att våra nuvarande verktyg har
       visat att de kan ge den information som klubben söker. Innan en sådan användning blir
       rimlig behöver metoder och tolkningar prövas. Ett tilltalande gränssnitt är inte ett
       argument för en starkare slutsats.

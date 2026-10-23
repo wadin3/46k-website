@@ -16,7 +16,7 @@ sections:
   - kind: text
     heading: The visible action is not the whole event
     body: >-
-      We tend to start with what we can see. A pass through a defensive line. A movement that
+      **We tend to start with what we can see.** A pass through a defensive line. A movement that
       opens space. A decision to wait when everyone else wants to go forward. These are useful
       observations. But the action itself does not explain everything about how the player
       arrived at it.
@@ -51,7 +51,7 @@ sections:
       define or validate football intelligence.
 
 
-      For 46K, translation therefore requires care. We can ask what kinds of information a
+      For 46K, *translation therefore requires care*. We can ask what kinds of information a
       situation demands. We cannot equate a cognitive term with everything happening in the
       game. Football's own details have to remain in the picture. Otherwise a more technical
       vocabulary may simply disguise an equally broad assumption.

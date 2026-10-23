@@ -1,6 +1,8 @@
 /* A neutral reading surface; the official Paper token remains unchanged. */
 .magazine { --reading-paper: #FAFAF7; --category-ink: var(--pitch); background: var(--reading-paper); position: relative; isolation: isolate; }
-.magazine::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--fine-paper); background-size: 1254px 1254px; filter: grayscale(1) brightness(1.055); mix-blend-mode: luminosity; opacity: .4; }
+.magazine::before { content: ''; position: absolute; inset: 860px 0 auto; height: 1000px; z-index: -1; pointer-events: none; background: var(--print-plate) right top / min(1250px, 100%) auto no-repeat; transform: scaleX(-1); opacity: .22; }
+.reading-copy strong { font-weight: 700; }
+.reading-copy em { font-family: Georgia, serif; font-size: 1.04em; }
 .story-cover { position: relative; isolation: isolate; min-height: 660px; display: flex; align-items: end; padding-block: 42px; overflow: clip; }
 .cover-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
 .category-develop .cover-photo { object-position: 65% 20%; }
@@ -63,9 +65,10 @@
 .story-photo small { font-size: inherit; color: var(--muted); }
 .story-pullquote { position: relative; max-width: 940px; margin: 80px auto; padding: 24px 0 16px 58px; }
 .quote-mark { position: absolute; left: 0; top: 0; font: 400 86px/1 Georgia, serif; color: var(--pitch); }
-.story-pullquote blockquote { font: 400 42px/1.25 Georgia, serif; margin: 0 0 24px; text-wrap: balance; }
+.story-pullquote blockquote { font: italic 400 42px/1.25 Georgia, serif; margin: 0 0 24px; text-wrap: balance; }
+.story-pullquote::after { content: ''; position: absolute; inset: 0 0 0 auto; width: 180px; z-index: -1; background: var(--print-plate) right center / 600px auto no-repeat; opacity: .18; pointer-events: none; }
 .story-pullquote figcaption { font-size: 12px; border-top: 2px solid var(--gold); padding-top: 16px; max-width: 360px; }
-.story-note { margin-block: 72px; padding-block: 32px; border-block: 1px solid #383D3E33; }
+.story-note { margin-block: 72px; padding-block: 32px; border-block: 1px solid #383D3E33; border-top-color: var(--gold); }
 .story-note .reading-copy { font-size: 16px; line-height: 1.85; }
 .story-note h2 { font-size: 30px; }
 .story-model { margin: 72px 0; padding: 40px; background: #EBEFEB; border-top: 3px solid var(--pitch); }
@@ -102,6 +105,8 @@
   .story-contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
+  .magazine::before { background-size: 760px auto; opacity: .1; }
+  .story-pullquote::after { right: 0; opacity: .1; }
   .story-cover { min-height: 600px; padding-block: 28px; align-items: end; }
   .cover-photo { object-position: 68% center; }
   .story-cover::after { background: linear-gradient(0deg, #FAFAF7FF 0%, #FAFAF7F5 34%, #FAFAF7AB 63%, #FAFAF720 100%); }
