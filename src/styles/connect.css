@@ -1,0 +1,35 @@
+.connect-page { color: var(--paper); background: var(--graphite); }
+.connect-hero { position: relative; isolation: isolate; overflow: hidden; padding-block: 64px 72px; }
+.connect-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--connect-print) right top / min(1500px, 100%) auto no-repeat; filter: grayscale(1); mix-blend-mode: screen; opacity: .16; }
+.connect-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(110deg, #222B2D55, transparent 70%); }
+.connect-content { max-width: 1100px; }
+.connect-eyebrow { margin: 0; color: var(--gold); }
+.connect-hero .line { margin-block: 22px 30px; }
+.connect-hero h1 { margin: 0 0 36px; font-size: 64px; line-height: 1.08; letter-spacing: 0; }
+.connect-topics { padding-left: 22px; margin: 0 0 34px; max-width: 860px; font-size: 17px; line-height: 1.75; }
+.connect-topics li { padding-left: 10px; margin-bottom: 18px; }
+.connect-topics li:last-child { margin-bottom: 0; }
+.connect-topics li::marker { color: var(--gold); }
+.connect-topics strong { font-weight: 700; }
+.connect-action { background: var(--gold); border-color: var(--gold); border-radius: 3px; color: #182120; font-weight: 600; }
+.connect-action:hover { background: var(--paper); border-color: var(--paper); text-decoration: none; }
+.connect-action:focus-visible { outline: 2px solid var(--paper); outline-offset: 5px; }
+@media (prefers-reduced-motion: no-preference) {
+  .connect-content { animation: connect-arrival .65s ease-out both; }
+}
+@keyframes connect-arrival { from { opacity: .75; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) {
+  .connect-hero { padding-block: 48px 56px; }
+  .connect-hero h1 { font-size: 54px; }
+}
+@media (max-width: 700px) {
+  .connect-hero { padding-block: 38px 48px; }
+  .connect-hero h1 { font-size: 40px; margin-bottom: 30px; }
+  .connect-topics { font-size: 16px; line-height: 1.75; padding-left: 18px; }
+  .connect-topics li { padding-left: 6px; margin-bottom: 20px; }
+  .connect-hero .line { margin-block: 18px 26px; }
+  .connect-eyebrow { font-size: 11px; }
+}
+@media (max-width: 380px) {
+  .connect-hero h1 { font-size: 34px; }
+}
