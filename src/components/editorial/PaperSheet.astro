@@ -1,0 +1,9 @@
+---
+interface Props { number: number; variant?: string; }
+const { number, variant = 'reading' } = Astro.props;
+---
+<section class={`paper-sheet paper-${variant} surface-${number % 3}`} data-paper-page={number}>
+  <div class="paper-running" aria-hidden="true"><span>46K / EDITORIAL</span><span>DECODING FOOTBALL INTELLIGENCE</span></div>
+  <slot />
+  <div class="paper-folio" aria-hidden="true"><span>46K</span><span>{String(number).padStart(2, '0')}</span></div>
+</section>

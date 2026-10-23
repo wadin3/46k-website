@@ -5,34 +5,75 @@ const { locale = 'sv' } = Astro.props as { locale: Locale };
 const t = (text: string) => translate(locale, text);
 const href = (route = '') => localePath(route, locale);
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
-import { getCollection } from 'astro:content';
+import '../../styles/journal.css';
 import { sitePath } from '../../lib/paths';
 import { assetPath } from '../../lib/paths';
 const articles = await getArticles(locale);
 const cats=['ALL','UNDERSTAND','ASSESS','DEVELOP','2046'];
 ---
 <EditorialLayout locale={locale} title={t("Explore — 46K")} description={t("Ideas, research and perspectives on football intelligence.")}>
-<main id="main-content" class="container"><section class="journal-intro"><div class="kicker">{t("46K / THE JOURNAL")}</div><span class="line"></span><h1 class="serif">{t("Explore.")}</h1><p>{t("Better questions. Deeper understanding. New perspectives on the unseen side of football.")}</p></section>
+<main id="main-content" class="journal-page" style={`--journal-print: url('${sitePath('images/editorial-ink-plate.webp')}')`}>
+<section class="journal-hero"><div class="container"><p class="kicker">{t("46K / THE JOURNAL")}</p><span class="line"></span><h1 class="serif">{locale === 'sv' ? 'Utforska spelintelligens.' : 'Explore football intelligence.'}</h1><p>{locale === 'sv' ? 'Upptäck artiklar om psykologi, kognition och fotboll. Från vetenskapliga perspektiv och testmetoder till talangutveckling och framtidens fotboll.' : 'Discover articles about psychology, cognition and football. From scientific perspectives and assessment methods to talent development and the future of football.'}</p></div></section>
+<div class="container journal-library">
 <nav class="filters" aria-label={t("Article categories")}>{cats.map(c=><a href={href(c==='ALL'?'explore/':'explore/?category='+c)} data-cat={c} aria-current={c==='ALL'?'page':undefined}>{t(c)}</a>)}</nav>
-<p id="empty-category" class="empty-state" hidden role="status">{t("No articles in this category yet.")} <a class="text-link" href={href('explore/')}>{t("Explore all articles")}</a></p>
-<div class="article-grid" id="articles">{articles.map(article=><article class="article-card" data-category={article.data.category}>{article.data.heroImage && <img class="listing-photo" src={assetPath(article.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" />}<div class="meta">{t(article.data.category)} / {t(article.data.type.toUpperCase())} / {readingMinutes(article)} MIN</div><h2><a href={href('explore/'+articleSlug(article)+'/')}>{article.data.title}</a></h2><p>{article.data.description}</p><a class="read" href={href('explore/'+articleSlug(article)+'/')}>{t("READ ARTICLE")} <span aria-hidden="true">↗</span></a></article>)}</div>
+<div class="journal-results">
+<p id="empty-category" class="empty-state" hidden role="status">{t("No articles in this category yet.")} <a class="text-link" href={href('explore/')} data-reset-category>{t("Explore all articles")}</a></p>
+<div class="article-grid" id="articles">{articles.map(article=><article class="article-card" data-category={article.data.category}><a class="journal-cover-link" href={href('explore/'+articleSlug(article)+'/')}><div class="journal-cover-top"><span>46K / {t('Editorial')}</span><span>{article.data.date.getFullYear()}</span></div>{article.data.heroImage && <img class="listing-photo" src={assetPath(article.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" />}<div class="journal-cover-face"><div class="meta">{t(article.data.category)} / {t(article.data.type.toUpperCase())} / {readingMinutes(article)} MIN</div><h2>{article.data.title}</h2><p>{article.data.description}</p><span class="read">{t("READ ARTICLE")} <span aria-hidden="true">&#8599;</span></span></div></a></article>)}</div>
+</div></div>
 </main>
 <script>
-  const categories = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-cat]')).map(link => link.dataset.cat);
-  const requested = new URLSearchParams(window.location.search).get('category')?.toUpperCase() ?? 'ALL';
-  const category = categories.includes(requested) ? requested : 'ALL';
-  const cards = document.querySelectorAll<HTMLElement>('[data-category]');
-  let visible = 0;
-  cards.forEach(card => {
-    card.hidden = category !== 'ALL' && card.dataset.category !== category;
-    if (!card.hidden) visible++;
-  });
-  document.querySelectorAll<HTMLAnchorElement>('[data-cat]').forEach(link => {
-    if (link.dataset.cat === category) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  });
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-cat]')];
+  const categories = links.map(link => link.dataset.cat);
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-category]')];
   const empty = document.getElementById('empty-category');
-  if (empty) empty.hidden = visible !== 0;
+  const results = document.querySelector<HTMLElement>('.journal-results');
+  const grid = document.getElementById('articles');
+  let active = 'ALL';
+  const apply = (requested: string, animate = false) => {
+    active = categories.includes(requested) ? requested : 'ALL';
+    let visible = 0;
+    cards.forEach(card => {
+      card.hidden = active !== 'ALL' && card.dataset.category !== active;
+      card.classList.remove('journal-card-arrival');
+      if (!card.hidden) { visible++; if (animate) card.classList.add('journal-card-arrival'); }
+    });
+    links.forEach(link => link.dataset.cat === active ? link.setAttribute('aria-current', 'page') : link.removeAttribute('aria-current'));
+    if (empty) empty.hidden = visible !== 0;
+  };
+  const reserveSpace = () => {
+    if (!results || !grid) return;
+    // Keep the library footprint so filtering cannot clamp the scroll position.
+    cards.forEach(card => card.hidden = false);
+    results.style.minHeight = `${grid.offsetHeight}px`;
+    apply(active);
+  };
+  const fromUrl = () => {
+    apply(new URLSearchParams(location.search).get('category')?.toUpperCase() ?? 'ALL');
+    document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+      const translation = new URL(link.href); translation.search = location.search; link.href = translation.href;
+    });
+  };
+  reserveSpace();
+  fromUrl();
+  const select = (category: string) => {
+    const url = new URL(location.href);
+    if (category === 'ALL') url.searchParams.delete('category'); else url.searchParams.set('category', category);
+    history.pushState(null, '', url);
+    apply(category, true);
+    document.querySelectorAll<HTMLAnchorElement>('[data-language-link]').forEach(link => {
+      const translation = new URL(link.href); translation.search = url.search; link.href = translation.href;
+    });
+  };
+  links.forEach(link => link.addEventListener('click', event => {
+    if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); select(link.dataset.cat ?? 'ALL');
+  }));
+  document.querySelector('[data-reset-category]')?.addEventListener('click', event => { event.preventDefault(); select('ALL'); });
+  window.addEventListener('popstate', fromUrl);
+  let frame = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(reserveSpace); });
+  void document.fonts.ready.then(reserveSpace);
+  document.querySelectorAll('img').forEach(image => image.addEventListener('load', reserveSpace, { once: true }));
 </script>
 <style>.article-card[hidden]{display:none}</style>
 </EditorialLayout>
