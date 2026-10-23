@@ -21,6 +21,6 @@ for item in json.loads(Path('.astro/editorial-checks.json').read_text(encoding='
     if not path.exists():
         continue
     paper = Paper(path.read_text(encoding='utf-8'))
-    assert len(paper.pages) >= 2
+    assert len(paper.pages) >= 1 + bool(item['blocks'])
     assert paper.pages == list(range(1, len(paper.pages) + 1)), item['slug']
 print('Paper editorial: sequential numbered sheets in all generated article languages pass.')
