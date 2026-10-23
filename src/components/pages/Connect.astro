@@ -14,11 +14,15 @@ const email = 'wadin.psykologi@gmail.com';
       <div class="container connect-content">
         <p class="kicker connect-eyebrow">{c.eyebrow}</p>
         <span class="line" aria-hidden="true"></span>
-        <h1 class="serif" id="connect-title">{c.heading[0]}<br />{c.heading[1]}</h1>
-        <ul class="connect-topics">
-          {c.topics.map(topic => <li><strong>{topic.title}</strong>{' – '}{topic.body}</li>)}
-        </ul>
-        <a class="button-link connect-action" href={`mailto:${email}?subject=${encodeURIComponent(c.subject)}`}>{c.action}<span aria-hidden="true">&#8599;</span></a>
+        <div class="connect-columns">
+          <div class="connect-lead">
+            <h1 class="serif" id="connect-title">{c.heading[0]}<br />{c.heading[1]}</h1>
+            <a class="button-link connect-action" href={`mailto:${email}?subject=${encodeURIComponent(c.subject)}`}>{c.action}<span aria-hidden="true">&#8599;</span></a>
+          </div>
+          <ul class="connect-topics">
+            {c.topics.map(topic => <li><strong>{topic.title}</strong>{' – '}{topic.body}</li>)}
+          </ul>
+        </div>
       </div>
     </section>
   </main>
