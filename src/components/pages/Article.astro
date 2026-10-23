@@ -5,6 +5,7 @@ import { translate, localePath, locales, type Locale } from '../../i18n';
 import { getArticles, articleSlug, translationKey, readingMinutes } from '../../lib/articles';
 import EditorialLayout from '../../layouts/EditorialLayout.astro';
 import StoryBlock from '../editorial/StoryBlock.astro';
+import PaperSheet from '../editorial/PaperSheet.astro';
 import { assetPath } from '../../lib/paths';
 import '../../styles/story.css';
 interface Props { locale: Locale; article: CollectionEntry<'articles'>; }
@@ -24,26 +25,35 @@ let chapter = 0;
 const blocks = d.sections.map((block, index) => ({ block, index, number: block.kind === 'text' ? ++chapter : chapter }));
 const chapters = blocks.filter(item => item.block.kind === 'text' && item.block.heading);
 const minutes = readingMinutes(article);
+const spreads: (typeof blocks)[] = [];
+for (const item of blocks) {
+  if (item.block.kind === 'text' || !spreads.length) spreads.push([]);
+  spreads.at(-1)!.push(item);
+}
 ---
 <EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' — 46K'} description={d.description} noindex={d.demonstration || d.draft}>
   <main id="main-content" class={'magazine category-' + d.category.toLowerCase()} style={`--print-plate: url('${assetPath('/images/editorial-ink-plate.webp')}')`}>
+    <div class="paper-stack">
+    <PaperSheet number={1} variant="cover">
     <header class={'story-cover cover-' + d.cover + (d.heroImage ? '' : ' cover-without-photo')}>
-      {d.heroImage && <img class="cover-photo" src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height="1024" fetchpriority="high" />}
       <div class="cover-content container">
         <a class="story-back kicker" href={href('explore/')}><span aria-hidden="true">&#8592;</span> {t('The journal')}</a>
         <p class="cover-category kicker">{t(d.category)} <span>/ {t(d.type.toUpperCase())}</span></p>
         <h1>{d.title}</h1><p class="cover-deck">{d.description}</p>
         <div class="cover-byline"><span>46K / {t('Editorial')}</span><span><time datetime={d.date.toISOString()}>{d.date.toLocaleDateString(locale === 'sv' ? 'sv-SE' : 'en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</time> · {minutes} {t('MIN READ')}</span></div>
       </div>
+      {d.heroImage && <img class="cover-photo" src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height="1024" fetchpriority="high" />}
     </header>
     {(d.heroCaption || d.heroCredit) && <p class="cover-credit container"><span>{d.heroCaption}</span><small>{d.heroCredit}</small></p>}
     {(d.demonstration || d.draft) && <aside class="story-status container"><strong>{d.draft ? t('Editorial draft') : t('Demonstration article')}</strong><p>{t('Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.')}</p></aside>}
+    {article.body?.trim() && <div class="story-introduction reading-copy"><Content /></div>}
     {chapters.length > 0 && <nav class="story-contents container" aria-label={t('In this article')}><p class="kicker">{t('In this article')}</p><ol>{chapters.map(item => <li><a href={'#section-' + item.index}><span>{String(item.number).padStart(2, '0')}</span>{item.block.kind === 'text' && item.block.heading}</a></li>)}</ol></nav>}
-    <article class="story-flow container" aria-label={d.title}>
-      {article.body?.trim() && <div class="story-introduction story-grid"><p class="kicker">{t('The opening')}</p><div class="reading-column reading-copy"><Content /></div></div>}
-      {blocks.map(item => <StoryBlock {...item} />)}
+    </PaperSheet>
+    <article class="story-flow" aria-label={d.title}>
+      {spreads.map((spread, index) => <PaperSheet number={index + 2}><div class={`paper-spread ${spread.length === 1 ? 'spread-prose' : ''}`}>{spread.map(item => <StoryBlock {...item} />)}</div></PaperSheet>)}
     </article>
-    {d.sources.length > 0 && <section class="story-sources container" aria-labelledby="sources-title"><div class="story-grid"><p class="kicker">{t('Reading room')}</p><div class="reading-column"><h2 id="sources-title">{t('Sources & further reading')}</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<span aria-hidden="true"> &#8599;</span></a></li>)}</ol><p>{t('Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.')}</p></div></div></section>}
+    {d.sources.length > 0 && <PaperSheet number={spreads.length + 2} variant="sources"><section class="story-sources" aria-labelledby="sources-title"><div class="story-grid"><p class="kicker">{t('Reading room')}</p><div class="reading-column"><h2 id="sources-title">{t('Sources & further reading')}</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<span aria-hidden="true"> &#8599;</span></a></li>)}</ol><p>{t('Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.')}</p></div></div></section></PaperSheet>}
+    </div>
     {related.length > 0 && <section class="story-related"><div class="container"><div class="section-heading"><div><p class="kicker">{t('KEEP EXPLORING')}</p><h2 class="serif">{t('The next question.')}</h2></div><a class="text-link" href={href('explore/')}>{t('All articles')} <span aria-hidden="true">&#8599;</span></a></div><div class="related-grid">{related.map(a => <article>{a.data.heroImage && <a href={href('explore/' + articleSlug(a) + '/')} tabindex="-1" aria-hidden="true"><img src={assetPath(a.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" /></a>}<p class="kicker">{t(a.data.category)}</p><h3><a href={href('explore/' + articleSlug(a) + '/')}>{a.data.title}<span aria-hidden="true"> &#8599;</span></a></h3><p>{a.data.description}</p></article>)}</div></div></section>}
   </main>
 </EditorialLayout>
