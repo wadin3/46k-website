@@ -9,19 +9,19 @@ const dimensions: Record<string, [number, number]> = {
   Utv1: [1672, 941], Utv2: [1024, 1536], Utv3: [1448, 1086], UtvText: [1254, 1254],
 };
 const series = [
-  { label: sv ? 'Test' : 'Assessment', key: 'test', text: sv ? 'Digitala tester. Var du än befinner dig.' : 'Digital testing. Wherever you are.', cards: [
+  { label: sv ? 'Test' : 'Assessment', key: 'test', text: sv ? ['Digitala tester.', 'Var du än befinner dig.'] : ['Digital testing.', 'Wherever you are.'], cards: [
     { file: 'Test1', size: 'wide', alt: sv ? 'Spelare genomför ett illustrativt digitalt test vid planen.' : 'Player taking an illustrative digital assessment beside the pitch.' },
     { file: 'TestText', size: 'medium', alt: '' },
     { file: 'Test2', size: 'narrow', alt: sv ? 'Koncept för ett minnestest på mobil.' : 'Concept of a mobile memory assessment.' },
     { file: 'Test3', size: 'medium', alt: sv ? 'Koncept för klubbens testöversikt på dator.' : 'Concept of a club assessment overview on a laptop.' },
   ]},
-  { label: sv ? 'Profil' : 'Profile', key: 'profile', text: sv ? 'Upptäck styrkor och utvecklings\u00adområden.' : 'Discover strengths and areas for development.', cards: [
+  { label: sv ? 'Profil' : 'Profile', key: 'profile', text: sv ? ['Upptäck styrkor och utvecklingsområden.'] : ['Discover strengths and areas for development.'], cards: [
     { file: 'ProfilText', size: 'medium', alt: '' },
     { file: 'Profil1', size: 'wide', alt: sv ? 'Illustrativ spelarprofil med radar- och stapeldiagram, inte verkliga mätresultat.' : 'Illustrative player profile with radar and bar charts, not actual measured results.' },
     { file: 'Profil2', size: 'narrow', alt: sv ? 'Koncept för personliga insikter på mobil.' : 'Concept of personal insights on mobile.' },
     { file: 'Profil3', size: 'medium', alt: sv ? 'Spelare granskar en illustrativ profil på surfplatta.' : 'Player reviewing an illustrative profile on a tablet.' },
   ]},
-  { label: sv ? 'Utveckling' : 'Development', key: 'development', text: sv ? 'Från insikt till utveckling på planen.' : 'Turning insights into progress on the pitch.', cards: [
+  { label: sv ? 'Utveckling' : 'Development', key: 'development', text: sv ? ['Från insikt till utveckling på planen.'] : ['Turning insights into progress on the pitch.'], cards: [
     { file: 'Utv2', size: 'narrow', alt: sv ? 'Koncept för individuell utvecklingsplan på mobil.' : 'Concept of an individual development plan on mobile.' },
     { file: 'Utv1', size: 'wide', alt: sv ? 'Fotbollsträning med illustrativa markeringar för scanning och passningsalternativ.' : 'Football training with illustrative scanning and passing-option annotations.' },
     { file: 'UtvText', size: 'medium', alt: '' },
@@ -34,7 +34,7 @@ const series = [
     {series.map(series => <div class={`showcase-group showcase-${series.key}`} role="group" aria-label={series.label}>
       {series.cards.map(card => <div class={`showcase-card showcase-${card.size} ${card.alt ? '' : 'showcase-text'}`}>
         <img src={sitePath(`images/showcase/${card.file}.webp`)} alt={card.alt} loading="lazy" decoding="async" width={dimensions[card.file][0]} height={dimensions[card.file][1]} />
-        {!card.alt && <p class="serif">{series.text}</p>}
+        {!card.alt && <p class="serif">{series.text.map((line, index) => <>{index > 0 && ' '}<span class="showcase-copy-part">{line.split(' ').map((word, wordIndex) => <>{wordIndex > 0 && ' '}<span class="showcase-word">{word}</span></>)}</span></>)}</p>}
       </div>)}
     </div>)}
   </div>
@@ -49,6 +49,37 @@ const series = [
     let nearby = false;
     let ready = false;
     let preparing = false;
+    const fitText = () => {
+      showcase.querySelectorAll<HTMLElement>('.showcase-text p').forEach(text => {
+        text.style.removeProperty('font-size');
+        const style = getComputedStyle(text);
+        const maximum = parseFloat(style.fontSize);
+        const available = text.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+        const words = [...text.querySelectorAll<HTMLElement>('.showcase-word')];
+        const fits = () => text.offsetHeight <= text.parentElement!.clientHeight && words.every(word => word.getBoundingClientRect().width <= available);
+        if (fits()) return;
+        let low = 10;
+        let high = maximum;
+        // Fit the actual translated words and line stack, not the viewport width.
+        for (let iteration = 0; iteration < 9; iteration++) {
+          const candidate = (low + high) / 2;
+          text.style.fontSize = `${candidate}px`;
+          if (fits()) low = candidate; else high = candidate;
+        }
+        text.style.fontSize = `${Math.floor(low * 4) / 4}px`;
+      });
+    };
+    let fitFrame = 0;
+    const scheduleFit = () => {
+      cancelAnimationFrame(fitFrame);
+      fitFrame = requestAnimationFrame(fitText);
+    };
+    showcase.querySelectorAll('.showcase-text').forEach(card => {
+      if ('ResizeObserver' in window) new ResizeObserver(scheduleFit).observe(card);
+    });
+    void document.fonts.ready.then(fitText);
+    document.fonts.addEventListener('loadingdone', scheduleFit);
+    fitText();
     const synchronize = () => {
       const running = ready && nearby && !document.hidden && !motion.matches;
       animations.forEach(animation => running ? animation.play() : animation.pause());
@@ -59,18 +90,18 @@ const series = [
       showcase.classList.toggle('showcase-animated', !motion.matches && ready);
       groups.forEach(group => group.removeAttribute('aria-hidden'));
       if (!motion.matches && ready) {
-        // One shared 15-second clock: 4-second hold and 1-second group transition.
+        // One shared 18-second clock: 5-second hold and 1-second group transition.
         groups.forEach((group, index) => {
           const animation = group.animate([
             { transform: 'translate3d(0,0,0)', offset: 0 },
-            { transform: 'translate3d(0,0,0)', offset: 4 / 15, easing: 'cubic-bezier(.22,.75,.2,1)' },
-            { transform: 'translate3d(-105%,0,0)', offset: 5 / 15 },
-            { transform: 'translate3d(105%,0,0)', offset: 5 / 15 + .00001 },
-            { transform: 'translate3d(105%,0,0)', offset: 14 / 15, easing: 'cubic-bezier(.22,.75,.2,1)' },
+            { transform: 'translate3d(0,0,0)', offset: 5 / 18, easing: 'cubic-bezier(.22,.75,.2,1)' },
+            { transform: 'translate3d(-105%,0,0)', offset: 6 / 18 },
+            { transform: 'translate3d(105%,0,0)', offset: 6 / 18 + .00001 },
+            { transform: 'translate3d(105%,0,0)', offset: 17 / 18, easing: 'cubic-bezier(.22,.75,.2,1)' },
             { transform: 'translate3d(0,0,0)', offset: 1 },
-          ], { duration: 15000, iterations: Infinity });
+          ], { duration: 18000, iterations: Infinity });
           animation.pause();
-          animation.currentTime = (15000 - index * 5000) % 15000;
+          animation.currentTime = (18000 - index * 6000) % 18000;
           animations.push(animation);
         });
       }

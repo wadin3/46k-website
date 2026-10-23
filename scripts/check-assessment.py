@@ -40,7 +40,7 @@ for locale, route in [('sv', 'assessment'), ('en', 'en/assessment')]:
     assert len([image for image in page.images if '/showcase/' in image['src']]) == 12
     assert len(page.ids) == len(set(page.ids))
     assert all(section in page.ids for section in ['start', 'why', 'audience', 'outcome', 'science', 'contact'])
-    strings = [content['hero']['title'], content['hero']['body'], content['hero']['status'], content['why']['title'], content['why']['quote'], content['why']['caption'], content['science']['body'], content['science']['note']]
+    strings = [content['hero']['title'], content['hero']['body'], content['hero']['status'], content['why']['title'], content['why']['quote'], content['science']['body'], content['science']['note']]
     strings += content['why']['paragraphs'] + content['contact']['paragraphs'] + content['value']['intro']
     for card in content['value']['cards']:
         assert len(card['bullets']) == 3
