@@ -9,7 +9,7 @@ type: "editorial"
 date: "2026-10-30"
 readingTime: 10
 featured: true
-draft: true
+draft: false
 heroImage: "/images/football-intelligence-reading-game-bw.webp"
 heroAlt: "AI-genererad svartvit översiktsbild av en modern fotbollsträning, sedd från läktaren med spelare och öppna ytor över planen."
 heroCaption: ""

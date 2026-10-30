@@ -9,7 +9,7 @@ type: "editorial"
 date: "2026-10-30"
 readingTime: 10
 featured: true
-draft: true
+draft: false
 heroImage: "/images/football-intelligence-reading-game-bw.webp"
 heroAlt: "AI-generated black-and-white overview of a modern football training game, viewed from the stand with players and open spaces across the pitch."
 heroCaption: ""

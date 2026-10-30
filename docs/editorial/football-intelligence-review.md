@@ -44,5 +44,7 @@ the model introduction immediately before the six detailed numbered parts.
 No image captions or visible image credits are added. Image provenance
 and both built-in image_gen prompts are in the adjacent image-prompt file.
 
-This is a review preview, not a deployment. Future publication must be
-explicitly approved by the owner.
+The owner approved publication of the second visual review in chat on
+2026-10-30. Both replacement draft flags are now false so the approved
+article becomes public in Swedish and English at the existing URL.
+The earlier review lifecycle description above records the preview stage.
