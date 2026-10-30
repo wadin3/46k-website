@@ -24,6 +24,10 @@ args = parser.parse_args()
 root = Path("dist")
 classes = {"text": "story-text", "photo": "story-photo", "model": "story-model", "note": "story-note", "quote": "story-pullquote"}
 for article in json.loads(Path('.astro/editorial-checks.json').read_text(encoding='utf-8')):
+    if article.get('previewSuppressed') and args.preview or article.get('productionSuppressed') and not args.preview:
+        continue
+    if article.get('replacement') and article['draft'] and not args.preview and article.get('baseline'):
+        continue
     prefix = '' if article['language'] == 'sv' else article['language'] + '/'
     path = root / prefix / 'explore' / article['slug'] / 'index.html'
     expected = args.preview or not article['draft']

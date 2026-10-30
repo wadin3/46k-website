@@ -3,7 +3,10 @@ import { readFile, writeFile, unlink, access } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import yaml from 'js-yaml';
 
-const files = ['src/content/articles/sv/cms-workflow-check.md', 'src/content/articles/cms-workflow-check.md'];
+const primaryFiles = ['src/content/articles/sv/cms-workflow-check.md', 'src/content/articles/cms-workflow-check.md'];
+const baselineFiles = ['src/content/articles/sv/cms-revision-base.md', 'src/content/articles/cms-revision-base.md'];
+const replacementFiles = ['src/content/articles/sv/cms-revision-next.md', 'src/content/articles/cms-revision-next.md'];
+const files = [...primaryFiles, ...baselineFiles, ...replacementFiles];
 for (const file of files) {
   const exists = await access(file).then(() => true, () => false);
   assert(!exists, 'Refusing to overwrite an existing editorial file: ' + file);
@@ -24,15 +27,31 @@ const payload = (language, draft) => ({
 });
 try {
   for (const draft of [true,false]) {
-    for (const [index,file] of files.entries()) {
+    for (const [index,file] of primaryFiles.entries()) {
       const data = payload(index === 0 ? 'sv' : 'en', draft);
       const saved = yaml.dump(yaml.load(yaml.dump(data)));
       await writeFile(file, '---\n' + saved + '---\nAn opening saved as **Markdown**.\n');
+    }
+    for (let index = 0; index < 2; index++) {
+      const language = index === 0 ? 'sv' : 'en';
+      const base = {...payload(language, false), translationKey:'cms-revision-base', title:'Original revision fixture', sections:[{kind:'text', heading:'Original', body:'ORIGINAL_REVISION_BODY'}]};
+      const replacement = {...base, draft, replaces:'cms-revision-base', title:'Replacement revision fixture', sections:[{kind:'text', heading:'Replacement', body:'REPLACEMENT_REVISION_BODY'}]};
+      await writeFile(baselineFiles[index], '---\n' + yaml.dump(base) + '---\n');
+      await writeFile(replacementFiles[index], '---\n' + yaml.dump(replacement) + '---\n');
     }
     run('node',['scripts/check-editorial.mjs']);
     run('npm',['run','build']);
     run('python3',['scripts/check-site.py','--base',process.env.ASTRO_BASE || '/']);
     run('python3',['scripts/check-editorial.py']);
+    for (const prefix of ['', 'en/']) {
+      const html = await readFile('dist/' + prefix + 'explore/cms-revision-base/index.html', 'utf8');
+      assert(html.includes(draft ? 'ORIGINAL_REVISION_BODY' : 'REPLACEMENT_REVISION_BODY'));
+      assert(!html.includes(draft ? 'REPLACEMENT_REVISION_BODY' : 'ORIGINAL_REVISION_BODY'));
+      const base = (process.env.ASTRO_BASE || '').replace(/\/$/, '');
+      const listing = await readFile('dist/' + prefix + 'explore/index.html', 'utf8');
+      assert.equal(listing.split('class="journal-cover-link" href="' + base + '/' + prefix + 'explore/cms-revision-base/"').length - 1, 1);
+      assert.equal(await access('dist/' + prefix + 'explore/cms-revision-next/index.html').then(() => true, () => false), false);
+    }
     if (!draft) {
       const html = await readFile('dist/explore/cms-workflow-check/index.html','utf8');
       assert(html.includes('<strong>formatted</strong>'));

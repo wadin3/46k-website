@@ -7,7 +7,7 @@ const photo = z.object({
 });
 const section = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('text'), heading: z.string().default(''), body: z.string().min(1) }),
-  photo.extend({ kind: z.literal('photo'), layout: z.enum(['wide', 'offset', 'pair']).default('wide'),
+  photo.extend({ kind: z.literal('photo'), layout: z.enum(['wide', 'offset', 'pair', 'diagram']).default('wide'),
     secondImage: z.string().default(''), secondAlt: z.string().default(''),
     secondCaption: z.string().default(''), secondCredit: z.string().default('') }),
   z.object({ kind: z.literal('quote'), text: z.string().min(1), attribution: z.string().default('46K') }),
@@ -25,6 +25,7 @@ const articles = defineCollection({
     description: z.string(),
     language: z.enum(Object.keys(locales) as [Locale, ...Locale[]]).default('en'),
     translationKey: z.string().optional(),
+    replaces: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
     category: z.enum(['UNDERSTAND','ASSESS','DEVELOP','2046']),
     type: z.enum(['editorial','research','insight','practice']),
     date: z.coerce.date(),
@@ -35,6 +36,8 @@ const articles = defineCollection({
     heroAlt: z.string().optional(),
     heroCaption: z.string().default(''),
     heroCredit: z.string().default(''),
+    imageCaptions: z.boolean().default(true),
+    tocAfterHero: z.boolean().default(false),
     cover: z.enum(['light', 'dark']).default('light'),
     demonstration: z.boolean().default(false),
     sections: z.array(section).default([]),
