@@ -1,5 +1,20 @@
 # Football Intelligence: Image Provenance
 
+## Selected cover, second visual review
+
+Built-in image_gen, new generation without image references. Selected file:
+public/images/football-intelligence-reading-game-bw.webp, 1448 x 1086,
+WebP quality 88. The grayscale source is retained at
+C:/Users/kenny/.codex/generated_images/01a134db-fab9-76c1-b7d3-f1b82de8237d/exec-e144f6b9-57b2-429d-b2a5-8b2d64a9ed54.png.
+Encoding only; no post-generation retouching or compositing.
+The meeting cover below is superseded and retained as history.
+
+Final prompt:
+
+Use case: photorealistic-natural. Create an editorial magazine cover photograph about football intelligence: seeing space, reading patterns and anticipating play. A broad, elevated three-quarter view from a small modern stadium stand, looking diagonally across a contemporary football training pitch during a small-sided training game. Several young-adult footballers, around ten, are distributed naturally across the pitch; they are small figures within the wider environment, not portraits or close-ups. A ball, recognisable goals and crisp authentic pitch markings make the football context unmistakable. Show meaningful open space between the players and the diagonal geometry of the pitch, suggesting the game as something to read. Modern unbranded training kits and a believable present-day academy setting, not a historical or 1970s scene. True black-and-white grayscale photography, restrained fine analog film grain and a sophisticated printed-magazine finish. Clear midtone detail in grass, clothing and stand architecture, strong but not crushed contrast, natural daylight and subtle long shadows. Quiet, intelligent, observational mood, no staged celebration. Balanced landscape 4:3 composition that also crops gracefully to a wide 16:9 hero without losing the game. No prominent faces, no close-up people, no text, logos, watermarks, tactical overlays, arrows, HUD, sci-fi effects, sepia, scratches or excessive grain.
+
+## Earlier cover
+
 Built-in image_gen tool, no CLI fallback. Final project image: public/images/football-team-meeting-print.webp, 1448 x 1086, 264336 bytes, WebP quality 94.
 
 Final generated original retained at C:/Users/kenny/.codex/generated_images/01a134db-fab9-76c1-b7d3-f1b82de8237d/exec-e729c336-dc92-4234-8dbd-87d96da63b69.png.

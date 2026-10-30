@@ -1,5 +1,20 @@
 # Football Intelligence Article Review
 
+## Second visual review
+
+The owner rejected the meeting cover and requested wider grayscale imagery.
+The new cover is football-intelligence-reading-game-bw.webp, a 1448x1086
+grayscale training-pitch overview, encoded at WebP quality 88.
+The earlier cover is retained for history but no longer selected.
+
+The authored article has a scoped editorial treatment in both languages:
+six conceptual SVG pitch sketches, large step numbers, italic questions,
+separate outcome typography, in-place rhetorical pullquotes and selective
+bold emphasis. These sketches contain no measured or invented findings.
+Source wording, order, bibliography, captions and contents position remain
+unchanged. Rendering applies only to this translation key; other articles
+continue to use the established paper template.
+
 Source: the owner's Vad ar spelintelligens.docx, read using shared access
 while Word held the file open. All Word text runs and embedded hyperlink
 destinations were preserved. The original document remains unchanged.

@@ -10,8 +10,8 @@ date: "2026-10-30"
 readingTime: 10
 featured: true
 draft: true
-heroImage: "/images/football-team-meeting-print.webp"
-heroAlt: "AI-genererad redaktionell illustration av ett modernt lagmöte: en tränare instruerar fyra vuxna spelare med olika bakgrunder framför en taktiktavla."
+heroImage: "/images/football-intelligence-reading-game-bw.webp"
+heroAlt: "AI-genererad svartvit översiktsbild av en modern fotbollsträning, sedd från läktaren med spelare och öppna ytor över planen."
 heroCaption: ""
 heroCredit: "AI-generated illustration / 46K"
 cover: "light"

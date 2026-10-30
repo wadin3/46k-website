@@ -28,7 +28,7 @@ for locale, prefix in [('sv', ''), ('en', 'en/')]:
     page = Article(Path(f'dist/{prefix}explore/why-football-intelligence/index.html').read_text(encoding='utf-8'))
     replacement = next(entry for entry in entries if entry['slug'] == 'why-football-intelligence' and entry['language'] == locale and entry.get('replacement'))
     if not args.preview and replacement['draft']:
-        assert not any(image['src'].endswith('football-team-meeting-print.webp') for image in page.images)
+        assert not any(image['src'].endswith('football-intelligence-reading-game-bw.webp') for image in page.images)
         continue
     expected = json.loads(Path('docs/editorial/football-intelligence-' + ('source' if locale == 'sv' else 'translation') + '.json').read_text(encoding='utf-8'))['paragraphs']
     text = ' '.join(''.join(page.text).split())
@@ -37,5 +37,5 @@ for locale, prefix in [('sv', ''), ('en', 'en/')]:
             paragraph = paragraph.split('. ', 1)[1]
         assert ' '.join(paragraph.split()) in text, f'{locale}: source paragraph {index} differs'
     assert any(image['src'].endswith('football-intelligence-cycle.webp') for image in page.images)
-    assert any(image['src'].endswith('football-team-meeting-print.webp') for image in page.images)
+    assert any(image['src'].endswith('football-intelligence-reading-game-bw.webp') for image in page.images)
 print('Replacement: published baseline preserved; preview retains all supplied paragraphs and approved imagery.')

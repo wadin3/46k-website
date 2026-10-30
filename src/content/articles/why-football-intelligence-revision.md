@@ -10,8 +10,8 @@ date: "2026-10-30"
 readingTime: 10
 featured: true
 draft: true
-heroImage: "/images/football-team-meeting-print.webp"
-heroAlt: "AI-generated editorial illustration of a modern team meeting: a coach instructs four adult players from different backgrounds in front of a tactics board."
+heroImage: "/images/football-intelligence-reading-game-bw.webp"
+heroAlt: "AI-generated black-and-white overview of a modern football training game, viewed from the stand with players and open spaces across the pitch."
 heroCaption: ""
 heroCredit: "AI-generated illustration / 46K"
 cover: "light"

@@ -3,9 +3,9 @@ import type { CollectionEntry } from 'astro:content';
 import { editorialMarkdown } from '../../lib/editorial';
 import { assetPath } from '../../lib/paths';
 type Block = CollectionEntry<'articles'>['data']['sections'][number];
-interface Props { block: Block; index: number; number: number; imageCaptions?: boolean; }
-const { block, index, number, imageCaptions = true } = Astro.props;
-const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body) : '';
+interface Props { block: Block; index: number; number: number; imageCaptions?: boolean; feature?: boolean; }
+const { block, index, number, imageCaptions = true, feature = false } = Astro.props;
+const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body, feature && !['Referenser', 'References'].includes(block.heading)) : '';
 ---
 {block.kind === 'text' && <section class="story-text story-grid" id={'section-' + index}>
   {block.heading && <div class="chapter-marker" aria-hidden="true">{String(number).padStart(2, '0')}<span></span></div>}
