@@ -23,9 +23,11 @@ class Article(HTMLParser):
 parser = argparse.ArgumentParser()
 parser.add_argument('--preview', action='store_true')
 args = parser.parse_args()
+entries = json.loads(Path('.astro/editorial-checks.json').read_text(encoding='utf-8'))
 for locale, prefix in [('sv', ''), ('en', 'en/')]:
     page = Article(Path(f'dist/{prefix}explore/why-football-intelligence/index.html').read_text(encoding='utf-8'))
-    if not args.preview:
+    replacement = next(entry for entry in entries if entry['slug'] == 'why-football-intelligence' and entry['language'] == locale and entry.get('replacement'))
+    if not args.preview and replacement['draft']:
         assert not any(image['src'].endswith('football-team-meeting-print.webp') for image in page.images)
         continue
     expected = json.loads(Path('docs/editorial/football-intelligence-' + ('source' if locale == 'sv' else 'translation') + '.json').read_text(encoding='utf-8'))['paragraphs']
