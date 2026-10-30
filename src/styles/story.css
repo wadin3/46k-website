@@ -60,6 +60,12 @@
 .photo-layout img { width: 100%; aspect-ratio: 4/3; height: auto; object-fit: cover; }
 .photo-offset .photo-layout img { aspect-ratio: 1/1; }
 .photo-pair .photo-layout { grid-template-columns: 1fr; }
+.paper-spread.spread-diagram > .story-text { grid-row: auto; }
+.paper-spread.spread-diagram > .story-photo { grid-column: 1 / -1; }
+.photo-diagram .photo-layout { max-width: 760px; margin-inline: auto; }
+.photo-diagram .photo-layout img { aspect-ratio: auto; object-fit: contain; }
+.reading-copy li > h3 { margin-top: 0; }
+.reading-copy ol > li { break-inside: avoid; padding-left: 4px; }
 .story-photo figcaption { font: 400 11px/1.65 Arial, sans-serif; padding-top: 12px; }
 .story-photo figcaption span, .story-photo small { display: block; }
 .story-photo small { color: var(--muted); font-size: inherit; margin-top: 4px; }

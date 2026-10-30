@@ -32,6 +32,17 @@ content:
       - name: translationKey
         label: Translation group (same key for all language versions)
         type: string
+      - name: replaces
+        label: Ersätter artikel med slug / Replaces article slug
+        type: string
+      - name: imageCaptions
+        label: Visa bildtexter / Show image captions
+        type: boolean
+        default: true
+      - name: tocAfterHero
+        label: Innehåll direkt efter omslagsbild / Contents after cover photo
+        type: boolean
+        default: false
       - name: category
         label: Category
         type: select
@@ -108,7 +119,7 @@ content:
                 label: Bildformat / Layout
                 type: select
                 options:
-                  values: [wide, offset, pair]
+                  values: [wide, offset, pair, diagram]
                 default: wide
               - name: image
                 label: Bild / Image

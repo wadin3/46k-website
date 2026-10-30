@@ -30,12 +30,18 @@ for (const folder of ['src/content/articles', 'src/content/articles/sv']) {
         if (block.layout === 'pair') assert(block.secondImage && block.secondAlt);
       }
     }
-    expectations.push({ slug:name.slice(0,-3), language:data.language || 'en', draft:data.draft !== false,
+    expectations.push({ slug:data.replaces || name.slice(0,-3), replacement:!!data.replaces, language:data.language || 'en', draft:data.draft !== false,
       demonstration:!!data.demonstration, blocks:[...new Set(sections.map(block => block.kind))] });
     categories.set(data.language, new Set([...(categories.get(data.language) || []), data.category]));
     articles++;
   }
 }
 await mkdir('.astro', {recursive:true});
+for (const entry of expectations) {
+  const replacement = expectations.find(other => other.replacement && other.slug === entry.slug && other.language === entry.language);
+  entry.previewSuppressed = !entry.replacement && !!replacement;
+  entry.productionSuppressed = entry.previewSuppressed && !replacement.draft;
+  entry.baseline = entry.replacement && expectations.some(other => !other.replacement && other.slug === entry.slug && other.language === entry.language);
+}
 await writeFile('.astro/editorial-checks.json', JSON.stringify(expectations));
 console.log(`Checked ${articles} articles: CMS block definitions, YAML edit/save round trip, media metadata and draft/publication expectations.`);

@@ -41,6 +41,7 @@ jobs:
           python3 scripts/check-site.py --base "$ASTRO_BASE"
           python3 scripts/check-editorial.py
           python3 scripts/check-paper.py
+          python3 scripts/check-intelligence.py
           python3 scripts/check-mission.py
           python3 scripts/check-assessment.py
           python3 scripts/check-connect.py
@@ -60,6 +61,7 @@ jobs:
           python3 scripts/check-site.py --base "$ASTRO_BASE"
           python3 scripts/check-mission.py
           python3 scripts/check-paper.py
+          python3 scripts/check-intelligence.py
           python3 scripts/check-assessment.py
           python3 scripts/check-connect.py
       - name: Upload Pages artifact
@@ -86,6 +88,7 @@ jobs:
           python3 scripts/check-site.py
           python3 scripts/check-editorial.py --preview
           python3 scripts/check-paper.py
+          python3 scripts/check-intelligence.py --preview
           python3 scripts/check-mission.py
           python3 scripts/check-assessment.py
           python3 scripts/check-connect.py
