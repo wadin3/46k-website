@@ -9,7 +9,7 @@ type: editorial
 date: '2026-11-07'
 readingTime: 16
 featured: true
-draft: true
+draft: false
 heroImage: /images/football-brain-before-the-ball.webp
 heroAlt: AI-generated monochrome illustration of a midfielder looking over a shoulder before receiving the ball on a modern training pitch.
 heroCredit: AI-generated illustration / 46K

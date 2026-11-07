@@ -9,7 +9,7 @@ type: editorial
 date: '2026-11-07'
 readingTime: 16
 featured: true
-draft: true
+draft: false
 heroImage: /images/football-brain-before-the-ball.webp
 heroAlt: AI-genererad svartvit illustration av en mittfältare som tittar över axeln före bollmottagning på en modern träningsplan.
 heroCredit: AI-generated illustration / 46K

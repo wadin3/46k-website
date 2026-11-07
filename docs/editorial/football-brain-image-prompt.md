@@ -5,7 +5,8 @@ Selected asset: public/images/football-brain-before-the-ball.webp.
 1448 x 1086, WebP quality 80, 299812 bytes. Encoding only, no retouching.
 Original retained at C:/Users/kenny/.codex/generated_images/01a134db-fab9-76c1-b7d3-f1b82de8237d/exec-503bb79b-2154-462d-a940-3cdb8f8fe6f2.png.
 The scene is illustrative; it does not document real players or a real session.
-The eight supporting diagrams are deterministic grayscale SVG illustrations.
+The eight supporting diagrams are deterministic SVG illustrations in the
+46K Graphite, Pitch and Gold palette. The photograph remains grayscale.
 
 ## Final prompt
 
