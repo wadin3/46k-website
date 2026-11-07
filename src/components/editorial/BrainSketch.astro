@@ -1,0 +1,31 @@
+---
+interface Props { variant: number; }
+const { variant } = Astro.props;
+// Qualitative editorial illustrations, never presented as measurements.
+const routes = [
+  ['M70 100 L164 24 A112 112 0 0 1 225 100 Z','M101 73 A44 44 0 0 1 114 100'],
+  ['M48 99 L119 43 L224 83','M48 43 L119 99 L224 43'],
+  ['M65 106 L102 30 L200 90 Z','M87 94 L150 24 L225 104 Z'],
+  ['M40 94 H78 L97 52 L116 104 L136 44 L156 77 H238','M40 113 H238'],
+  ['M40 92 L133 59','M159 45 V90 M180 51 L232 34'],
+  ['M43 98 L113 98 L165 42 L231 42','M113 98 L176 110 L230 79'],
+  ['M48 83 L113 63 L219 28 M113 63 L231 78 M113 63 L218 118','M113 63 L139 27'],
+  ['M44 103 L112 58 L175 91 L232 33','M44 103 L232 33'],
+][variant];
+const points = [
+  [[70,100],[164,40],[213,85],[51,35]],
+  [[48,99],[119,43],[224,83],[48,43],[224,43]],
+  [[65,106],[102,30],[200,90],[150,24],[225,104]],
+  [[40,94],[238,77]],
+  [[40,92],[133,59],[232,34]],
+  [[43,98],[113,98],[165,42],[231,42],[230,79]],
+  [[48,83],[113,63],[219,28],[231,78],[218,118]],
+  [[44,103],[112,58],[175,91],[232,33]],
+][variant];
+---
+<svg class="brain-sketch" viewBox="0 0 280 148" aria-hidden="true" focusable="false">
+  <path class="brain-ground" d="M20 18 H260 V130 H20 Z M140 18 V130 M20 49 H39 V99 H20 M260 49 H241 V99 H260" />
+  <circle class="brain-ground" cx="140" cy="74" r="19" />
+  {routes.map((d,i)=><path class={i===0?'brain-route':'brain-route-secondary'} d={d} />)}
+  {points.map(([cx,cy],i)=><circle class={i===0?'brain-origin':'brain-position'} cx={cx} cy={cy} r={i===0?5:3.5} />)}
+</svg>

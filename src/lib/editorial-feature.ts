@@ -43,6 +43,9 @@ export function featureTypography() {
         if (/^(Men vad är det egentligen|But what is it|Kognitionen är därmed|Cognition is therefore)/.test(text)) cls(node,'editorial-question');
         if (/^(Kan vi gå ännu djupare\?|Can we go even deeper\?)/.test(text)) cls(node,'editorial-turn');
         if (/^46K [–—-] Decoding/.test(text)) cls(node,'editorial-signoff');
+        if (/^(Vår hypotes|Our hypothesis)/.test(text)) cls(node,'brain-hypothesis');
+        if (/^(I videoanalysen|In video analysis)/.test(text)) cls(node,'editorial-question');
+        if (/^(Spola tillbaka en sekund\.|Rewind one second\.)/.test(text)) cls(node,'editorial-turn');
         const terms = /\b(arbetsminne|inhibition|kognitiv flexibilitet|kognitiva förmågor|Vår hypotes|working memory|cognitive flexibility|cognitive abilities|Our hypothesis)\b/gi;
         let count = 0;
         node.children = node.children.flatMap((child: ElementContent) => {
