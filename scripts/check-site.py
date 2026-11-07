@@ -60,8 +60,11 @@ def main():
             failures.append(f"{route}: missing main, language, title or unique h1")
         if page.missing_alt:
             failures.append(f"{route}: image without alt attribute")
-    if len(pages) < 16:
-        failures.append(f"Expected at least 16 bilingual pages; found {len(pages)}")
+    # Article counts change when drafts or retired examples are removed.
+    # Assert the actual core routes; check-editorial verifies article routes.
+    required = {prefix + route for prefix in ['/', '/en/'] for route in ['', 'assessment/', 'connect/', 'explore/', 'mission/']}
+    for missing in sorted(required - pages.keys()):
+        failures.append(f"Missing core page: {missing}")
     for route, page in pages.items():
         expected_language = "en" if route.startswith("/en/") else "sv"
         if page.lang != expected_language:

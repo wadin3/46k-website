@@ -2,14 +2,17 @@
 import type { CollectionEntry } from 'astro:content';
 import { editorialMarkdown } from '../../lib/editorial';
 import { assetPath } from '../../lib/paths';
+import BrainSketch from './BrainSketch.astro';
 type Block = CollectionEntry<'articles'>['data']['sections'][number];
-interface Props { block: Block; index: number; number: number; imageCaptions?: boolean; feature?: boolean; }
-const { block, index, number, imageCaptions = true, feature = false } = Astro.props;
+interface Props { block: Block; index: number; number: number; imageCaptions?: boolean; feature?: boolean; brain?: boolean; locale?: string; }
+const { block, index, number, imageCaptions = true, feature = false, brain = false, locale = 'sv' } = Astro.props;
+const abilityNames = locale === 'sv' ? ['Uppmärksamhet och avsökning','Arbetsminne','Visuospatial förmåga i rörelse','Bearbetningshastighet','Inhibition','Kognitiv flexibilitet','Divergent tänkande','Planering'] : ['Attention and scanning','Working memory','Visuospatial ability in motion','Processing speed','Inhibition','Cognitive flexibility','Divergent thinking','Planning'];
+const ability = brain && block.kind === 'text' ? abilityNames.indexOf(block.heading) : -1;
 const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body, feature && !['Referenser', 'References'].includes(block.heading)) : '';
 ---
-{block.kind === 'text' && <section class="story-text story-grid" id={'section-' + index}>
+{block.kind === 'text' && <section class={'story-text story-grid' + (ability >= 0 ? ' brain-ability' : '')} id={'section-' + index}>
   {block.heading && <div class="chapter-marker" aria-hidden="true">{String(number).padStart(2, '0')}<span></span></div>}
-  <div class="reading-column">{block.heading && <h2>{block.heading}</h2>}<div class="reading-copy" set:html={html} /></div>
+  <div class="reading-column">{ability >= 0 ? <header class="brain-ability-heading"><div><p class="brain-label">{locale === 'sv' ? 'Förmåga' : 'Ability'} <span aria-hidden="true">/</span> {String(ability+1).padStart(2,'0')}</p><h2>{block.heading}</h2></div><BrainSketch variant={ability} /></header> : block.heading && <h2>{block.heading}</h2>}<div class="reading-copy" set:html={html} /></div>
 </section>}
 {block.kind === 'photo' && <figure class={'story-photo photo-' + block.layout}>
   <div class="photo-layout"><img src={assetPath(block.image)} alt={block.alt} width="1536" height="1024" loading="lazy" />

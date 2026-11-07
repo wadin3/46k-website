@@ -38,6 +38,7 @@ const articles = defineCollection({
     heroCredit: z.string().default(''),
     imageCaptions: z.boolean().default(true),
     tocAfterHero: z.boolean().default(false),
+    editorialStyle: z.enum(['paper', 'feature']).default('paper'),
     cover: z.enum(['light', 'dark']).default('light'),
     demonstration: z.boolean().default(false),
     sections: z.array(section).default([]),

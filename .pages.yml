@@ -43,6 +43,12 @@ content:
         label: Innehåll direkt efter omslagsbild / Contents after cover photo
         type: boolean
         default: false
+      - name: editorialStyle
+        label: Redaktionell form / Editorial style
+        type: select
+        options:
+          values: [paper, feature]
+        default: paper
       - name: category
         label: Category
         type: select
