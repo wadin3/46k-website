@@ -24,6 +24,8 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--preview',action='store_true')
 args=parser.parse_args()
 entries=json.loads(Path('.astro/editorial-checks.json').read_text())
+def normalize(text):
+    return ' '.join(text.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').split())
 for locale,prefix in [('sv',''),('en','en/')]:
     for slug in ['can-we-measure-it','the-2046-question']:
         assert not Path(f'dist/{prefix}explore/{slug}/index.html').exists(), slug+' must be removed'
@@ -32,11 +34,11 @@ for locale,prefix in [('sv',''),('en','en/')]:
     assert path.exists()==(args.preview or not article['draft'])
     if not path.exists(): continue
     page=Page(path.read_text(encoding='utf-8'))
-    visible=' '.join(''.join(page.parts).split())
+    visible=normalize(''.join(page.parts))
     fixture=json.loads(Path('docs/editorial/football-brain-'+('source' if locale=='sv' else 'translation')+'.json').read_text(encoding='utf-8'))
     for index,text in enumerate(fixture['paragraphs']):
         if index in [3,8,52,59]: text=text[2:].strip()
-        assert ' '.join(text.split()) in visible, f'{locale}: paragraph {index} missing or rewritten'
+        assert normalize(text) in visible, f'{locale}: paragraph {index} missing or rewritten'
     assert page.sketches==8
     assert len([x for x in page.ids if x.startswith('reference-')])==23
     assert len([x for x in page.links if x.startswith('https://doi.org/') or x.startswith('https://pubmed.ncbi.nlm.nih.gov/')])==23
