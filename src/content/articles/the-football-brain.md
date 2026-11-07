@@ -140,95 +140,72 @@ sections:
     heading: References
     body: |-
       <span id="reference-1"></span>
-
       [1] Diamond, A. (2013). Executive functions. Annual Review of Psychology, 64, 135–168. [Read the source](https://doi.org/10.1146/annurev-psych-113011-143750)
 
       <span id="reference-2"></span>
-
       [2] Wolfe, J. M. (2021). Guided Search 6.0: An updated model of visual search. Psychonomic Bulletin & Review, 28, 1060–1092. [Read the source](https://doi.org/10.3758/s13423-020-01859-9)
 
       <span id="reference-3"></span>
-
       [3] Posner, M. I. (1980). Orienting of attention. Quarterly Journal of Experimental Psychology, 32, 3–25. [Read the source](https://doi.org/10.1080/00335558008248231)
 
       <span id="reference-4"></span>
-
       [4] Simons, D. J., & Chabris, C. F. (1999). Gorillas in our midst: Sustained inattentional blindness for dynamic events. Perception, 28, 1059–1074. [Read the source](https://doi.org/10.1068/p281059)
 
       <span id="reference-5"></span>
-
       [5] Jordet, G., m.fl. (2020). Scanning, contextual factors, and association with performance in English Premier League footballers: An investigation across a season. Frontiers in Psychology, 11, 553813. [Read the source](https://doi.org/10.3389/fpsyg.2020.553813)
 
       <span id="reference-6"></span>
-
       [6] Baddeley, A. (2012). Working memory: Theories, models, and controversies. Annual Review of Psychology, 63, 1–29. [Read the source](https://doi.org/10.1146/annurev-psych-120710-100422)
 
       <span id="reference-7"></span>
-
       [7] Cowan, N. (2010). The magical mystery four: How is working memory capacity limited, and why? Current Directions in Psychological Science, 19, 51–57. [Read the source](https://pubmed.ncbi.nlm.nih.gov/20445769/)
 
       <span id="reference-8"></span>
-
       [8] Kane, M. J., & Engle, R. W. (2003). Working-memory capacity and the control of attention: The contributions of goal neglect, response competition, and task set to Stroop interference. Journal of Experimental Psychology: General, 132, 47–70. [Read the source](https://doi.org/10.1037/0096-3445.132.1.47)
 
       <span id="reference-9"></span>
-
       [9] Uttal, D. H., m.fl. (2013). The malleability of spatial skills: A meta-analysis of training studies. Psychological Bulletin, 139, 352–402. [Read the source](https://doi.org/10.1037/a0028446)
 
       <span id="reference-10"></span>
-
       [10] Harris, D. J., Wilson, M. R., Crowe, E. M., & Vine, S. J. (2020). Examining the roles of working memory and visual attention in multiple object tracking expertise. Cognitive Processing, 21, 209–222. [Read the source](https://doi.org/10.1007/s10339-020-00954-y)
 
       <span id="reference-11"></span>
-
       [11] Klatzky, R. L., Loomis, J. M., Beall, A. C., Chance, S. S., & Golledge, R. G. (1998). Spatial updating of self-position and orientation during real, imagined, and virtual locomotion. Psychological Science, 9, 293–298. [Read the source](https://doi.org/10.1111/1467-9280.00058)
 
       <span id="reference-12"></span>
-
       [12] Salthouse, T. A. (1996). The processing-speed theory of adult age differences in cognition. Psychological Review, 103, 403–428. [Read the source](https://doi.org/10.1037/0033-295X.103.3.403)
 
       <span id="reference-13"></span>
-
       [13] Ratcliff, R., & McKoon, G. (2008). The diffusion decision model: Theory and data for two-choice decision tasks. Neural Computation, 20, 873–922. [Read the source](https://doi.org/10.1162/neco.2008.12-06-420)
 
       <span id="reference-14"></span>
-
       [14] Logan, G. D., & Cowan, W. B. (1984). On the ability to inhibit thought and action: A theory of an act of control. Psychological Review, 91, 295–327. [Read the source](https://doi.org/10.1037/0033-295X.91.3.295)
 
       <span id="reference-15"></span>
-
       [15] Monsell, S. (2003). Task switching. Trends in Cognitive Sciences, 7, 134–140. [Read the source](https://pubmed.ncbi.nlm.nih.gov/12639695/)
 
       <span id="reference-16"></span>
-
       [16] Runco, M. A., & Jaeger, G. J. (2012). The standard definition of creativity. Creativity Research Journal, 24, 92–96. [Read the source](https://doi.org/10.1080/10400419.2012.650092)
 
       <span id="reference-17"></span>
-
       [17] Roca, A., Ford, P. R., & Memmert, D. (2018). Creative decision making and visual search behavior in skilled soccer players. PLOS ONE, 13, e0199381. [Read the source](https://doi.org/10.1371/journal.pone.0199381)
 
       <span id="reference-18"></span>
-
       [18] Kaller, C. P., Unterrainer, J. M., Rahm, B., & Halsband, U. (2004). The impact of problem structure on planning: Insights from the Tower of London task. Cognitive Brain Research, 20, 462–472. [Read the source](https://doi.org/10.1016/j.cogbrainres.2004.04.002)
 
       <span id="reference-19"></span>
-
       [19] Phillips, L. H., Wynn, V. E., McPherson, S., & Gilhooly, K. J. (2001). Mental planning and the Tower of London task. Quarterly Journal of Experimental Psychology A, 54, 579–597. [Read the source](https://pubmed.ncbi.nlm.nih.gov/11394063/)
 
       <span id="reference-20"></span>
-
       [20] Friedman, N. P., & Miyake, A. (2017). Unity and diversity of executive functions: Individual differences as a window on cognitive structure. Cortex, 86, 186–204. [Read the source](https://doi.org/10.1016/j.cortex.2016.04.023)
 
       <span id="reference-21"></span>
-
       [21] Friedman, N. P., m.fl. (2016). Stability and change in executive function abilities from late adolescence to early adulthood: A longitudinal twin study. Developmental Psychology, 52, 326–340. [Read the source](https://doi.org/10.1037/dev0000075)
 
       <span id="reference-22"></span>
-
       [22] Melby-Lervåg, M., Redick, T. S., & Hulme, C. (2016). Working memory training does not improve performance on measures of intelligence or other measures of far transfer: Evidence from a meta-analytic review. Perspectives on Psychological Science, 11, 512–534. [Read the source](https://doi.org/10.1177/1745691616635612)
 
       <span id="reference-23"></span>
-
       [23] Kalén, A., m.fl. (2021). The role of domain-specific and domain-general cognitive functions and skills in sports performance: A meta-analysis. Psychological Bulletin, 147, 1290–1308. [Read the source](https://doi.org/10.1037/bul0000355)
 sources: []
 ---
