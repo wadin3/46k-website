@@ -1,4 +1,4 @@
-# 46K.com
+# 46K website
 
 Website for 46K - Decoding Football Intelligence.
 
@@ -9,16 +9,16 @@ Swedish is the default language; English is available under `/en/`.
 
 Run `npm ci`, then `npm run dev`. Build with `npm run build`.
 
-`ASTRO_SITE` sets the site origin and `ASTRO_BASE` its deployment path.
-Both default to the 46k.com root configuration. The Pages workflow reads these
-values from GitHub Pages before deploying main.
+Astro builds for `https://46karat.com` at the domain root. The Pages workflow
+checks the repository's configured custom domain against `public/CNAME` before
+publishing main. Manage the custom domain in the repository's Pages settings.
 
-Verify the production output with `python scripts/check-site.py --base /`.
-Use the same base value that was used during the build.
+Verify links, assets, metadata, the sitemap and CNAME with
+`python scripts/check-site.py` after building.
 
 ## Project context
 
-- [Published site](https://wadin3.github.io/46k-website/)
+- [Published site](https://46karat.com/)
 - [Project status](PROJECT.md)
 - [Language structure](docs/LANGUAGES.md)
 - [Brand library and reading order](docs/brand/README.md)

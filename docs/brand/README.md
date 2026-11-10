@@ -62,7 +62,7 @@ font selections and reusable production templates are not supplied.
 
 ## Website status
 
-Published with the owner's approval at https://wadin3.github.io/46k-website/.
+Published with the owner's approval at https://46karat.com/.
 Swedish is the default; English is under `/en/`. PR #2 includes PR #1's
 deployment work and has been merged. Official logos are used unchanged.
 Production deployment, all 16 public routes and live language switching

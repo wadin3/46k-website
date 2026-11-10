@@ -70,13 +70,13 @@ noindex in production-mode builds. Publication still requires content review.
 - `node scripts/check-editorial.mjs`: CMS block keys, eight content files,
   YAML load/save round trip, media metadata and source-derived draft expectations.
 - `npm run build`: Astro schema validation and Markdown rendering.
-- `python scripts/check-site.py --base /46k-website`: generated routes,
-  links, images, unique h1, languages and deployment base.
+- `python scripts/check-site.py`: generated routes, links, images,
+  unique h1, languages, metadata and sitemap for the custom domain root.
 - `python scripts/check-editorial.py`: real rendered block coverage,
   demonstration noindex and draft exclusion. Add `--preview` for preview output.
 - `node scripts/check-publication.mjs` (CI/Linux): temporary CMS-shaped content
   saved as YAML, built first as a draft and then with draft:false. Verifies both
-  languages, Markdown formatting/media, publication and project-base links.
+  languages, Markdown formatting/media, publication and root-relative links.
   Temporary files are removed before the preview artifact is built.
 
 Reading time for block articles is calculated automatically and shared by
