@@ -16,7 +16,7 @@ class Page(HTMLParser):
         attrs=dict(attrs)
         if tag in ('p','h1','h2','h3','li','div'): self.parts.append(' ')
         if attrs.get('id'): self.ids.add(attrs['id'])
-        if tag=='a': self.links.append(attrs.get('href',''))
+        if tag=='a': self.links.append(attrs)
         if tag=='svg' and 'brain-sketch' in attrs.get('class',''): self.sketches+=1
     def handle_data(self, value): self.parts.append(value)
 
@@ -41,5 +41,6 @@ for locale,prefix in [('sv',''),('en','en/')]:
         assert normalize(text) in visible, f'{locale}: paragraph {index} missing or rewritten'
     assert page.sketches==8
     assert len([x for x in page.ids if x.startswith('reference-')])==23
-    assert len([x for x in page.links if x.startswith('https://doi.org/') or x.startswith('https://pubmed.ncbi.nlm.nih.gov/')])==23
+    sources = [link for link in page.links if link.get('href', '').startswith(('https://doi.org/', 'https://pubmed.ncbi.nlm.nih.gov/'))]
+    assert len(sources) == 23 and all(link.get('target') == '_blank' for link in sources)
 print('Football Brain: source fidelity, 8 visual abilities, 23 original source links, draft visibility and retired article removal pass.')

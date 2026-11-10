@@ -8,7 +8,9 @@ interface Props { block: Block; index: number; number: number; imageCaptions?: b
 const { block, index, number, imageCaptions = true, feature = false, brain = false, locale = 'sv' } = Astro.props;
 const abilityNames = locale === 'sv' ? ['Uppmärksamhet och avsökning','Arbetsminne','Visuospatial förmåga i rörelse','Bearbetningshastighet','Inhibition','Kognitiv flexibilitet','Divergent tänkande','Planering'] : ['Attention and scanning','Working memory','Visuospatial ability in motion','Processing speed','Inhibition','Cognitive flexibility','Divergent thinking','Planning'];
 const ability = brain && block.kind === 'text' ? abilityNames.indexOf(block.heading) : -1;
-const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body, feature && !['Referenser', 'References'].includes(block.heading)) : '';
+const isReferenceList = block.kind === 'text' && ['Referenser', 'References'].includes(block.heading.trim());
+const markdownStyle = isReferenceList ? 'references' : feature ? 'feature' : 'body';
+const html = block.kind === 'text' || block.kind === 'note' ? await editorialMarkdown(block.body, markdownStyle) : '';
 ---
 {block.kind === 'text' && <section class={'story-text story-grid' + (ability >= 0 ? ' brain-ability' : '')} id={'section-' + index}>
   {block.heading && <div class="chapter-marker" aria-hidden="true">{String(number).padStart(2, '0')}<span></span></div>}

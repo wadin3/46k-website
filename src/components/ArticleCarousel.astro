@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { translate, localePath, type Locale } from '../i18n';
-import { articleSlug, readingMinutes } from '../lib/articles';
+import { articleSlug, articleByline, articleMetadata } from '../lib/articles';
 import { sitePath } from '../lib/paths';
 interface Props { articles: CollectionEntry<'articles'>[]; locale: Locale; }
 const { articles, locale } = Astro.props;
@@ -11,7 +11,8 @@ const t = (text: string) => translate(locale, text);
   <div class="article-rail" data-rail tabindex="0" aria-label={t('Articles')}>
     <div class="marquee-group" data-canonical>
       {articles.map(article => <a class="rail-card" data-article href={localePath('explore/' + articleSlug(article) + '/', locale)}>
-        <p class="meta">{t(article.data.category)} / {readingMinutes(article)} {t('MIN READ')}</p>
+        <p class="article-byline">{articleByline(article, locale)}</p>
+        <p class="meta">{articleMetadata(article, locale)}</p>
         <h3>{article.data.title}</h3><p class="rail-description">{article.data.description}</p>
         <span class="read">{t('Read article')} <span aria-hidden="true">&#8599;</span></span>
       </a>)}
