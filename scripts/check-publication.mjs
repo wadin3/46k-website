@@ -41,23 +41,21 @@ try {
     }
     run('node',['scripts/check-editorial.mjs']);
     run('npm',['run','build']);
-    run('python3',['scripts/check-site.py','--base',process.env.ASTRO_BASE || '/']);
+    run('python3',['scripts/check-site.py']);
     run('python3',['scripts/check-editorial.py']);
     for (const prefix of ['', 'en/']) {
       const html = await readFile('dist/' + prefix + 'explore/cms-revision-base/index.html', 'utf8');
       assert(html.includes(draft ? 'ORIGINAL_REVISION_BODY' : 'REPLACEMENT_REVISION_BODY'));
       assert(!html.includes(draft ? 'REPLACEMENT_REVISION_BODY' : 'ORIGINAL_REVISION_BODY'));
-      const base = (process.env.ASTRO_BASE || '').replace(/\/$/, '');
       const listing = await readFile('dist/' + prefix + 'explore/index.html', 'utf8');
-      assert.equal(listing.split('class="journal-cover-link" href="' + base + '/' + prefix + 'explore/cms-revision-base/"').length - 1, 1);
+      assert.equal(listing.split('class="journal-cover-link" href="/' + prefix + 'explore/cms-revision-base/"').length - 1, 1);
       assert.equal(await access('dist/' + prefix + 'explore/cms-revision-next/index.html').then(() => true, () => false), false);
     }
     if (!draft) {
       const html = await readFile('dist/explore/cms-workflow-check/index.html','utf8');
       assert(html.includes('<strong>formatted</strong>'));
-      const base = (process.env.ASTRO_BASE || '').replace(/\/$/,'');
-      assert(html.includes('src="' + base + '/images/editorial-feedback.webp"'));
-      assert(html.includes('href="' + base + '/explore/"'));
+      assert(html.includes('src="/images/editorial-feedback.webp"'));
+      assert(html.includes('href="/explore/"'));
     }
   }
   console.log('PASS: CMS-shaped YAML save, Markdown rendering, draft exclusion and draft:false publication in both languages.');

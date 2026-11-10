@@ -23,15 +23,15 @@ image pairs/credits, sources and related reading. Existing article URLs and
 body-only Markdown compatibility remain. Original logo PNGs are unchanged.
 
 See `docs/EDITORIAL.md` for editing and preview instructions, tests and the
-remaining authenticated CMS checks. CI validates default/project-path builds,
+remaining authenticated CMS checks. CI validates builds at the custom domain root,
 draft previews and a temporary CMS-shaped edit/draft/publication lifecycle.
 The actual Pages CMS interface is currently behind sign-in; media upload,
 block editing/reordering and editor-triggered preview have not been verified.
 
 ## Published
 
-Live: https://wadin3.github.io/46k-website/
-English: https://wadin3.github.io/46k-website/en/
+Live: https://46karat.com/
+English: https://46karat.com/en/
 
 Swedish is the default. The upper-right language menu uses native names;
 the selected language has a small accompanying flag. Switching preserves
