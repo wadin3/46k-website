@@ -1,5 +1,26 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { Locale } from '../i18n';
+import { translate, type Locale } from '../i18n';
+
+const categoryNames = {
+  UNDERSTAND: 'Football intelligence',
+  ASSESS: 'Cognitive testing',
+  DEVELOP: 'Training & development',
+  '2046': '2046',
+};
+
+export function articleCategoryLabel(category: keyof typeof categoryNames, locale: Locale) {
+  return translate(locale, categoryNames[category]);
+}
+
+export function articleByline(article: CollectionEntry<'articles'>, locale: Locale) {
+  return article.data.authorship === 'research-summary'
+    ? translate(locale, 'Research article / Adapted by 46K')
+    : '46K';
+}
+
+export function articleMetadata(article: CollectionEntry<'articles'>, locale: Locale) {
+  return `${articleCategoryLabel(article.data.category, locale)} / ${readingMinutes(article)} ${translate(locale, 'MIN READ')}`;
+}
 
 export function articleSlug(article: CollectionEntry<'articles'>) {
   return article.data.replaces ?? article.id.split('/').at(-1)!;

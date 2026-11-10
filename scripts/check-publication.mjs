@@ -15,6 +15,7 @@ const run = (command, args) => execFileSync(command, args, {stdio:'inherit', env
 const payload = (language, draft) => ({
   title:'CMS workflow check', description:'Temporary automated file-to-build check.',
   language, translationKey:'cms-workflow-check', category:'ASSESS', type:'research',
+  authorship:'research-summary',
   date:'2026-10-15', readingTime:1, draft, demonstration:true,
   heroImage:'/images/editorial-feedback.webp', heroAlt:'Illustrative player and coach.',
   sections:[
@@ -53,6 +54,9 @@ try {
     }
     if (!draft) {
       const html = await readFile('dist/explore/cms-workflow-check/index.html','utf8');
+      const english = await readFile('dist/en/explore/cms-workflow-check/index.html','utf8');
+      assert(html.includes('class="cover-byline">Forskningsartikel / Bearbetad av 46K</p>'));
+      assert(english.includes('class="cover-byline">Research article / Adapted by 46K</p>'));
       assert(html.includes('<strong>formatted</strong>'));
       assert(html.includes('src="/images/editorial-feedback.webp"'));
       assert(html.includes('href="/explore/"'));

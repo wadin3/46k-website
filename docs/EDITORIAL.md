@@ -9,6 +9,8 @@ is needed. Existing article URLs and translation groups are preserved.
    prepared on `editorial-redesign-v2`, not directly on `main`.
 2. Choose category, language, type and cover image. The template supplies
    category styling, numbered chapters, contents links and related reading.
+   Choose `research-summary` as the byline only when adapting an external research
+   article. The default byline is 46K.
 3. Write the opening in the final rich-text field. Older articles may keep
    their entire Markdown body here; this remains supported.
 4. Add and reorder story blocks: text, photo, quote, note or model.

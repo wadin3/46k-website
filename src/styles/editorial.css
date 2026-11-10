@@ -18,6 +18,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .container { width: min(100%, 1440px); margin: auto; padding-inline: 48px; }
 .serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: 0; }
 .kicker, .meta { font-size: 12px; line-height: 1.6; font-weight: 600; letter-spacing: 0; text-transform: uppercase; }
+.article-byline { font-size: 11px; line-height: 1.6; margin: 0 0 6px; }
 .line { display: block; width: 44px; height: 3px; background: var(--gold); margin: 20px 0 28px; }
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 10; padding: 12px 20px; background: var(--paper); }
 .skip-link:focus { top: 12px; }

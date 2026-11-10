@@ -61,6 +61,12 @@ content:
         options:
           values: [editorial, research, insight, practice]
         required: true
+      - name: authorship
+        label: Avsändare / Byline (research-summary för sammanfattningar av andras forskning)
+        type: select
+        options:
+          values: ['46k', research-summary]
+        default: '46k'
       - name: date
         label: Date
         type: date

@@ -17,10 +17,9 @@
 .story-back { display: inline-flex; align-items: center; min-height: 44px; gap: 12px; margin-bottom: 20px; }
 .cover-category { color: var(--pitch); display: flex; align-items: center; gap: 12px; margin: 0 0 22px; }
 .cover-category::before { content: ''; width: 32px; height: 2px; background: var(--gold); }
-.cover-category span { font-weight: 400; }
 .story-cover h1 { font: 400 58px/1.08 Georgia, serif; letter-spacing: 0; margin: 0 0 24px; text-wrap: balance; }
 .cover-deck { font: 400 23px/1.55 Georgia, serif; max-width: 830px; margin: 0 0 28px; }
-.cover-byline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid #383D3E33; padding-top: 16px; font-size: 11px; line-height: 1.6; }
+.cover-byline { margin: 0; border-top: 1px solid #383D3E33; padding-top: 16px; font-size: 11px; line-height: 1.6; }
 .cover-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center 40%; }
 .category-assess .cover-photo { filter: grayscale(1); }
 .cover-credit { display: flex; justify-content: space-between; gap: 18px; font: 400 11px/1.7 Arial, sans-serif; padding-block: 10px 16px; margin: 0; }
