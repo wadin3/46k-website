@@ -32,11 +32,11 @@ sections:
 
       Football has developed an extensive vocabulary to describe their qualities: scanning, assessing situations, anticipation, positioning, timing, understanding roles, creativity and decision-making. Other descriptions concern controlling the tempo, staying calm under pressure or playing on instinct.
 
-      These concepts also recur in football’s coaching materials. The English FA, for example, describes successful pressing through six interacting capabilities: scanning, timing, movement, positioning, deception and technique. [[1]](https://www.thefa.com/bootroom/resources/coaching/the-big-six-pressing) UEFA’s coach education emphasises, among other things, positional understanding, opportunities to explore different solutions, and training situations that develop decision-making. [[2]](https://editorial.uefa.com/resources/0267-11ebff960bb7-405a74be27d5-1000/uefa_b_diploma_2020_en.pdf)
+      These concepts also recur in football’s coaching materials. The English FA, for example, describes successful pressing through six interacting capabilities: scanning, timing, movement, positioning, deception and technique. [[1]](#reference-1) UEFA’s coach education emphasises, among other things, positional understanding, opportunities to explore different solutions, and training situations that develop decision-making. [[2]](#reference-2)
 
-      Scouting also emphasises the importance of context. Higinio Vilches, who works with Spain’s youth national teams, describes how players’ technical and tactical qualities must be assessed in relation to their team’s way of playing. [[3]](https://www.fifatrainingcentre.com/en/practice/elite-sessions/youth-national-teams/u15-boys-tournament/higinio-vilches-on-scouting-spanish-youth-talent.php)
+      Scouting also emphasises the importance of context. Higinio Vilches, who works with Spain’s youth national teams, describes how players’ technical and tactical qualities must be assessed in relation to their team’s way of playing. [[3]](#reference-3)
 
-      Football’s understanding is also beginning to extend beyond visible behaviours. In a presentation for the FIFA Training Centre, researcher Mark Williams links football intelligence to information processing, pattern recognition and the ability to anticipate what is going to happen. Experience plays a central role: skilful players learn which information is worth using. [[4]](https://www.fifatrainingcentre.com/en/environment/science-explained/high-performance/play/mark-williams-on-game-intelligence.php)
+      Football’s understanding is also beginning to extend beyond visible behaviours. In a presentation for the FIFA Training Centre, researcher Mark Williams links football intelligence to information processing, pattern recognition and the ability to anticipate what is going to happen. Experience plays a central role: skilful players learn which information is worth using. [[4]](#reference-4)
 
       Take the player who looks over their shoulder before the ball arrives. The head movement can be observed. But what did the player take in? Could they see the run, keep that information available when their gaze returned to the ball, and notice that the original passing option was disappearing?
 
@@ -50,21 +50,21 @@ sections:
     body: |-
       This is where psychological research becomes interesting. Cognition concerns how we perceive, process and use information. Executive functions help us, among other things, to keep information current, inhibit an inappropriate action, and adapt when circumstances change.
 
-      More and more studies are beginning to investigate the links with football. In a Swedish study from 2012, players in higher divisions performed better on executive-function tests than players in lower divisions. The researchers also found a relationship between test results and the number of goals and assists a player recorded in the following season. [[5]](https://doi.org/10.1371/journal.pone.0034731)
+      More and more studies are beginning to investigate the links with football. In a Swedish study from 2012, players in higher divisions performed better on executive-function tests than players in lower divisions. The researchers also found a relationship between test results and the number of goals and assists a player recorded in the following season. [[5]](#reference-5)
 
-      A Dutch study from 2014 compared 84 academy players with 42 amateur players of a similar age. The academy players were better at stopping a motor impulse, and showed a greater effect of a cue that prepared their attention. [[6]](https://doi.org/10.1371/journal.pone.0091254)
+      A Dutch study from 2014 compared 84 academy players with 42 amateur players of a similar age. The academy players were better at stopping a motor impulse, and showed a greater effect of a cue that prepared their attention. [[6]](#reference-6)
 
-      A meta-analysis of 142 studies across several sports found that more skilful athletes, on average, performed better on cognitive tasks. The differences were larger when the tasks resembled the sport in question. [[7]](https://doi.org/10.1037/bul0000355)
+      A meta-analysis of 142 studies across several sports found that more skilful athletes, on average, performed better on cognitive tasks. The differences were larger when the tasks resembled the sport in question. [[7]](#reference-7)
 
       The research picture contains both promising relationships and clear limitations. The studies above also discuss relationships that could not be established statistically, and predicting future performance is difficult when the evidence base is small and performance measures are hard to define. Football intelligence, as we see it, is far more than the number of goals and assists.
 
-      FIFA also publishes its own material, including a discussion in which Jes Buster Madsen addresses attention, working memory, inhibition, visual information processing, pattern recognition and action selection. The accompanying research article, written with Thomas Habekost and Jacob Ovesen, presents a theoretical model of how players assess a situation, select and execute actions, and use feedback. [[8]](https://www.fifatrainingcentre.com/en/environment/expert-knowledge/cognition-in-elite-football.php)[[9]](https://doi.org/10.3389/fpsyg.2024.1477262)
+      FIFA also publishes its own material, including a discussion in which Jes Buster Madsen addresses attention, working memory, inhibition, visual information processing, pattern recognition and action selection. The accompanying research article, written with Thomas Habekost and Jacob Ovesen, presents a theoretical model of how players assess a situation, select and execute actions, and use feedback. [[8]](#reference-8)[[9]](#reference-9)
   - kind: text
     heading: "The 46K perspective: Football intelligence begins in the brain"
     body: |-
       At 46K, our starting point is that a player’s way of perceiving and solving the game rests on fundamental cognitive abilities interacting with football knowledge, technique and experience.
 
-      Psychological science gives us concepts with which to investigate that interaction. Working memory, for example, involves keeping information available while we use it. Inhibition helps us resist distractions or stop a response. Cognitive flexibility makes it possible to change perspective and adapt an action. These functions are also relevant to learning and handling new demands. [[10]](https://doi.org/10.1146/annurev-psych-113011-143750)
+      Psychological science gives us concepts with which to investigate that interaction. Working memory, for example, involves keeping information available while we use it. Inhibition helps us resist distractions or stop a response. Cognitive flexibility makes it possible to change perspective and adapt an action. These functions are also relevant to learning and handling new demands. [[10]](#reference-10)
 
       To connect this perspective with football, we have begun developing our own model of football intelligence.
 
@@ -146,7 +146,7 @@ sections:
 
       Our hypothesis is that a cognitive profile can contribute to understanding both how a player handles the demands of a match and how training and instructions can best be designed. Two players may, for example, need different amounts of structure when learning a new task, or different strategies for solving match situations.
 
-      Research in the area is far from complete, and psychological characteristics are not easy to measure precisely. For example, a study published in 2026 showed that a generic cognitive test battery could distinguish between groups of young elite and sub-elite players, but also showed low to moderate stability on retesting[[12]](https://doi.org/10.1026/2941-7597/a000064). Measuring a cognitive ability and establishing what the result means for a footballer are two tasks that both need to be done properly.
+      Research in the area is far from complete, and psychological characteristics are not easy to measure precisely. For example, a study published in 2026 showed that a generic cognitive test battery could distinguish between groups of young elite and sub-elite players, but also showed low to moderate stability on retesting[[11]](#reference-11). Measuring a cognitive ability and establishing what the result means for a footballer are two tasks that both need to be done properly.
 
       With this starting point, we are developing 46K Assessment, our upcoming service for psychometric assessment of cognitive and executive abilities. Our ambition is to give players and coaches an understandable profile that can be connected with observations, training situations and development needs.
 
@@ -156,27 +156,27 @@ sections:
   - kind: text
     heading: "References"
     body: |-
-      1. The Football Association. (2022, 10 februari). [The big six: pressing](https://www.thefa.com/bootroom/resources/coaching/the-big-six-pressing). The Boot Room.
+      1. <span id="reference-1"></span>The Football Association. (2022, 10 februari). [The big six: pressing](https://www.thefa.com/bootroom/resources/coaching/the-big-six-pressing). The Boot Room.
 
-      2. UEFA. (2020). [Coaching Convention 2020: Syllabus of minimum content—UEFA B diploma](https://editorial.uefa.com/resources/0267-11ebff960bb7-405a74be27d5-1000/uefa_b_diploma_2020_en.pdf).
+      2. <span id="reference-2"></span>UEFA. (2020). [Coaching Convention 2020: Syllabus of minimum content—UEFA B diploma](https://editorial.uefa.com/resources/0267-11ebff960bb7-405a74be27d5-1000/uefa_b_diploma_2020_en.pdf).
 
-      3. Vilches, H. (2025, 8 april). [Higinio Vilches on scouting Spanish youth talent](https://www.fifatrainingcentre.com/en/practice/elite-sessions/youth-national-teams/u15-boys-tournament/higinio-vilches-on-scouting-spanish-youth-talent.php). FIFA Training Centre.
+      3. <span id="reference-3"></span>Vilches, H. (2025, 8 april). [Higinio Vilches on scouting Spanish youth talent](https://www.fifatrainingcentre.com/en/practice/elite-sessions/youth-national-teams/u15-boys-tournament/higinio-vilches-on-scouting-spanish-youth-talent.php). FIFA Training Centre.
 
-      4. Williams, A. M. (2023, 20 april). [Mark Williams on game intelligence](https://www.fifatrainingcentre.com/en/environment/science-explained/high-performance/play/mark-williams-on-game-intelligence.php). FIFA Training Centre.
+      4. <span id="reference-4"></span>Williams, A. M. (2023, 20 april). [Mark Williams on game intelligence](https://www.fifatrainingcentre.com/en/environment/science-explained/high-performance/play/mark-williams-on-game-intelligence.php). FIFA Training Centre.
 
-      5. Vestberg, T., Gustafson, R., Maurex, L., Ingvar, M., & Petrovic, P. (2012). [Executive functions predict the success of top-soccer players](https://doi.org/10.1371/journal.pone.0034731). PLOS ONE, 7(4), e34731.
+      5. <span id="reference-5"></span>Vestberg, T., Gustafson, R., Maurex, L., Ingvar, M., & Petrovic, P. (2012). [Executive functions predict the success of top-soccer players](https://doi.org/10.1371/journal.pone.0034731). PLOS ONE, 7(4), e34731.
 
-      6. Verburgh, L., Scherder, E. J. A., van Lange, P. A. M., & Oosterlaan, J. (2014). [Executive functioning in highly talented soccer players](https://doi.org/10.1371/journal.pone.0091254). PLOS ONE, 9(3), e91254.
+      6. <span id="reference-6"></span>Verburgh, L., Scherder, E. J. A., van Lange, P. A. M., & Oosterlaan, J. (2014). [Executive functioning in highly talented soccer players](https://doi.org/10.1371/journal.pone.0091254). PLOS ONE, 9(3), e91254.
 
-      7. Kalén, A., Bisagno, E., Musculus, L., Raab, M., Pérez-Ferreirós, A., Williams, A. M., Araújo, D., Lindwall, M., & Ivarsson, A. (2021). [The role of domain-specific and domain-general cognitive functions and skills in sports performance: A meta-analysis](https://doi.org/10.1037/bul0000355). Psychological Bulletin, 147(12), 1290–1308.
+      7. <span id="reference-7"></span>Kalén, A., Bisagno, E., Musculus, L., Raab, M., Pérez-Ferreirós, A., Williams, A. M., Araújo, D., Lindwall, M., & Ivarsson, A. (2021). [The role of domain-specific and domain-general cognitive functions and skills in sports performance: A meta-analysis](https://doi.org/10.1037/bul0000355). Psychological Bulletin, 147(12), 1290–1308.
 
-      8. Madsen, J. B. (2025, 27 februari). [Jes Buster Madsen on cognition in elite football](https://www.fifatrainingcentre.com/en/environment/expert-knowledge/cognition-in-elite-football.php). FIFA Training Centre.
+      8. <span id="reference-8"></span>Madsen, J. B. (2025, 27 februari). [Jes Buster Madsen on cognition in elite football](https://www.fifatrainingcentre.com/en/environment/expert-knowledge/cognition-in-elite-football.php). FIFA Training Centre.
 
-      9. Habekost, T., Ovesen, J., & Madsen, J. B. (2024). [Cognition in elite soccer players: A general model](https://doi.org/10.3389/fpsyg.2024.1477262). Frontiers in Psychology, 15, 1477262.
+      9. <span id="reference-9"></span>Habekost, T., Ovesen, J., & Madsen, J. B. (2024). [Cognition in elite soccer players: A general model](https://doi.org/10.3389/fpsyg.2024.1477262). Frontiers in Psychology, 15, 1477262.
 
-      10. Diamond, A. (2013). [Executive functions](https://doi.org/10.1146/annurev-psych-113011-143750). Annual Review of Psychology, 64, 135–168.
+      10. <span id="reference-10"></span>Diamond, A. (2013). [Executive functions](https://doi.org/10.1146/annurev-psych-113011-143750). Annual Review of Psychology, 64, 135–168.
 
-      11. Reinhard, M. L., Larkin, P., García López, L. M., & Höner, O. (2026). [Cognitive assessment in elite youth football: Reliability and validity of a generic cognitive function diagnostic tool](https://doi.org/10.1026/2941-7597/a000064). Journal of Applied Sport and Exercise Psychology, 33(3).
+      11. <span id="reference-11"></span>Reinhard, M. L., Larkin, P., García López, L. M., & Höner, O. (2026). [Cognitive assessment in elite youth football: Reliability and validity of a generic cognitive function diagnostic tool](https://doi.org/10.1026/2941-7597/a000064). Journal of Applied Sport and Exercise Psychology, 33(3).
 
       References to FIFA presentations refer to the published written summaries.
 sources: []

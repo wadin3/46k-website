@@ -26,9 +26,9 @@ boundaries are presentation changes. No new claims or quotations were added.
 The English version is a faithful translation explicitly requested in chat.
 Both source paragraph fixtures are retained for automated rendering checks.
 
-The source cites [12] but supplies eleven bibliography entries. This was
-reported to the owner and deliberately not silently corrected. The [12]
-hyperlink remains the destination supplied in Word.
+The manuscript cites [12] for the DOI listed in bibliography entry 11.
+The published citation uses [11] and links to that entry. The original
+manuscript fixtures retain [12].
 
 The new files are true draft replacements. `replaces` keeps the existing
 public URL and excludes duplicate cards in preview. Production continues
