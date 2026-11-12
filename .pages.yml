@@ -95,6 +95,9 @@ content:
       - name: heroAlt
         label: Image description
         type: string
+      - name: editorialNote
+        label: Om texten för forskningsbearbetning / About adapted research
+        type: text
       - name: heroCaption
         label: Bildtext / Cover caption
         type: text

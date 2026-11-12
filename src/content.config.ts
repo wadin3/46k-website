@@ -30,6 +30,7 @@ const articles = defineCollection({
     category: z.enum(['UNDERSTAND','ASSESS','DEVELOP','2046']),
     type: z.enum(['editorial','research','insight','practice']),
     authorship: z.enum(['46k', 'research-summary']).default('46k'),
+    editorialNote: z.string().trim().min(1).optional(),
     date: z.coerce.date(),
     readingTime: z.number().int().positive(),
     featured: z.boolean().default(false),

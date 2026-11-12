@@ -6,6 +6,8 @@ translationKey: vestberg-2017-executive-functions
 category: UNDERSTAND
 type: research
 authorship: research-summary
+editorialNote: >-
+  This shortened research summary was prepared for the 46K knowledge library. The Swedish adaptation was produced with AI and reviewed by a licensed psychologist. This English version translates the Swedish adaptation.
 date: '2026-11-10'
 readingTime: 5
 featured: true
@@ -125,8 +127,6 @@ sections:
     body: |-
       <span id="reference-1"></span>
       Vestberg, T., Reinebo, G., Maurex, L., Ingvar, M., & Petrovic, P. (2017). Core executive functions are associated with success in young elite soccer players. PLOS ONE, 12(2), e0170845. [Read the source](https://doi.org/10.1371/journal.pone.0170845)
-
-      About this text: This shortened research summary was prepared for the 46K knowledge library. The Swedish adaptation was produced with AI and reviewed by a licensed psychologist. This English version translates the Swedish adaptation.
 ---
 
 Original article: Core executive functions are associated with success in young elite soccer players.

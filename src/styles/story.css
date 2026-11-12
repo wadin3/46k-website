@@ -30,10 +30,13 @@
 .story-status p { margin: 6px 0 0; }
 .story-introduction { margin-block: 32px; columns: 2; column-gap: 36px; font: 400 20px/1.75 Georgia, serif; }
 .story-introduction > p:first-child::first-letter { float: left; font: 400 64px/.9 Georgia, serif; padding: 7px 9px 0 0; color: var(--pitch); }
-.story-contents { padding-block: 24px 0; border-top: 1px solid #383D3E22; }
-.story-contents > p { margin: 0 0 12px; }
+.story-editorial-note { margin-block: 24px; padding: 12px 16px; border-inline-start: 2px solid var(--gold); background: #383D3E08; font-size: 13px; line-height: 1.65; }
+.story-editorial-note h2 { margin: 0 0 4px; font: inherit; font-weight: 600; color: var(--pitch); }
+.story-editorial-note p { max-width: 78ch; margin: 0; }
+.story-contents { padding-block: 14px; border-block: 1px solid #383D3E22; }
+.story-contents > p { margin: 0 0 5px; }
 .story-contents ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; list-style: none; margin: 0; padding: 0; }
-.story-contents a { display: flex; gap: 12px; min-height: 44px; padding-block: 9px; font-size: 12px; line-height: 1.6; }
+.story-contents a { display: flex; gap: 12px; min-height: 28px; padding-block: 4px; font-size: 12px; line-height: 1.45; }
 .story-contents a span { color: var(--pitch); }
 .paper-spread { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; align-items: start; }
 .story-text { grid-column: 1; grid-row: 1 / span 4; scroll-margin-top: 28px; }

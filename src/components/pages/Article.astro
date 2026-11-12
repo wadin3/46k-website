@@ -28,6 +28,9 @@ const blocks = d.sections.map((block, index) => ({ block, index, number: block.k
 const chapters = blocks.filter(item => item.block.kind === 'text' && item.block.heading);
 const contents = chapters.map(item => ({ id: 'section-' + item.index, title: item.block.kind === 'text' ? item.block.heading : '', number: item.number }));
 const byline = articleByline(article, locale);
+const editorialNote = d.authorship === 'research-summary'
+  ? d.editorialNote
+  : t('46K prepared this article with AI assistance for information searches, research review, text editing and reference management. A licensed psychologist reviews the article’s content, conclusions and final version.');
 const spreads: (typeof blocks)[] = [];
 for (const item of blocks) {
   if (item.block.kind === 'text' || !spreads.length) spreads.push([]);
@@ -47,6 +50,12 @@ for (const item of blocks) {
       </div>
       {d.heroImage && <img class:list={['cover-photo', { 'cover-photo-four-three': d.coverAspect === 'four-three' }]} src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height={d.coverAspect === 'four-three' ? 1152 : 1024} fetchpriority="high" />}
     </header>
+    {editorialNote && (
+      <aside class="story-editorial-note" aria-labelledby="editorial-note-title">
+        <h2 id="editorial-note-title">{t('About this text')}</h2>
+        <p>{editorialNote}</p>
+      </aside>
+    )}
     {d.tocAfterHero && <StoryContents label={t('In this article')} items={contents} />}
     {d.imageCaptions && (d.heroCaption || d.heroCredit) && <p class="cover-credit container"><span>{d.heroCaption}</span><small>{d.heroCredit}</small></p>}
     {(d.demonstration || d.draft) && <aside class="story-status container"><strong>{d.draft ? t('Editorial draft') : t('Demonstration article')}</strong>{d.demonstration && <p>{t('Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.')}</p>}</aside>}

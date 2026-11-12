@@ -130,6 +130,8 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "Editorial draft": "Redaktionellt utkast",
   "Demonstration article": "Demonstrationsartikel",
   "Example material for editorial review. Scenes are illustrative; recommendations are 46K interpretations, not validated results.": "Exempelmaterial för redaktionell granskning. Scenerna är illustrativa; förslagen är 46K:s tolkningar, inte validerade resultat.",
+  "About this text": "Om texten",
+  "46K prepared this article with AI assistance for information searches, research review, text editing and reference management. A licensed psychologist reviews the article’s content, conclusions and final version.": "Denna artikel är framtagen av 46K med stöd av AI för informationssökning, genomgång av forskning, textbearbetning och referenshantering. Artikelns innehåll, slutsatser och slutliga utformning kontrolleras av leg. psykolog.",
   "In this article": "I den här artikeln",
   "The opening": "Utgångspunkten",
   "Reading room": "Läs vidare",

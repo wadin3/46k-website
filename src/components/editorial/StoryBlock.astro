@@ -15,7 +15,7 @@ const html = block.kind === 'text' || block.kind === 'note' ? await editorialMar
 ---
 {block.kind === 'text' && <section class={'story-text story-grid' + (ability >= 0 ? ' brain-ability' : '')} id={'section-' + index}>
   {block.heading && <div class="chapter-marker" aria-hidden="true">{String(number).padStart(2, '0')}<span></span></div>}
-  <div class="reading-column">{ability >= 0 ? <header class="brain-ability-heading"><div><p class="brain-label">{locale === 'sv' ? 'Förmåga' : 'Ability'} <span aria-hidden="true">/</span> {String(ability+1).padStart(2,'0')}</p><h2>{block.heading}</h2></div><BrainSketch variant={ability} /></header> : block.heading && <h2>{block.heading}</h2>}<div class="reading-copy" set:html={html} /></div>
+  <div class="reading-column">{ability >= 0 ? <header class="brain-ability-heading"><h2>{block.heading}</h2><BrainSketch variant={ability} /></header> : block.heading && <h2>{block.heading}</h2>}<div class="reading-copy" set:html={html} /></div>
   {block.visual && <VestbergVisual variant={block.visual} locale={locale} />}
 </section>}
 {block.kind === 'photo' && <figure class={'story-photo photo-' + block.layout}>
