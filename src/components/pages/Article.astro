@@ -48,7 +48,7 @@ for (const item of blocks) {
         <h1>{d.title}</h1><p class="cover-deck">{d.description}</p>
         <p class="cover-byline">{byline}</p>
       </div>
-      {d.heroImage && <img class="cover-photo" src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height="1024" fetchpriority="high" />}
+      {d.heroImage && <img class:list={['cover-photo', { 'cover-photo-four-three': d.coverAspect === 'four-three' }]} src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height={d.coverAspect === 'four-three' ? 1152 : 1024} fetchpriority="high" />}
     </header>
     {d.tocAfterHero && <StoryContents label={t('In this article')} items={contents} />}
     {d.imageCaptions && (d.heroCaption || d.heroCredit) && <p class="cover-credit container"><span>{d.heroCaption}</span><small>{d.heroCredit}</small></p>}

@@ -6,7 +6,8 @@ const photo = z.object({
   caption: z.string().default(''), credit: z.string().default(''),
 });
 const section = z.discriminatedUnion('kind', [
-  z.object({ kind: z.literal('text'), heading: z.string().default(''), body: z.string().min(1) }),
+  z.object({ kind: z.literal('text'), heading: z.string().default(''), body: z.string().min(1),
+    visual: z.enum(['vestberg-tests', 'vestberg-results']).optional() }),
   photo.extend({ kind: z.literal('photo'), layout: z.enum(['wide', 'offset', 'pair', 'diagram']).default('wide'),
     secondImage: z.string().default(''), secondAlt: z.string().default(''),
     secondCaption: z.string().default(''), secondCredit: z.string().default('') }),
@@ -34,6 +35,7 @@ const articles = defineCollection({
     featured: z.boolean().default(false),
     draft: z.boolean().default(true),
     heroImage: z.string().optional(),
+    coverAspect: z.enum(['wide', 'four-three']).default('wide'),
     heroAlt: z.string().optional(),
     heroCaption: z.string().default(''),
     heroCredit: z.string().default(''),
