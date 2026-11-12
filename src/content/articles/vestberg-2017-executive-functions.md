@@ -9,7 +9,7 @@ authorship: research-summary
 date: '2026-11-10'
 readingTime: 5
 featured: true
-draft: true
+draft: false
 heroImage: /images/vestberg-2017-adapted-research.webp
 heroAlt: Illustration of a brain over a football pitch on a research folder.
 coverAspect: four-three

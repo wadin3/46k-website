@@ -9,7 +9,7 @@ authorship: research-summary
 date: '2026-11-10'
 readingTime: 5
 featured: true
-draft: true
+draft: false
 heroImage: /images/vestberg-2017-adapted-research.webp
 heroAlt: Illustration av en hjärna över en fotbollsplan på en forskningsmapp.
 coverAspect: four-three
