@@ -42,6 +42,7 @@ sections:
       The researchers therefore wanted to find out whether both types of function already mattered for young players.
   - kind: text
     heading: How was the study conducted?
+    visual: vestberg-tests
     body: |-
       The study involved boys from a Swedish elite football academy. They played at the highest level in their respective age groups.
 
@@ -70,6 +71,7 @@ sections:
       The researchers used the test as a measure of more complex executive functions.
   - kind: text
     heading: What did the study find?
+    visual: vestberg-results
     body: |-
       On average, players scored above general population norms on both main tests.
 

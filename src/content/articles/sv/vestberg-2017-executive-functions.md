@@ -42,6 +42,7 @@ sections:
       Forskarna ville därför undersöka om båda typerna av funktioner hade betydelse redan hos unga spelare.
   - kind: text
     heading: Hur genomfördes studien?
+    visual: vestberg-tests
     body: |-
       Studien utgick från pojkspelare i en svensk elitfotbollsakademi. De spelade på högsta nivån inom sina respektive åldersgrupper.
 
@@ -70,6 +71,7 @@ sections:
       Forskarna använde testet som ett mått på mer komplexa exekutiva funktioner.
   - kind: text
     heading: Vad visade resultaten?
+    visual: vestberg-results
     body: |-
       Spelarna presterade i genomsnitt över normalpopulationens nivå på båda huvudtesterna.
 

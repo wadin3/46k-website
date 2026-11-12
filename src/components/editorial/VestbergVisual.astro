@@ -1,0 +1,68 @@
+---
+interface Props { variant: 'vestberg-tests' | 'vestberg-results'; locale: string; }
+const { variant, locale } = Astro.props;
+const sv = locale === 'sv';
+const measures = [
+  { label: sv ? 'Arbetsminne (dWM)' : 'Working memory (dWM)', r: 0.437 },
+  { label: 'Design Fluency', r: 0.349 },
+  { label: sv ? 'Kombinerat mått' : 'Combined measure', r: 0.550 },
+];
+const coefficient = (r: number) => r.toFixed(3).replace('.', sv ? ',' : '.');
+---
+{variant === 'vestberg-tests' ? (
+  <figure class="research-figure">
+    <figcaption>{sv ? 'Två uppgifter, olika krav' : 'Two tasks with different demands'}</figcaption>
+    <div class="research-tasks">
+      <div>
+        <div class="memory-cards" aria-hidden="true"><span>7</span><span>3</span><span>7</span></div>
+        <h3>{sv ? 'Arbetsminne' : 'Working memory'}</h3>
+        <p>{sv ? 'Känna igen ett kort som visats tidigare.' : 'Recognise a card shown earlier.'}</p>
+      </div>
+      <div>
+        <div class="design-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <h3>Design Fluency</h3>
+        <p>{sv ? 'Koppla ihop punkter till nya figurer när reglerna växlar.' : 'Connect dots to make new designs as the rules change.'}</p>
+      </div>
+    </div>
+    <p class="research-caption">{sv ? 'Schematisk illustration av uppgifterna.' : 'Schematic illustration of the tasks.'}</p>
+  </figure>
+) : (
+  <figure class="research-figure">
+    <figcaption>{sv ? 'Samband med antal gjorda mål' : 'Correlations with goals scored'}</figcaption>
+    <ul class="correlation-bars">
+      {measures.map(({ label, r }) => (
+        <li>
+          <span>{label}</span>
+          <span class="correlation-value">r = {coefficient(r)}</span>
+          <div class="correlation-track" aria-hidden="true"><span style={{width: `${r * 100}%`}}></span></div>
+        </li>
+      ))}
+    </ul>
+    <div class="correlation-scale" aria-hidden="true"><span>0</span><span>r = 1</span></div>
+    <p class="research-caption">{sv ? 'Ojusterade korrelationer i analysen av de 30 spelare som gjorde minst ett mål.' : 'Unadjusted correlations in the analysis of the 30 players who scored at least one goal.'} <a href="#reference-1">[1]</a></p>
+  </figure>
+)}
+<style>
+  .research-figure { margin: 28px 0 0; padding: clamp(18px, 3vw, 32px); border-top: 2px solid var(--gold); background: #285c4309; color: var(--graphite); }
+  figcaption { font: 400 clamp(22px, 3vw, 30px)/1.2 Georgia, serif; margin-bottom: 22px; }
+  .research-tasks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .research-tasks > div { border: 1px solid #383d3e30; padding: 16px; }
+  h3 { font: 600 16px/1.3 Arial, sans-serif; margin: 12px 0 6px; }
+  p { margin: 0; line-height: 1.6; }
+  .memory-cards, .design-dots { height: 52px; display: flex; align-items: center; gap: 6px; }
+  .memory-cards span { display: grid; place-items: center; width: 29px; height: 39px; border: 1px solid var(--pitch); border-radius: 3px; color: var(--pitch); }
+  .memory-cards span:last-child { background: var(--pitch); color: white; border-color: var(--gold); }
+  .design-dots { display: grid; grid-template-columns: repeat(3, 10px); gap: 9px 18px; align-content: center; }
+  .design-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--graphite); }
+  .design-dots span:nth-child(odd) { background: var(--gold); }
+  .correlation-bars { list-style: none; display: grid; gap: 14px; padding: 0; margin: 0; }
+  .correlation-bars li { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; font-size: 14px; }
+  .correlation-value { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .correlation-track { grid-column: 1 / -1; height: 8px; background: #383d3e20; }
+  .correlation-track span { display: block; height: 100%; background: var(--pitch); }
+  li:last-child .correlation-track span { background: var(--gold); }
+  .correlation-scale { display: flex; justify-content: space-between; margin-top: 5px; font-size: 11px; }
+  .research-caption { margin-top: 18px; font-size: 13px; }
+  .research-caption a { text-decoration: underline; }
+  @media (max-width: 520px) { .research-tasks { grid-template-columns: 1fr; } }
+</style>

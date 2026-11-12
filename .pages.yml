@@ -121,6 +121,11 @@ content:
           - name: text
             label: Textavsnitt / Text section
             fields:
+              - name: visual
+                label: Studiefigur / Study figure
+                type: select
+                options:
+                  values: [vestberg-tests, vestberg-results]
               - name: heading
                 label: Mellanrubrik / Heading
                 type: string
