@@ -91,14 +91,7 @@
 .story-sources li { font-size: 14px; line-height: 1.8; padding-bottom: 16px; }
 .story-sources a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
 .story-sources .reading-column > p { font-size: 13px; line-height: 1.8; }
-.story-related { padding-block: 48px 64px; background: #EDF0EC; }
-.story-related .container { max-width: 1160px; }
-.related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
-.related-grid article { border-top: 1px solid #383D3E44; padding-top: 20px; }
-.related-grid img { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
-.related-grid h3 { font: 400 28px/1.25 Georgia, serif; margin-block: 16px; }
-.related-grid .kicker { color: var(--pitch); }
-.related-grid article > p:last-child { font: 400 16px/1.7 Georgia, serif; }
+.story-return { max-width: 1160px; padding-block: 24px 40px; }
 @media (max-width: 1000px) {
   .paper-sheet { padding: 68px 40px; }
   .story-cover h1 { font-size: 48px; }
@@ -123,7 +116,7 @@
   .cover-credit { flex-direction: column; gap: 4px; }
   .story-introduction, .spread-prose .reading-copy { columns: 1; }
   .story-introduction { font-size: 19px; }
-  .paper-spread, .story-sources .story-grid, .story-contents ol, .related-grid { grid-template-columns: 1fr; }
+  .paper-spread, .story-sources .story-grid, .story-contents ol { grid-template-columns: 1fr; }
   .paper-spread > * { grid-column: 1; grid-row: auto; }
   .surface-0 .paper-spread:not(.spread-prose) > *, .paper-spread:not(:has(.story-text)) > * { grid-column: 1; grid-row: auto; }
   .surface-0 .paper-spread:not(.spread-prose) > .story-text { grid-column: 1; }
@@ -140,7 +133,7 @@
   .story-text h2, .reading-copy h2 { font-size: 26px; }
 }
 @media print {
-  .site-header, .site-footer, .story-related, .story-contents { display: none; }
+  .site-header, .site-footer, .story-return, .story-contents { display: none; }
   .magazine { background: white; padding: 0; }
   .paper-stack { padding: 0; max-width: none; }
   .paper-sheet { box-shadow: none; border: 0; break-after: page; margin: 0; }

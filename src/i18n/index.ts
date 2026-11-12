@@ -122,12 +122,10 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "READ ARTICLE": "LÄS ARTIKELN",
   "BACK TO EXPLORE": "TILLBAKA TILL UTFORSKA",
   "Sources & further reading": "Källor och vidare läsning",
-  "KEEP EXPLORING": "FORTSÄTT UTFORSKA",
   "EDITORIAL": "PERSPEKTIV",
   "RESEARCH": "FORSKNING",
   "INSIGHT": "INSIKT",
   "PRACTICE": "PRAKTIK",
-  "The journal": "Insikter",
   "Editorial": "Redaktionen",
   "Editorial draft": "Redaktionellt utkast",
   "Demonstration article": "Demonstrationsartikel",
@@ -136,7 +134,7 @@ const dictionaries: Partial<Record<Locale, Record<string, string>>> = {
   "The opening": "Utgångspunkten",
   "Reading room": "Läs vidare",
   "Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.": "Källorna stöder de specifika påståenden som länkas i texten, inte hela 46K-modellen eller en individuell talangprognos.",
-  "The next question.": "Nästa fråga."
+  "Go back": "Gå tillbaka"
 },
 };
 

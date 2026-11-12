@@ -19,9 +19,6 @@ const d = article.data;
 const feature = d.editorialStyle === 'feature' || d.translationKey === 'football-intelligence-authored-v1';
 const brain = d.translationKey === 'football-brain';
 const { Content } = await render(article);
-const all = await getArticles(locale);
-const related = all.filter(a => a.id !== article.id)
-  .sort((a,b) => Number(b.data.category === d.category) - Number(a.data.category === d.category)).slice(0, 3);
 const languageRoutes = Object.fromEntries(await Promise.all((Object.keys(locales) as Locale[]).map(async language => {
   const match = (await getArticles(language)).find(other => translationKey(other) === translationKey(article));
   return [language, localePath(match ? 'explore/' + articleSlug(match) + '/' : 'explore/', language)];
@@ -43,7 +40,7 @@ for (const item of blocks) {
     <PaperSheet number={1} byline={byline} variant="cover">
     <header class={'story-cover cover-' + d.cover + (d.heroImage ? '' : ' cover-without-photo')}>
       <div class="cover-content container">
-        <a class="story-back kicker" href={href('explore/')}><span aria-hidden="true">&#8592;</span> {t('The journal')}</a>
+        <a class="story-back kicker" href={href('explore/')}><span aria-hidden="true">&#8592;</span> {t('Go back')}</a>
         <p class="cover-category kicker">{articleMetadata(article, locale)}</p>
         <h1>{d.title}</h1><p class="cover-deck">{d.description}</p>
         <p class="cover-byline">{byline}</p>
@@ -64,6 +61,8 @@ for (const item of blocks) {
     </article>
     {d.sources.length > 0 && <PaperSheet number={spreads.length + 2} byline={byline} variant="sources"><section class="story-sources" aria-labelledby="sources-title"><div class="story-grid"><p class="kicker">{t('Reading room')}</p><div class="reading-column"><h2 id="sources-title">{t('Sources & further reading')}</h2><ol>{d.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<span aria-hidden="true"> &#8599;</span></a></li>)}</ol><p>{t('Sources support the specific claims linked in the text, not the complete 46K model or an individual talent prediction.')}</p></div></div></section></PaperSheet>}
     </div>
-    {related.length > 0 && <section class="story-related"><div class="container"><div class="section-heading"><div><p class="kicker">{t('KEEP EXPLORING')}</p><h2 class="serif">{t('The next question.')}</h2></div><a class="text-link" href={href('explore/')}>{t('All articles')} <span aria-hidden="true">&#8599;</span></a></div><div class="related-grid">{related.map(a => <article>{a.data.heroImage && <a href={href('explore/' + articleSlug(a) + '/')} tabindex="-1" aria-hidden="true"><img src={assetPath(a.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" /></a>}<p class="article-byline">{articleByline(a, locale)}</p><p class="kicker">{articleMetadata(a, locale)}</p><h3><a href={href('explore/' + articleSlug(a) + '/')}>{a.data.title}<span aria-hidden="true"> &#8599;</span></a></h3><p>{a.data.description}</p></article>)}</div></div></section>}
+    <div class="container story-return">
+      <a class="text-link" href={href('explore/')}><span aria-hidden="true">&#8592;</span> {t('Go back')}</a>
+    </div>
   </main>
 </EditorialLayout>

@@ -17,7 +17,12 @@ const email = 'wadin.psykologi@gmail.com';
         <div class="connect-columns">
           <div class="connect-lead">
             <h1 class="serif" id="connect-title">{c.heading[0]}<br />{c.heading[1]}</h1>
-            <a class="button-link connect-action" href={`mailto:${email}?subject=${encodeURIComponent(c.subject)}`}>{c.action}<span aria-hidden="true">&#8599;</span></a>
+            <div class="connect-actions">
+              <a class="button-link connect-action" href={`mailto:${email}?subject=${encodeURIComponent(c.subject)}`}>{c.emailAction}<span aria-hidden="true">&#8599;</span></a>
+              <button class="button-link connect-copy" type="button" hidden aria-live="polite"
+                data-email={email} data-copied={c.copied} data-copy-error={c.copyError}>{c.action}</button>
+            </div>
+            <p class="connect-status" role="status"></p>
           </div>
           <ul class="connect-topics">
             {c.topics.map(topic => <li><strong>{topic.title}</strong>{' – '}{topic.body}</li>)}
@@ -25,5 +30,41 @@ const email = 'wadin.psykologi@gmail.com';
         </div>
       </div>
     </section>
+    <section class="connect-about" aria-labelledby="connect-about-title">
+      <div class="container connect-content">
+        <p class="kicker connect-eyebrow connect-about-eyebrow">{c.about.eyebrow}</p>
+        <span class="line" aria-hidden="true"></span>
+        <h2 class="serif" id="connect-about-title">{c.about.heading}</h2>
+        <p class="connect-about-intro">{c.about.intro}</p>
+        <ul class="connect-team">
+          {c.about.people.map(person => (
+            <li>
+              <h3>{person.name}</h3>
+              <p class="connect-role">{person.role}</p>
+              <p>{person.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   </main>
 </EditorialLayout>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.connect-copy');
+  const email = button?.dataset.email;
+  const status = document.querySelector('.connect-status');
+
+  if (button && email && status && navigator.clipboard?.writeText) {
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      status.textContent = '';
+      try {
+        await navigator.clipboard.writeText(email);
+        button.textContent = button.dataset.copied ?? button.textContent;
+      } catch {
+        status.textContent = button.dataset.copyError ?? '';
+      }
+    });
+  }
+</script>

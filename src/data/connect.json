@@ -11,8 +11,20 @@
       { "title": "Pilotprojekt", "body": "Utforska möjligheten att delta i utprovning och vidareutveckling av 46K Assessment." },
       { "title": "Idéer och samarbeten", "body": "Har du en idé, fråga eller erfarenhet som kan bidra till att utveckla 46K? Hör av dig." }
     ],
-    "action": "Mejla 46K",
-    "subject": "46K - Ett samtal"
+    "action": "Kopiera mailadress",
+    "emailAction": "Mejla 46K",
+    "subject": "46K - Ett samtal",
+    "copied": "Mailadressen kopierad",
+    "copyError": "Det gick inte att kopiera adressen. Använd gärna Mejla 46K.",
+    "about": {
+      "eyebrow": "OM OSS",
+      "heading": "Psykologi möter fotboll.",
+      "intro": "46K drivs av Wadin Psykologi och Struktur AB. Vi kombinerar psykologisk och beteendevetenskaplig kompetens med en ambition att bidra till en djupare förståelse av spelintelligens och hur den kan utvecklas.",
+      "people": [
+        { "name": "Kenny Wadin", "role": "Leg. psykolog", "body": "Initiativtagare till 46K. Ansvarar för metodutveckling och psykologiskt innehåll." },
+        { "name": "Camilla Wadin", "role": "Beteendevetare", "body": "Arbetar med testning, projektadministration och utveckling av verksamheten." }
+      ]
+    }
   },
   "en": {
     "title": "Connect - 46K",
@@ -26,7 +38,19 @@
       { "title": "Pilot projects", "body": "Explore the possibility of taking part in testing and further developing 46K Assessment." },
       { "title": "Ideas and collaborations", "body": "Have an idea, question or experience that could help develop 46K? Get in touch." }
     ],
-    "action": "Email 46K",
-    "subject": "46K - A conversation"
+    "action": "Copy email address",
+    "emailAction": "Email 46K",
+    "subject": "46K - A conversation",
+    "copied": "Email address copied",
+    "copyError": "Could not copy the address. You can still use Email 46K.",
+    "about": {
+      "eyebrow": "ABOUT US",
+      "heading": "Psychology meets football.",
+      "intro": "46K is run by Wadin Psykologi och Struktur AB. We bring together expertise in psychology and behavioural science to deepen our understanding of football intelligence and how it can be developed.",
+      "people": [
+        { "name": "Kenny Wadin", "role": "Licensed psychologist", "body": "Founded 46K and leads methodology development and psychology content." },
+        { "name": "Camilla Wadin", "role": "Behavioural scientist", "body": "Works on testing, project administration and developing the organisation." }
+      ]
+    }
   }
 }
