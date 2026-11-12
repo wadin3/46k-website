@@ -86,6 +86,12 @@ content:
       - name: heroImage
         label: Omslagsbild / Cover image
         type: image
+      - name: coverAspect
+        label: Omslagsformat / Cover aspect ratio
+        type: select
+        options:
+          values: [wide, four-three]
+        default: wide
       - name: heroAlt
         label: Image description
         type: string
