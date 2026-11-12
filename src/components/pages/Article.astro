@@ -37,7 +37,7 @@ for (const item of blocks) {
   spreads.at(-1)!.push(item);
 }
 ---
-<EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' — 46K'} description={d.description} noindex={d.demonstration || d.draft}>
+<EditorialLayout locale={locale} languageRoutes={languageRoutes} title={d.title + ' | 46K'} description={d.description} noindex={d.demonstration || d.draft}>
   <main id="main-content" class={'magazine category-' + d.category.toLowerCase() + (feature ? ' article-feature' : '') + (brain ? ' article-brain' : '')} style={`--print-plate: url('${assetPath('/images/editorial-ink-plate.webp')}')`}>
     <div class="paper-stack">
     <PaperSheet number={1} byline={byline} variant="cover">
@@ -48,7 +48,7 @@ for (const item of blocks) {
         <h1>{d.title}</h1><p class="cover-deck">{d.description}</p>
         <p class="cover-byline">{byline}</p>
       </div>
-      {d.heroImage && <img class:list={['cover-photo', { 'cover-photo-four-three': d.coverAspect === 'four-three' }]} src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height={d.coverAspect === 'four-three' ? 1152 : 1024} fetchpriority="high" />}
+      {d.heroImage && <img class:list={['cover-photo', { 'cover-photo-four-three': d.coverAspect === 'four-three', 'cover-photo-three-two': d.coverAspect === 'three-two' }]} src={assetPath(d.heroImage)} alt={d.heroAlt ?? ''} width="1536" height={d.coverAspect === 'four-three' ? 1152 : 1024} fetchpriority="high" />}
     </header>
     {editorialNote && (
       <aside class="story-editorial-note" aria-labelledby="editorial-note-title">

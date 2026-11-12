@@ -11,14 +11,14 @@ import { assetPath } from '../../lib/paths';
 const articles = await getArticles(locale);
 const cats = ['ALL', 'UNDERSTAND', 'ASSESS', 'DEVELOP', '2046'] as const;
 ---
-<EditorialLayout locale={locale} title={t("Explore — 46K")} description={t("Ideas, research and perspectives on football intelligence.")}>
+<EditorialLayout locale={locale} title={t("Explore | 46K")} description={t("Ideas, research and perspectives on football intelligence.")}>
 <main id="main-content" class="journal-page" style={`--journal-print: url('${sitePath('images/editorial-ink-plate.webp')}')`}>
 <section class="journal-hero"><div class="container"><p class="kicker">{t("46K / THE JOURNAL")}</p><span class="line"></span><h1 class="serif">{locale === 'sv' ? 'Utforska spelintelligens.' : 'Explore football intelligence.'}</h1><p>{locale === 'sv' ? 'Upptäck artiklar om psykologi, kognition och fotboll. Från vetenskapliga perspektiv och testmetoder till talangutveckling och framtidens fotboll.' : 'Discover articles about psychology, cognition and football. From scientific perspectives and assessment methods to talent development and the future of football.'}</p></div></section>
 <div class="container journal-library">
 <nav class="filters" aria-label={t("Article categories")}>{cats.map(c=><a href={href(c==='ALL'?'explore/':'explore/?category='+c)} data-cat={c} aria-current={c==='ALL'?'page':undefined}>{c === 'ALL' ? t(c) : articleCategoryLabel(c, locale)}</a>)}</nav>
 <div class="journal-results">
 <p id="empty-category" class="empty-state" hidden role="status">{t("No articles in this category yet.")} <a class="text-link" href={href('explore/')} data-reset-category>{t("Explore all articles")}</a></p>
-<div class="article-grid" id="articles">{articles.map(article=><article class="article-card" data-category={article.data.category}><a class="journal-cover-link" href={href('explore/'+articleSlug(article)+'/')}><div class="journal-cover-top">{articleByline(article, locale)}</div>{article.data.heroImage && <img class="listing-photo" src={assetPath(article.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" />}<div class="journal-cover-face"><div class="meta">{articleMetadata(article, locale)}</div><h2>{article.data.title}</h2><p>{article.data.description}</p><span class="read">{t("READ ARTICLE")} <span aria-hidden="true">&#8599;</span></span></div></a></article>)}</div>
+<div class="article-grid" id="articles">{articles.map(article=><article class="article-card" data-category={article.data.category}><a class="journal-cover-link" href={href('explore/'+articleSlug(article)+'/')}><div class="journal-cover-top">{articleByline(article, locale)}</div>{article.data.heroImage && <img class:list={['listing-photo', { 'listing-photo-full': article.data.coverAspect === 'three-two' }]} src={assetPath(article.data.heroImage)} alt="" width="1536" height="1024" loading="lazy" />}<div class="journal-cover-face"><div class="meta">{articleMetadata(article, locale)}</div><h2>{article.data.title}</h2><p>{article.data.description}</p><span class="read">{t("READ ARTICLE")} <span aria-hidden="true">&#8599;</span></span></div></a></article>)}</div>
 </div></div>
 </main>
 <script>

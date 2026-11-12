@@ -22,6 +22,7 @@
 .cover-byline { margin: 0; border-top: 1px solid #383D3E33; padding-top: 16px; font-size: 11px; line-height: 1.6; }
 .cover-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center 40%; }
 .cover-photo.cover-photo-four-three { aspect-ratio: 4/3; }
+.cover-photo.cover-photo-three-two { aspect-ratio: 3/2; }
 .category-assess .cover-photo { filter: grayscale(1); }
 .cover-credit { display: flex; justify-content: space-between; gap: 18px; font: 400 11px/1.7 Arial, sans-serif; padding-block: 10px 16px; margin: 0; }
 .cover-credit small { font: inherit; color: var(--muted); }

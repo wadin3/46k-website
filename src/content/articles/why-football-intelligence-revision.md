@@ -10,8 +10,9 @@ date: "2026-10-30"
 readingTime: 10
 featured: true
 draft: false
-heroImage: "/images/football-intelligence-reading-game-bw.webp"
-heroAlt: "AI-generated black-and-white overview of a modern football training game, viewed from the stand with players and open spaces across the pitch."
+heroImage: /images/football-intelligence-publication.webp
+heroAlt: Magazine spread showing a player with the ball, passing routes and a highlighted area of the pitch.
+coverAspect: three-two
 heroCaption: ""
 heroCredit: "AI-generated illustration / 46K"
 cover: "light"
@@ -136,7 +137,7 @@ sections:
 
       Cognition is therefore not a separate part of football intelligence, but part of the foundation for everything that happens before the action.
   - kind: text
-    heading: "If we can understand it – can we also measure it?"
+    heading: "Can we measure what we understand?"
     body: |-
       Cognitive abilities differ between people. With psychometric tests, we can investigate some of these differences through standardised tasks and systematic comparisons.
 
@@ -152,13 +153,13 @@ sections:
 
       We believe the value lies in what the knowledge helps us do: bring out the invisible aspects of players’ talent, understand individual differences, and find more targeted ways to support learning and development.
 
-      46K – Decoding Football Intelligence
+      46K: Decoding Football Intelligence
   - kind: text
     heading: "References"
     body: |-
       1. <span id="reference-1"></span>The Football Association. (2022, 10 februari). [The big six: pressing](https://www.thefa.com/bootroom/resources/coaching/the-big-six-pressing). The Boot Room.
 
-      2. <span id="reference-2"></span>UEFA. (2020). [Coaching Convention 2020: Syllabus of minimum content—UEFA B diploma](https://editorial.uefa.com/resources/0267-11ebff960bb7-405a74be27d5-1000/uefa_b_diploma_2020_en.pdf).
+      2. <span id="reference-2"></span>UEFA. (2020). [Coaching Convention 2020: Syllabus of minimum content (UEFA B diploma)](https://editorial.uefa.com/resources/0267-11ebff960bb7-405a74be27d5-1000/uefa_b_diploma_2020_en.pdf).
 
       3. <span id="reference-3"></span>Vilches, H. (2025, 8 april). [Higinio Vilches on scouting Spanish youth talent](https://www.fifatrainingcentre.com/en/practice/elite-sessions/youth-national-teams/u15-boys-tournament/higinio-vilches-on-scouting-spanish-youth-talent.php). FIFA Training Centre.
 

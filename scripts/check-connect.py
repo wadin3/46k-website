@@ -33,7 +33,7 @@ for locale, route in [('sv', 'connect'), ('en', 'en/connect')]:
     text = ' '.join(''.join(page.text).split())
     assert page.sections == 2 and page.h1 == 1
     assert len(content['topics']) == 5
-    for value in [content['eyebrow'], ' '.join(content['heading'])] + [f"{topic['title']} – {topic['body']}" for topic in content['topics']]:
+    for value in [content['eyebrow'], ' '.join(content['heading'])] + [f"{topic['title']}. {topic['body']}" for topic in content['topics']]:
         assert value in text, f'{locale}: missing {value}'
     assert len(page.mail) == 1
     mail = urlsplit(page.mail[0])

@@ -36,7 +36,7 @@ const articles = defineCollection({
     featured: z.boolean().default(false),
     draft: z.boolean().default(true),
     heroImage: z.string().optional(),
-    coverAspect: z.enum(['wide', 'four-three']).default('wide'),
+    coverAspect: z.enum(['wide', 'four-three', 'three-two']).default('wide'),
     heroAlt: z.string().optional(),
     heroCaption: z.string().default(''),
     heroCredit: z.string().default(''),

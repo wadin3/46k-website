@@ -54,7 +54,7 @@ sections:
 
       Two tests were central to the study.
   - kind: text
-    heading: Working memory – keeping information available
+    heading: "Working memory: keeping information available"
     body: |-
       The first test was a computer-based task the researchers called Demanding Working Memory (dWM).
 
@@ -62,7 +62,7 @@ sections:
 
       The researchers used this task as a measure of basic executive ability.
   - kind: text
-    heading: Design Fluency – finding new solutions
+    heading: "Design Fluency: finding new solutions"
     body: |-
       The second main test was Design Fluency, from the D-KEFS test battery.
 

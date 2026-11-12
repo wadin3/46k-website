@@ -32,12 +32,16 @@ for locale, prefix in [('sv', ''), ('en', 'en/')]:
     page = Article(html)
     replacement = next(entry for entry in entries if entry['slug'] == 'why-football-intelligence' and entry['language'] == locale and entry.get('replacement'))
     if not args.preview and replacement['draft']:
-        assert not any(image['src'].endswith('football-intelligence-reading-game-bw.webp') for image in page.images)
+        assert not any(image['src'].endswith('football-intelligence-publication.webp') for image in page.images)
         continue
     expected = json.loads(Path('docs/editorial/football-intelligence-' + ('source' if locale == 'sv' else 'translation') + '.json').read_text(encoding='utf-8'))['paragraphs']
     text = ' '.join(''.join(page.text).split())
     for index, paragraph in enumerate(expected[1:], 1):
         paragraph = paragraph.replace('[12]', '[11]')
+        paragraph = paragraph.replace('Om vi kan förstå det – kan vi också mäta det?', 'Kan vi mäta det vi förstår?')
+        paragraph = paragraph.replace('If we can understand it – can we also measure it?', 'Can we measure what we understand?')
+        paragraph = paragraph.replace('46K – Decoding Football Intelligence', '46K: Decoding Football Intelligence')
+        paragraph = paragraph.replace('minimum content—UEFA B diploma', 'minimum content (UEFA B diploma)')
         if 27 <= index <= 47 and (index - 27) % 4 == 0:
             paragraph = paragraph.split('. ', 1)[1]
         assert ' '.join(paragraph.split()) in text, f'{locale}: source paragraph {index} differs'
@@ -46,5 +50,5 @@ for locale, prefix in [('sv', ''), ('en', 'en/')]:
     sources = [link for link in page.links if link.get('href', '').startswith(('https://', 'http://'))]
     assert len(sources) == 11 and all(link.get('target') == '_blank' for link in sources)
     assert any(image['src'].endswith('football-intelligence-cycle.webp') for image in page.images)
-    assert any(image['src'].endswith('football-intelligence-reading-game-bw.webp') for image in page.images)
+    assert any(image['src'].endswith('football-intelligence-publication.webp') for image in page.images)
 print('Replacement: published baseline preserved; preview retains all supplied paragraphs and approved imagery.')

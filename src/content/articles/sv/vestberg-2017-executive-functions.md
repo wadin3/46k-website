@@ -21,7 +21,7 @@ sections:
   - kind: text
     heading: Sammanfattning
     body: |-
-      Vad skiljer framgångsrika unga fotbollsspelare från andra? Utöver teknik, fysisk kapacitet och spelförståelse finns ett växande forskningsintresse för hjärnans exekutiva funktioner – de mentala processer som hjälper oss att hantera information, styra uppmärksamheten och anpassa våra handlingar.
+      Vad skiljer framgångsrika unga fotbollsspelare från andra? Utöver teknik, fysisk kapacitet och spelförståelse finns ett växande forskningsintresse för hjärnans exekutiva funktioner. Det är de mentala processer som hjälper oss att hantera information, styra uppmärksamheten och anpassa våra handlingar.
 
       I en svensk studie undersökte forskare vid Karolinska Institutet exekutiva funktioner hos unga elitfotbollsspelare. Resultaten visade att spelarna i genomsnitt presterade bättre än jämnåriga i normalpopulationen på två kognitiva test. Högre testresultat hade dessutom samband med fler gjorda mål. [[1]](#reference-1)
 
@@ -54,7 +54,7 @@ sections:
 
       Två test stod i centrum.
   - kind: text
-    heading: Arbetsminne – att hålla information tillgänglig
+    heading: "Arbetsminne: att hålla information tillgänglig"
     body: |-
       Det första testet var en datorbaserad uppgift som forskarna benämnde Demanding Working Memory (dWM).
 
@@ -62,7 +62,7 @@ sections:
 
       Forskarna använde detta som ett mått på grundläggande exekutiv förmåga.
   - kind: text
-    heading: Design Fluency – att hitta nya lösningar
+    heading: "Design Fluency: att hitta nya lösningar"
     body: |-
       Det andra huvudtestet var Design Fluency, hämtat från testbatteriet D-KEFS.
 
@@ -121,7 +121,7 @@ sections:
 
       Det mest betydelsefulla är att sambanden inte enbart gäller komplex problemlösning, utan även mer grundläggande funktioner som arbetsminne.
 
-      Forskningen bidrar därmed till en bredare förståelse av vilka förmågor som kan ha betydelse för framgång inom fotboll – och varför kognitiva egenskaper är intressanta att studera redan under ungdomsåren.
+      Forskningen bidrar därmed till en bredare förståelse av vilka förmågor som kan ha betydelse för framgång inom fotboll och varför kognitiva egenskaper är intressanta att studera redan under ungdomsåren.
   - kind: text
     heading: Referenser
     body: |-

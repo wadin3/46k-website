@@ -90,7 +90,7 @@ content:
         label: Omslagsformat / Cover aspect ratio
         type: select
         options:
-          values: [wide, four-three]
+          values: [wide, four-three, three-two]
         default: wide
       - name: heroAlt
         label: Image description

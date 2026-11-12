@@ -14,7 +14,7 @@ const features = [
 ];
 const articles = await getArticles(locale);
 ---
-<EditorialLayout locale={locale} description={t('We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.')}>
+<EditorialLayout locale={locale} description={t('We explore the science behind football intelligence and create tools that help players understand their potential and develop on the pitch.')}>
   <main id="main-content">
     <section class="home-hero">
       <img class="hero-image" src={sitePath('images/football-ground-hero-v4.webp')} alt={t('Illustrative male football player with a ball on a training pitch beside a goal and stand.')} width="1920" height="819" fetchpriority="high" />
@@ -23,7 +23,7 @@ const articles = await getArticles(locale);
         <span class="line"></span>
         <h1 class="serif"><span>{t('Football Intelligence')}</span>{' '}<span class="hero-decoded">{t('Decoded')}</span></h1>
         <p class="hero-statement">{t('Talent is more than physique and technique')}</p>
-        <p class="hero-deck">{t('We explore the science behind football intelligence – and create tools that help players understand their potential and develop on the pitch.')}</p>
+        <p class="hero-deck">{t('We explore the science behind football intelligence and create tools that help players understand their potential and develop on the pitch.')}</p>
         <a class="button-link" href={href('explore/')}>{t('Explore our thinking')} <span aria-hidden="true">&#8599;</span></a>
       </div>
     </section>

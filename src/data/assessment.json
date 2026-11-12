@@ -1,6 +1,6 @@
 {
   "sv": {
-    "title": "Mäta — 46K Assessment",
+    "title": "Mäta | 46K Assessment",
     "description": "46K Assessment är en kommande tjänst. Vi utvecklar kognitiva tester för att ge spelare och klubbar nya perspektiv på styrkor, potential och utveckling.",
     "hero": {
       "eyebrow": "46K ASSESSMENT / KOMMANDE TJÄNST",
@@ -18,7 +18,7 @@
         "Bakom intelligent spel finns hjärnans grundläggande funktioner att uppfatta, sortera, förstå, minnas och bearbeta information.",
         "Dessa kognitiva förmågor skiljer sig mellan människor. Vi undersöker hur de bidrar till spelintelligens och vilken betydelse de har för hur spelare lär sig och utvecklas."
       ],
-      "quote": "Tänk om vi kan förstå potentialen bakom prestation – inte bara det som syns idag?",
+      "quote": "Tänk om vi kan förstå potentialen bakom dagens prestationer?",
       "alt": "Konceptuell fotbollsillustration där en vuxen spelare läser spelet, med scanningbågar och visuella informationslager.",
       "caption": "Konceptuell illustration. Diagram, tidsangivelser och markeringar i bilderna är illustrativa, inte uppmätta resultat."
     },
@@ -32,8 +32,8 @@
           "title": "För dig som spelar.",
           "lead": "Hitta ditt försprång.",
           "paragraphs": [
-            "Alla vill bli snabbare, starkare och skickligare med bollen. Men kanske finns ditt försprång någon annanstans – i hur du uppfattar spelet, bearbetar information, hittar lösningar och fattar bättre beslut.",
-            "Vi vill hjälpa dig att förstå de kognitiva egenskaper som påverkar ditt sätt att spela – och vad du kan arbeta vidare med."
+            "Alla vill bli snabbare, starkare och skickligare med bollen. Men kanske ligger ditt försprång i hur du uppfattar spelet, bearbetar information, hittar lösningar och fattar bättre beslut.",
+            "Vi vill hjälpa dig att förstå de kognitiva egenskaper som påverkar ditt sätt att spela och vad du kan arbeta vidare med."
           ],
           "bullets": ["Upptäck din individuella kognitiva profil.", "Få nya perspektiv på styrkor och utvecklingsområden.", "Få vägledning för matchsituationer och egen träning."],
           "closing": "Förstå mer av spelaren du kan bli."
@@ -42,7 +42,7 @@
           "label": "KLUBB / AKADEMI",
           "title": "För er som utvecklar.",
           "lead": "",
-          "paragraphs": ["Alla spelare utvecklas olika – och det som syns idag säger inte allt om vad en spelare kan bli i framtiden. Vi vill ge tränare och klubbar ytterligare ett perspektiv för att utveckla fler spelare bättre."],
+          "paragraphs": ["Alla spelare utvecklas olika. Det som syns idag säger inte allt om vad en spelare kan bli i framtiden. Vi vill ge tränare och klubbar ytterligare ett perspektiv för att utveckla fler spelare bättre."],
           "bullets": ["Komplettera observationer och matchdata.", "Skapa bättre underlag för individuell utveckling.", "Undersök styrkor och potential som annars kan förbises."],
           "closing": "Bättre information - bättre utvecklingsbeslut."
         }
@@ -51,7 +51,7 @@
     "outcome": { "eyebrow": "FRÅN INSIKT TILL FÖRSPRÅNG" },
     "science": {
       "eyebrow": "04 / VETENSKAPLIG GRUND",
-      "body": "Vår modell bygger på etablerad kunskap från psykometri och kognitionspsykologi, i mötet med forskning om fotboll. Nu utvecklar vi nya tillämpningar – med ambitionen att skapa insikter som både är vetenskapligt hållbara och användbara i praktiken.",
+      "body": "Vår modell bygger på etablerad kunskap från psykometri och kognitionspsykologi, i mötet med forskning om fotboll. Nu utvecklar vi nya tillämpningar. Målet är att skapa insikter som både är vetenskapligt hållbara och användbara i praktiken.",
       "note": "Metoderna testas och valideras stegvis. Vi skiljer mellan kunskap, lovande samband och hypoteser.",
       "evidenceLabel": "Tre evidensnivåer"
     },
@@ -63,7 +63,7 @@
     }
   },
   "en": {
-    "title": "Assess — 46K Assessment",
+    "title": "Assess | 46K Assessment",
     "description": "46K Assessment is an upcoming service. We are developing cognitive tests to give players and clubs new perspectives on strengths, potential and development.",
     "hero": {
       "eyebrow": "46K ASSESSMENT / UPCOMING SERVICE",
